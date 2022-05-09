@@ -1,5 +1,5 @@
 ### Hello, I'm Almir! 👋
-A student software engeneer & Development.
+I currently study two branches of Information Technology: Software Engineering and Full Stack Development.
 
 
 <br>
