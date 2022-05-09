@@ -66,6 +66,10 @@ I currently study two branches of Information Technology: Software Engineering a
 >
 > I use this [tutorial](https://braydoncoyer.dev/blog/creating-a-killer-github-profile-readme-part-1/)! & this [API](https://github.com/anuraghazra/github-readme-stats)
 
+<div align="center">
+  
+  ![Snake animation](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
+  
+</div>
 
-![snake svg atalho](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
 
