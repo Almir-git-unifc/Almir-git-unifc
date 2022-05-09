@@ -58,7 +58,6 @@ I currently study two branches of Information Technology: Software Engineering a
 <br>
 
 
-man Software Engenner and Development:
 
 <br>
 <br>
