@@ -54,7 +54,7 @@ I currently study two branches of Information Technology: Software Engineering a
 
 <br>
 <br>
-
+![snake gif](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
 
 > ### Want to know how I made this README?
 >
@@ -62,4 +62,4 @@ I currently study two branches of Information Technology: Software Engineering a
 
 
 
-![snake gif](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
+
