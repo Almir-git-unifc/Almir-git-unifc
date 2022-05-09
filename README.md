@@ -49,7 +49,7 @@ I currently study two branches of Information Technology: Software Engineering a
 ![](https://img.shields.io/badge/Tools-Postman-informational?style=flat&logo=Postman&logoColor=white&color=4AB197)
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&logoColor=white&color=4AB197)
 ![](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=87CEFA&color=4AB197)
-![snake gif](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
+
 
 </details>
 
@@ -68,5 +68,5 @@ I currently study two branches of Information Technology: Software Engineering a
 > I use this [tutorial](https://braydoncoyer.dev/blog/creating-a-killer-github-profile-readme-part-1/)! & this [API](https://github.com/anuraghazra/github-readme-stats)
 
 
-
+![snake gif](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
 
