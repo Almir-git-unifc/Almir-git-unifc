@@ -2,12 +2,6 @@
 A student software engeneer & Development.
 
 
-<br>
-
-## 📌 Pinned Repositories
-
-
-![blogatico](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCardsPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
 
 <br>
 
@@ -21,7 +15,7 @@ A student software engeneer & Development.
 
 
 ![Almiramb's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=27)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=3&theme=cobalt&title_color=fff)](https://github.com/Almir-git-unifc /github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=3&theme=cobalt&title_color=fff)](https://github.com/Almir-git-unifc/github-readme-stats)
 
 
 <br>
