@@ -2,14 +2,8 @@
 A student software engeneer & Development.
 
 
-
 <br>
 
-
-
-
-<br>
-<br>
 
 ## &#x1f4c8; GitHub Stats
 
@@ -20,9 +14,6 @@ A student software engeneer & Development.
 
 <br>
 
-
-<br>
-<br>
 
 ## 💼 Skills
 
@@ -61,6 +52,7 @@ A student software engeneer & Development.
 
 </details>
 
+<br>
 <br>
 
 
