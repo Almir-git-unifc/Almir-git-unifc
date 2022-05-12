@@ -63,6 +63,8 @@ I currently study two branches of Information Technology: Software Engineering a
 ![](https://img.shields.io/badge/Tools-Postman-informational?style=flat&logo=Postman&logoColor=white&color=4AB197)
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&logoColor=white&color=4AB197)
 ![](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=87CEFA&color=4AB197)
+![](https://img.shields.io/badge/Tools-Sublime-informational?style=flat&logo=Sublime&logoColor=87CEFA&color=4AB197)
+![](https://img.shields.io/badge/Tools-Genymotion-informational?style=flat&logo=Genymotion&logoColor=87CEFA&color=4AB197)
 
 
 </details>
