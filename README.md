@@ -7,7 +7,7 @@ I currently study two branches of Information Technology: Software Engineering a
 ## 📌 Pinned Repositories
 
 
-![blogatico](https://github-readme-stats.vercel.app/api/pin/?username=almirramb&repo=blogatico&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
+![blogatico](https://github-readme-stats.vercel.app/api/pin/?username=almirramb&repo=simpleCardsPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
 ![Ionic3-Curse](https://github-readme-stats.vercel.app/api/pin/?username=almirramb&repo=Ionic3-Curse&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)
 ![ionic-3-essencial](https://github-readme-stats.vercel.app/api/pin/?username=almirramb&repo=ionic-3-essencial&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=#4AB197&bg_color=1A2B34)
 ![partiuformar](https://github-readme-stats.vercel.app/api/pin/?username=almirramb&repo=partiuformar&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#5F9EA0)
