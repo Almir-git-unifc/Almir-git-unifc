@@ -7,9 +7,11 @@ I currently study two branches of Information Technology: Software Engineering a
 ## 📌 Pinned Repositories
 
 
-![blogatico](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCardsPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
-![Ionic3-Curse](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCarrocelPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)
+![Cards](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCardsPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
+![Carrossel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCarrocelPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)
 
+![Cards](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCardsPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)
+![Carrossel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=simpleCarrocelPage-react_js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)
 
 <br>
 
