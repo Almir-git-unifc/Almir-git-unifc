@@ -1,5 +1,5 @@
 ### Hello, I'm Almir! 👋
-I currently study two branches of Information Technology: Software Engineering and Full Stack Development.
+I currently study two branches of Information Technology: Software Engineering and Full Stack Development with SFPC - Scrum Foundation Professional Certificate.
 
 
 <br>
