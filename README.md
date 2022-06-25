@@ -58,6 +58,7 @@ I currently study two branches of Information Technology: Software Engineering a
 
 
 
+
 <br>
 
 ![](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
@@ -67,6 +68,7 @@ I currently study two branches of Information Technology: Software Engineering a
 ![](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=87CEFA&color=4AB197)
 ![](https://img.shields.io/badge/Tools-sublime_text-informational?style=flat&logo=sublime_text&logoColor=87CEFA&color=4AB197)
 ![](https://img.shields.io/badge/Tools-Genymotion-informational?style=flat&logo=Genymotion&logoColor=87CEFA&color=4AB197)
+![](https://img.shields.io/badge/CertiProf-Scrum-informational?style=flat&logo=SFPCn&logoColor=87CEFA&color=4AB197)
 
 
 </details>
