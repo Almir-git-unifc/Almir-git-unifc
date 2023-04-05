@@ -75,7 +75,7 @@ I currently study two branches of Information Technology: Software Engineering a
 <br>
 <br>
 
-
+![Snake animation](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/output/github-contribution-grid-snake.svg)
 
 <br>
 <br>
