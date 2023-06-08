@@ -68,6 +68,7 @@ I currently study two branches of Information Technology: Software Engineering a
 ![Genymotion](https://img.shields.io/badge/Tools-Genymotion-informational?style=flat&logo=Genymotion&logoColor=87CEFA&color=4AB197)
 ![node-current](https://img.shields.io/node/v/np)
 [![CertiProf - Scrum](https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
+[![CertiProf - BI](https://img.shields.io/static/v1?label=CertiProf&message=BI-Fundation&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
 
 
 </details>
