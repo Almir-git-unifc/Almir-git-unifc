@@ -32,11 +32,12 @@ I currently study two branches of Information Technology: Software Engineering a
 
 ## 💼 Skills
 
-![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![react](https://img.shields.io/badge/React-FA7343?style=for-the-badge&logo=react&logoColor=61DAFB)
-![html5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
-![css3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![html5](https://img.shields.io/badge/HTML-007ACC?style=for-the-badge&logo=html5&logoColor=white)
+![css3](https://img.shields.io/badge/CSS-4b50a1?&style=for-the-badge&logo=css3&logoColor=white)
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node](https://img.shields.io/badge/Node-239120?style=for-the-badge&logo=react&logoColor=61DAFB)
+![java](https://img.shields.io/badge/Java-FA7343?style=for-the-badge&logo=java&logoColor=white)
 ![mysql](https://img.shields.io/badge/MySQL-CC6699?style=for-the-badge&logo=mysql&logoColor=white)
 
 
@@ -61,14 +62,15 @@ I currently study two branches of Information Technology: Software Engineering a
 
 ![GitHub](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&logoColor=white&color=4AB197)
 ![Trello](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=87CEFA&color=4AB197)
-![Jenkins](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
-![SonarQube](https://img.shields.io/badge/Tools-SonarQube-informational?style=flat&logo=SonarQube&logoColor=white&color=4AB197)
 ![Postman](https://img.shields.io/badge/Tools-Postman-informational?style=flat&logo=Postman&logoColor=white&color=4AB197)
 ![sublime](https://img.shields.io/badge/Tools-sublime_text-informational?style=flat&logo=sublime_text&logoColor=87CEFA&color=4AB197)
+![Jenkins](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
+![SonarQube](https://img.shields.io/badge/Tools-SonarQube-informational?style=flat&logo=SonarQube&logoColor=white&color=4AB197)
 ![Genymotion](https://img.shields.io/badge/Tools-Genymotion-informational?style=flat&logo=Genymotion&logoColor=87CEFA&color=4AB197)
 ![node-current](https://img.shields.io/badge/Node->=16.6.0-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
 [![CertiProf - Scrum](https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
 [![CertiProf - BI](https://img.shields.io/static/v1?label=CertiProf&message=BI-Fundation&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
+[![CertiProf - 27001](https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197)](https://certiprof.com/products/certified-iso-iec-20000-foundation-i20000f)
 
 
 </details>
