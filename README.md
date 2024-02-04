@@ -86,6 +86,6 @@ I currently study two branches of Information Technology: Software Engineering a
 
 > ### Want to know how I made this README?
 >
-> I use this [tutorial](https://braydoncoyer.dev/blog/creating-a-killer-github-profile-readme-part-1/)! & this [API](https://github.com/anuraghazra/github-readme-stats)
+> I use this [tutorial](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/)! & for statistics use this [API](https://github.com/anuraghazra/github-readme-stats)
 
 
