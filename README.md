@@ -63,6 +63,7 @@ I currently study two branches of Information Technology: Software Engineering a
 ![GitHub](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&logoColor=white&color=4AB197)
 ![Trello](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=87CEFA&color=4AB197)
 ![Postman](https://img.shields.io/badge/Tools-Postman-informational?style=flat&logo=Postman&logoColor=white&color=4AB197)
+![Thunder-Cli](https://img.shields.io/badge/Tools-thunder_cli-informational?style=flat&logo=thunderclient&logoColor=white&color=4AB197)
 ![sublime](https://img.shields.io/badge/Tools-sublime_text-informational?style=flat&logo=sublime_text&logoColor=87CEFA&color=4AB197)
 ![Jenkins](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
 ![SonarQube](https://img.shields.io/badge/Tools-SonarQube-informational?style=flat&logo=SonarQube&logoColor=white&color=4AB197)
