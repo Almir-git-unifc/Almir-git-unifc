@@ -29,6 +29,9 @@ I currently study two branches of Information Technology: Software Engineering a
 
 <br>
 
+[![trophy](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)](https://github.com/Almir-git-unifc/github-profile-trophy)
+
+<br>
 
 ## 💼 Skills
 
