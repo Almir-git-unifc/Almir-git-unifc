@@ -100,7 +100,7 @@ Generates a snake with the general contributions
     src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
   />
 </picture>
-
+generated with Platane/snk
 
 
 <br>
@@ -114,5 +114,6 @@ Generates a snake with the general contributions
 > ### Want to know how I made this README?
 >
 > I use this [tutorial](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/)! & for statistics use this [API](https://github.com/anuraghazra/github-readme-stats)
+> To snake I use [repository](https://github.com/Platane/Platane/blob/master/README.md)
 
 
