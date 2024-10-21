@@ -81,11 +81,10 @@ I currently study two branches of Information Technology: Software Engineering a
 
 
 
-# snk
+# 
 
 
-
-Generates a snake game from a github user contributions graph
+Generates a snake with commits
 
 <picture>
   <source
