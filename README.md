@@ -84,7 +84,7 @@ I currently study two branches of Information Technology: Software Engineering a
 # 
 
 
-Generates a snake with the general contributions
+Generates a snake with the general contributions; with Platane/snk
 
 <picture>
   <source
@@ -100,7 +100,7 @@ Generates a snake with the general contributions
     src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
   />
 </picture>
-generated with Platane/snk
+
 
 
 <br>
