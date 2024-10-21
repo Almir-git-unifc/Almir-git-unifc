@@ -84,7 +84,7 @@ I currently study two branches of Information Technology: Software Engineering a
 # 
 
 
-Generates a snake with commits
+Generates a snake with the general contributions
 
 <picture>
   <source
