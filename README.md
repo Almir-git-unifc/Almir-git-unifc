@@ -84,7 +84,7 @@ I currently study two branches of Information Technology: Software Engineering a
 # 
 
 
-Generates a snake with the general contributions; with Platane/snk
+General contributions; made with Platane/snk
 
 <picture>
   <source
