@@ -10,6 +10,7 @@ I currently study two branches of Information Technology: Software Engineering a
 [![Crud-App ](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=full-stack_crud_mongodb&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/full-stack_crud_mongodb) [![Carrossel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=Carrocel-Page_simple_react-js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/Carrocel-Page_simple_react-js)
 
 [![Quiz](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=Quizz_simple_react-js&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/Quizz_simple_react-js)
+[![To Do List](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=ToDo-List_react&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/ToDo-List_react)
 
 
 <br>
