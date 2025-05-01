@@ -115,7 +115,7 @@ General contributions; made with Platane/snk
 
 > ### Want to know how I made this README?
 >
-> I use this [tutorial](https://blog.rocketseat.com.br/como-fazer-um-bom-readme/)! & for statistics use this [API](https://github.com/anuraghazra/github-readme-stats); & for trophy use this [repo](https://github.com/ryo-ma/github-profile-trophy)
-> To snake I use [repository](https://github.com/Platane/Platane/blob/master/README.md)
+> I use this [tutorial](https://www.dio.me/articles/como-criar-um-bom-readmemd); for statistics this [API](https://github.com/anuraghazra/github-readme-stats); for [trophy](https://github.com/ryo-ma/github-profile-trophy); for [badges](https://ileriayo.github.io/markdown-badges/); 
+> & this repository to [snake](https://github.com/Platane/Platane/blob/master/README.md)
 
 
