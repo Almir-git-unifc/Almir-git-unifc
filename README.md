@@ -26,12 +26,12 @@ I currently study two branches of Information Technology: Software Engineering a
 
 
 ![Almir_GitHub Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=27)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=3&theme=cobalt&title_color=fff)](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/z-profile-trophy-juicyfresh.png)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=3&theme=cobalt&title_color=fff)](https://github.com/Almir-git-unifc/github-readme-stats)
 
 
 <br>
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)]([https://github.com/ryo-ma/github-profile-trophy](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/z-profile-trophy-juicyfresh.png)
 
 <br>
 
