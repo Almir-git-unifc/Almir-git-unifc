@@ -26,9 +26,11 @@ I currently study two branches of Information Technology: Software Engineering a
 ## &#x1f4c8; GitHub Stats
 
 
-![Almir_GitHub Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=27)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff)
-
+<div style="display: flex;">
+  <img src="https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=33" alt="Git Stats" style="flex: 1;">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=4&theme=cobalt&title_color=fff&line_height=33" alt="Top Langs" style="flex: 1;">
+</div>
+<!-- Os quadros Statse Language estão configurados para &line_height=33 e  4 linguagens; &langs_count=4  Se aparecer mais linguagens precisa modificar->
 
 
 <br>
