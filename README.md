@@ -32,7 +32,11 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 <br>
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)](https://github.com/Almir-git-unifc/github-profile-trophy)
+<picture>
+  <img src="https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20" 
+       onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png';" 
+       alt="GitHub Trophies" />
+</picture>
 
 <br>
 
