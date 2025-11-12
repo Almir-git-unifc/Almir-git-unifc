@@ -24,8 +24,8 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## &#x1f4c8; GitHub Stats
 
-![Git Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=33)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=4&theme=cobalt&title_color=fff)
+![Git Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=40)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff)
 
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
 <!-- Se aparecer outras lingaugens estes quadros precisam ser reconfigurados -->
