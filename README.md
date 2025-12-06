@@ -7,13 +7,14 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ## 📌 Pinned Repositories
 
 
-[![Crud-App ](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=full-stack_crud_mongodb&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/full-stack_crud_mongodb) 
-[![Budget-controll](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=budget-controll_react-native&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/budget-controll_react-native)
+[![Crud-App - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=full-stack_crud_mongodb&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/full-stack_crud_mongodb) 
+<br>
+[![Budget-controll - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=budget-controll_react-native&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/budget-controll_react-native)
 
 
-[![Portfolio](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=single-page-app_portfolio&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)](https://github.com/Almir-git-unifc/single-page-app_portfolio)
-[![To Do List](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=ToDo-List_react&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/ToDo-List_react)
-
+[![Portfolio - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=single-page-app_portfolio&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#4682B4)]([https://github.com/Almir-git-unifc/single-page-app_portfolio](https://github.com/Almir-git-unifc/single-page-app_portfolio/blob/main/img1uni.png))<br>
+[![To Do List - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=ToDo-List_react&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/ToDo-List_react)
+<br>
 
 <br>
 
