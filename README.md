@@ -25,6 +25,9 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ## &#x1f4c8; GitHub Stats
 
 ![Git Stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=40)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc)](https://github.com/Almir-git-unifc/github-readme-stats)
+
+
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff)
 
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
