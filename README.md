@@ -17,10 +17,8 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 <br>
 
 ## &#x1f4c8; GitHub Stats
- 
-![Anurag's GitHub stats - Vercel is offline](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&line_height=40) 
 
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=transparent&line_height=40)
  ![Top Langs - Vercel is offline](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff) 
 
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
@@ -32,7 +30,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
  
 </picture>
 
-![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png)
+<!-- ![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png)  -->
 
 <br>
 
@@ -41,6 +39,12 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png';" 
        alt="GitHub Trophies" />
 </picture>
+
+![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png)
+
+
+
+
 
 <br>
 
