@@ -6,6 +6,10 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## 📌 Pinned Repositories
 
+[![Full Stack MongoDb - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=full-stack_crud_mongodb&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/full-stack_crud_mongodb)
+[![Budget - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=budget-controll_react-native&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/budget-controll_react-native)
+
+[![Portfolio - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=single-page-app_portfolio&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/single-page-app_portfolio)
 [![To Do List - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=ToDo-List_react&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/ToDo-List_react)
 <br>
 
@@ -18,7 +22,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## &#x1f4c8; GitHub Stats
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=transparent&line_height=40)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&line_height=40)
  ![Top Langs - Vercel is offline](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff) 
 
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
