@@ -41,10 +41,10 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 <picture>
   <img src="https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20" 
        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png';" 
-       alt="GitHub Trophies" />
+       alt="Vercel Trophies Outline" />
 </picture>
 
-![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png)
+![Trofeus - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png)
 
 
 
