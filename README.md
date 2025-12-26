@@ -6,12 +6,26 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## 📌 Pinned Repositories
 
-[![Full Stack MongoDb - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=full-stack_crud_mongodb&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/full-stack_crud_mongodb)
-[![Budget - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=budget-controll_react-native&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/budget-controll_react-native)
+<p align="center">
+  <a href="https://github.com/Almir-git-unifc/full-stack_crud_mongodb">
+    <img src="zzz1Mon.png" alt="Link-MongoDB-CRUD" width="45%">
+  </a>
+  <a href="https://github.com/Almir-git-unifc/budget-controll_react-native">
+    <img src="zzz2Budg.png" alt="Link-Budget-Control" width="45%">
+  </a>
+</p>
 
-[![Portfolio - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=single-page-app_portfolio&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/single-page-app_portfolio)
-[![To Do List - Display paused by Vercel](https://github-readme-stats.vercel.app/api/pin/?username=Almir-git-unifc&repo=ToDo-List_react&theme=cobalt&title_color=ffffff&text_color=c9cacc&icon_color=4AB197&bg_color=#1A2B34)](https://github.com/Almir-git-unifc/ToDo-List_react)
-<br>
+
+<p align="center">
+  <a href="https://github.com/Almir-git-unifc/single-page-app_portfolio">
+    <img src="zzz3Port.png" alt="Link-portfolio" width="45%">
+  </a>
+  <a href="https://github.com/Almir-git-unifc/ToDo-List_react">
+    <img src="zzz4ToDo.png" alt="Link-ToDo-List_react" width="45%">
+  </a>
+</p>
+
+
 
 <br>
 
@@ -22,17 +36,16 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## &#x1f4c8; GitHub Stats
 
-![GitHub-stats-offline](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&line_height=40)
+![GitHub-stats-and](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&line_height=40)
  ![Langs-Vercel-offline](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff) 
 
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
 <!-- Se aparecer outras lingaugens estes quadros precisam ser reconfigurados -->
-<picture>
-   <img src="https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&include_all_commits&line_height=40" 
-       onerror="this.onerror=null;this.src='https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png';" 
-       alt="GitHub Stats" /> 
- 
-</picture>
+<p align="center">
+  <a href="https://github.com/Almir-git-unifc/Almir-git-unifc">
+    <img src="zzgithubStats.png" alt="GitHub Stats" width="800">
+  </a>
+</p>
 
 <!-- ![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png)  -->
 
