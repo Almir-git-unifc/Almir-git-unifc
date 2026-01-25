@@ -1,10 +1,10 @@
 export function trophySVG({ title, subtitle, points, rank }) {
   return `
-<svg width="180" height="110" viewBox="0 0 180 110"
+<svg width="170" height="110" viewBox="0 0 170 110"
      xmlns="http://www.w3.org/2000/svg">
 
   <!-- Card -->
-  <rect x="0" y="0" width="180" height="110" rx="10"
+  <rect x="0" y="0" width="170" height="110" rx="10"
         fill="#0d1117" stroke="#30363d"/>
 
   <!-- Rank badge -->
