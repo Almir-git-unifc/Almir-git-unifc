@@ -1,9 +1,9 @@
 export function trophySVG({ title, subtitle, points, rank }) {
   return `
-<svg width="180" height="115" viewBox="0 0 180 115"
+<svg width="175" height="115" viewBox="0 0 175 115"
      xmlns="http://www.w3.org/2000/svg">
 
-  <rect width="180" height="115" rx="10"
+  <rect width="175" height="115" rx="10"
         fill="#0d1117" stroke="#30363d"/>
 
   <!-- Rank -->
