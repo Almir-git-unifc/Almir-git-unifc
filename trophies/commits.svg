@@ -2,12 +2,12 @@
 <svg width="400" height="120" xmlns="http://www.w3.org/2000/svg">
   <rect width="400" height="120" rx="12" fill="#0d1117"/>
   <text x="20" y="35" fill="#58a6ff" font-size="20" font-family="Arial">
-    Stars
+    Commits
   </text>
   <text x="20" y="65" fill="#c9d1d9" font-size="16">
-    Middle Star
+    High Committer
   </text>
   <text x="20" y="95" fill="#3fb950" font-size="16">
-    B • 23 pts
+    A • 146 pts
   </text>
 </svg>
