@@ -1,0 +1,35 @@
+name: Update GitHub Trophies
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # todo dia às 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install @octokit/rest
+
+      - name: Generate trophies
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate_trophies.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add trophies/
+          git commit -m "chore: update github trophies" || exit 0
+          git push
