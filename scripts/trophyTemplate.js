@@ -1,41 +1,40 @@
 export function trophySVG({ title, subtitle, points, rank }) {
   return `
-<svg width="170" height="110" viewBox="0 0 170 110"
+<svg width="180" height="115" viewBox="0 0 180 115"
      xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Card -->
-  <rect x="0" y="0" width="170" height="110" rx="10"
+  <rect width="180" height="115" rx="10"
         fill="#0d1117" stroke="#30363d"/>
 
-  <!-- Rank badge -->
-  <rect x="10" y="10" width="34" height="34" rx="6"
+  <!-- Rank -->
+  <rect x="10" y="10" width="36" height="36" rx="7"
         fill="#238636"/>
-  <text x="27" y="33" text-anchor="middle"
-        fill="#ffffff" font-size="14" font-weight="bold">
+  <text x="28" y="35" text-anchor="middle"
+        fill="#ffffff" font-size="16" font-weight="700">
     ${rank}
   </text>
 
   <!-- Title -->
-  <text x="52" y="28"
+  <text x="54" y="30"
         fill="#c9d1d9"
-        font-size="13"
-        font-weight="bold">
+        font-size="14"
+        font-weight="700">
     ${title}
   </text>
 
   <!-- Subtitle -->
-  <text x="52" y="46"
+  <text x="54" y="50"
         fill="#8b949e"
-        font-size="10">
+        font-size="11">
     ${subtitle}
   </text>
 
   <!-- Points -->
-  <text x="90" y="85"
+  <text x="90" y="95"
         text-anchor="middle"
         fill="#58a6ff"
-        font-size="12"
-        font-weight="bold">
+        font-size="14"
+        font-weight="700">
     ${points}pt
   </text>
 
