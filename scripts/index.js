@@ -1,25 +1,73 @@
 import fs from "fs";
-import {
-  getPullRequests,
-  getCommits,
-  getRepositories,
-  getStars,
-  getExperience,
-} from "./githubMetrics.js";
-
+import { Octokit } from "@octokit/rest";
 import { trophySVG } from "./trophyTemplate.js";
 import { rankByPoints } from "./rank.js";
 
-if (!fs.existsSync("trophies")) {
-  fs.mkdirSync("trophies");
+// --- Configurações ---
+const USER = process.env.GITHUB_ACTOR; // Token precisa de read access
+const TOKEN = process.env.GITHUB_TOKEN;
+
+if (!fs.existsSync("trophies")) fs.mkdirSync("trophies");
+
+// --- GitHub API ---
+const octokit = new Octokit({ auth: TOKEN });
+
+// --- Funções de métrica ---
+async function getPullRequests() {
+  const { data } = await octokit.search.issuesAndPullRequests({
+    q: `is:pr author:${USER}`,
+  });
+  return data.total_count;
 }
 
+async function getCommits() {
+  const { data } = await octokit.search.commits({
+    q: `author:${USER}`,
+    per_page: 1,
+    headers: { accept: "application/vnd.github.cloak-preview" }, // obrigatório
+  });
+  return data.total_count;
+}
+
+async function getRepositories() {
+  const { data } = await octokit.repos.listForUser({
+    username: USER,
+    per_page: 100,
+  });
+  return data.length;
+}
+
+async function getStars() {
+  const { data } = await octokit.repos.listForUser({
+    username: USER,
+    per_page: 100,
+  });
+  return data.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+}
+
+function getExperience(commits) {
+  if (commits >= 1000) return 25;
+  if (commits >= 500) return 16;
+  if (commits >= 200) return 8;
+  return 4;
+}
+
+// --- Função para calcular progresso dentro do rank ---
+function getProgress(points, rank) {
+  const rankLimits = { "C": 0, "B": 50, "A": 100, "AA": 150, "AAA": 200 };
+  const nextLimit = { "C": 50, "B": 100, "A": 150, "AA": 200, "AAA": 200 };
+  return Math.min(100, ((points - rankLimits[rank]) / (nextLimit[rank] - rankLimits[rank])) * 100);
+}
+
+// --- Função principal ---
 async function main() {
   const pullRequests = await getPullRequests();
   const commits = await getCommits();
   const repositories = await getRepositories();
   const stars = await getStars();
-  const experience = await getExperience(commits);
+  const experience = getExperience(commits);
+
+  console.log("METRICS:", { pullRequests, commits, repositories, stars, experience });
 
   const trophies = [
     {
@@ -55,13 +103,19 @@ async function main() {
   ];
 
   for (const t of trophies) {
+    const rank = rankByPoints(t.points);
+    const progress = getProgress(t.points, rank);
+
     const svg = trophySVG({
       ...t,
-      rank: rankByPoints(t.points),
+      rank,
+      progress,
     });
 
     fs.writeFileSync(`trophies/${t.file}`, svg);
   }
+
+  console.log("✅ Trophies updated!");
 }
 
-main();
+main().catch(err => console.error(err));
