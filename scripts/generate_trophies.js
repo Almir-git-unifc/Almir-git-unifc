@@ -31,14 +31,14 @@ async function main() {
       file: "pull_requests.svg",
       title: "Pull Requests",
       subtitle: "Ultra Puller",
-      score: 146,
+      score: 154,
       grade: "AAA",
     },
     {
       file: "commits.svg",
       title: "Commits",
       subtitle: "High Committer",
-      score: 146,
+      score: 176,
       grade: "A",
     },
     {
