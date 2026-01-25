@@ -4,8 +4,8 @@ import { trophySVG } from "./trophyTemplate.js";
 import { rankByPoints } from "./rank.js";
 
 // --- Configurações ---
-const USER = process.env.GITHUB_ACTOR; // Token precisa de read access
-const TOKEN = process.env.GITHUB_TOKEN;
+const USER = "Almir-git-unifc"; // Seu username
+const TOKEN = process.env.GITHUB_TOKEN; // GITHUB_TOKEN do workflow
 
 if (!fs.existsSync("trophies")) fs.mkdirSync("trophies");
 
@@ -24,7 +24,7 @@ async function getCommits() {
   const { data } = await octokit.search.commits({
     q: `author:${USER}`,
     per_page: 1,
-    headers: { accept: "application/vnd.github.cloak-preview" }, // obrigatório
+    headers: { accept: "application/vnd.github.cloak-preview" },
   });
   return data.total_count;
 }
@@ -52,14 +52,12 @@ function getExperience(commits) {
   return 4;
 }
 
-// --- Função para calcular progresso dentro do rank ---
 function getProgress(points, rank) {
   const rankLimits = { "C": 0, "B": 50, "A": 100, "AA": 150, "AAA": 200 };
   const nextLimit = { "C": 50, "B": 100, "A": 150, "AA": 200, "AAA": 200 };
   return Math.min(100, ((points - rankLimits[rank]) / (nextLimit[rank] - rankLimits[rank])) * 100);
 }
 
-// --- Função principal ---
 async function main() {
   const pullRequests = await getPullRequests();
   const commits = await getCommits();
@@ -70,48 +68,17 @@ async function main() {
   console.log("METRICS:", { pullRequests, commits, repositories, stars, experience });
 
   const trophies = [
-    {
-      file: "pull_requests.svg",
-      title: "Pull Requests",
-      subtitle: "Ultra Puller",
-      points: pullRequests,
-    },
-    {
-      file: "commits.svg",
-      title: "Commits",
-      subtitle: "High Committer",
-      points: commits,
-    },
-    {
-      file: "repositories.svg",
-      title: "Repositories",
-      subtitle: "High Repo Creator",
-      points: repositories,
-    },
-    {
-      file: "experience.svg",
-      title: "Experience",
-      subtitle: "Intermediate Dev",
-      points: experience,
-    },
-    {
-      file: "stars.svg",
-      title: "Stars",
-      subtitle: "Middle Star",
-      points: stars,
-    },
+    { file: "pull_requests.svg", title: "Pull Requests", subtitle: "Ultra Puller", points: pullRequests },
+    { file: "commits.svg", title: "Commits", subtitle: "High Committer", points: commits },
+    { file: "repositories.svg", title: "Repositories", subtitle: "High Repo Creator", points: repositories },
+    { file: "experience.svg", title: "Experience", subtitle: "Intermediate Dev", points: experience },
+    { file: "stars.svg", title: "Stars", subtitle: "Middle Star", points: stars },
   ];
 
   for (const t of trophies) {
     const rank = rankByPoints(t.points);
     const progress = getProgress(t.points, rank);
-
-    const svg = trophySVG({
-      ...t,
-      rank,
-      progress,
-    });
-
+    const svg = trophySVG({ ...t, rank, progress });
     fs.writeFileSync(`trophies/${t.file}`, svg);
   }
 
