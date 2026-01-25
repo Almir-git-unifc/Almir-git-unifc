@@ -61,13 +61,8 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![Alternative image tropheus](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png)
 <br>
 ## 🏆 GitHub Trophies
-
 <p align="center">
-<img src="./trophies/pull_requests.svg" width="160"/>
-<img src="./trophies/commits.svg" width="160"/>
-<img src="./trophies/repositories.svg" width="160"/>
-<img src="./trophies/experience.svg" width="160"/>
-<img src="./trophies/stars.svg" width="160"/>
+<img src="./trophies/pull_requests.svg" width="160"/><img src="./trophies/commits.svg" width="160"/><img src="./trophies/repositories.svg" width="160"/><img src="./trophies/experience.svg" width="160"/><img src="./trophies/stars.svg" width="160"/>
 </p>
 
 
