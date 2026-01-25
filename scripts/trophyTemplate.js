@@ -1,10 +1,11 @@
-export function trophySVG({ title, subtitle, points, rank }) {
+export function trophySVG({ title, subtitle, points, rank, icon = "🏆" }) {
   return `
-<svg width="175" height="115" viewBox="0 0 175 115"
-     xmlns="http://www.w3.org/2000/svg">
+<svg width="175" height="115" viewBox="0 0 175 115" xmlns="http://www.w3.org/2000/svg">
 
+  <!-- Borda do card em cinza-claro -->
   <rect width="175" height="115" rx="10"
-        fill="#0d1117" stroke="#30363d"/>
+        fill="#0d1117"
+        stroke="#c9d1d9" stroke-width="2"/>
 
   <!-- Rank -->
   <rect x="10" y="10" width="36" height="36" rx="7"
@@ -12,6 +13,11 @@ export function trophySVG({ title, subtitle, points, rank }) {
   <text x="28" y="35" text-anchor="middle"
         fill="#ffffff" font-size="16" font-weight="700">
     ${rank}
+  </text>
+
+  <!-- Ícone opcional dentro do card -->
+  <text x="150" y="30" text-anchor="middle" font-size="18">
+    ${icon}
   </text>
 
   <!-- Title -->
