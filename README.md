@@ -63,11 +63,11 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ## 🏆 GitHub Trophies
 
 <p align="center">
-<img src="./trophies/pull_requests.svg" width="170"/>
-<img src="./trophies/commits.svg" width="170"/>
-<img src="./trophies/repositories.svg" width="170"/>
-<img src="./trophies/experience.svg" width="170"/>
-<img src="./trophies/stars.svg" width="170"/>
+<img src="./trophies/pull_requests.svg" width="160"/>
+<img src="./trophies/commits.svg" width="160"/>
+<img src="./trophies/repositories.svg" width="160"/>
+<img src="./trophies/experience.svg" width="160"/>
+<img src="./trophies/stars.svg" width="160"/>
 </p>
 
 
