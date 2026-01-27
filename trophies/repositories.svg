@@ -1,13 +1,28 @@
 
-<svg width="400" height="120" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="120" rx="12" fill="#0d1117"/>
-  <text x="20" y="35" fill="#58a6ff" font-size="20" font-family="Arial">
+<svg width="175" height="115" viewBox="0 0 175 115" xmlns="http://www.w3.org/2000/svg">
+  <rect width="175" height="115" rx="10" fill="#0d1117" stroke="#c9d1d9" stroke-width="1"/>
+
+  <rect x="50" y="10" width="115" height="50" rx="5" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+
+  <rect x="10" y="10" width="36" height="36" rx="7" fill="#238636"/>
+  <text x="28" y="35" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">
+    C
+  </text>
+
+  <text x="150" y="30" text-anchor="middle" font-size="18">
+    🏆
+  </text>
+
+  <text x="54" y="30" fill="#c9d1d9" font-size="14" font-weight="700">
     Repositories
   </text>
-  <text x="20" y="65" fill="#c9d1d9" font-size="16">
+  <text x="54" y="48" fill="#8b949e" font-size="11">
     High Repo Creator
   </text>
-  <text x="20" y="95" fill="#3fb950" font-size="16">
-    A • 22 pts
+
+  <rect x="10" y="75" width="155" height="30" rx="5" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  
+  <text x="87" y="95" text-anchor="middle" fill="#58a6ff" font-size="14" font-weight="700">
+    25 pts
   </text>
 </svg>
