@@ -8,6 +8,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions: # Adicione isso para permitir o push
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -24,7 +26,8 @@ jobs:
       - name: Generate trophies
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/generate_trophies.js
+        # MUDANÇA AQUI: Executar o index.js em vez do generate_trophies.js
+        run: node scripts/index.js 
 
       - name: Commit changes
         run: |
