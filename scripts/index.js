@@ -21,11 +21,17 @@ async function getPullRequests() {
 }
 
 async function getCommits() {
+  const since = new Date();
+  since.setFullYear(since.getFullYear() - 1);
+
   const { data } = await octokit.search.commits({
-    q: `author:${USER}`,
+    q: `author:${USER} committer-date:>${since.toISOString()}`,
     per_page: 1,
-    headers: { accept: "application/vnd.github.cloak-preview" },
+    headers: {
+      accept: "application/vnd.github.cloak-preview",
+    },
   });
+
   return data.total_count;
 }
 
