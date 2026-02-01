@@ -12,7 +12,7 @@ export function trophySVG({
   <rect width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d"/>
 
   <!-- Title -->
-  <text x="12" y="20" fill="#c9d1d9" font-size="14" font-weight="700">
+  <text x="12" y="20" fill="#d4b93c" font-size="14" font-weight="700">
     ${title}
   </text>
 
@@ -28,12 +28,12 @@ export function trophySVG({
   </text>
 
   <!-- Subtitle -->
-  <text x="12" y="70" fill="#8b949e" font-size="12">
+  <text x="12" y="70" fill="#677b44" font-size="12">
     ${subtitle}
   </text>
 
   <!-- Score -->
-  <text x="12" y="90" fill="#c9d1d9" font-size="13" font-weight="700">
+  <text x="12" y="90" fill="#539df1" font-size="13" font-weight="700">
     ${points} pts
   </text>
 
