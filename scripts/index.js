@@ -15,7 +15,8 @@ const octokit = new Octokit({ auth: TOKEN });
 // --- Funções de métrica ---
 async function getPullRequests() {
   const { data } = await octokit.search.issuesAndPullRequests({
-    q: `is:pr author:${USER}`,
+    q: `is:pr author:${USER} is:merged`,
+    per_page: 1,
   });
   return data.total_count;
 }
@@ -59,9 +60,18 @@ function getExperience(commits) {
 }
 
 function getProgress(points, rank) {
-  const rankLimits = { "C": 0, "B": 50, "A": 100, "AA": 150, "AAA": 200 };
-  const nextLimit = { "C": 50, "B": 100, "A": 150, "AA": 200, "AAA": 200 };
-  return Math.min(100, ((points - rankLimits[rank]) / (nextLimit[rank] - rankLimits[rank])) * 100);
+  const limits = {
+    C:  { min: 0,   max: 50 },
+    B:  { min: 50,  max: 100 },
+    A:  { min: 100, max: 150 },
+    AA: { min: 150, max: 200 },
+    AAA:{ min: 200, max: 200 },
+  };
+
+  const { min, max } = limits[rank];
+  if (max === min) return 100;
+
+  return Math.min(100, ((points - min) / (max - min)) * 100);
 }
 
 async function main() {
