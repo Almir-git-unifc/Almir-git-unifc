@@ -1,5 +1,6 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
+
 import { trophySVG } from "./trophyTemplate.js";
 import { resolveRank } from "./resolveRank.js";
 import {
@@ -7,6 +8,13 @@ import {
   STAR_RULES,
   PR_RULES,
 } from "./trophyRules.js";
+
+import {
+  experienceScore,
+  experienceProgress,
+} from "./experienceUtils.js";
+
+import { RANK_ICONS } from "./rankIcons.js";
 
 // ===============================
 // Configurações
@@ -21,7 +29,12 @@ if (!fs.existsSync("trophies")) {
 // ===============================
 // GitHub API
 // ===============================
-const octokit = new Octokit({ auth: TOKEN });
+const octokit = new Octokit({
+  auth: TOKEN,
+  headers: {
+    accept: "application/vnd.github.cloak-preview",
+  },
+});
 
 // ===============================
 // Métricas GitHub
@@ -35,16 +48,13 @@ async function getPullRequests() {
   return data.total_count;
 }
 
-async function getCommits() {
+async function getCommitsLastYear() {
   const since = new Date();
   since.setFullYear(since.getFullYear() - 1);
 
   const { data } = await octokit.search.commits({
     q: `author:${USER} committer-date:>${since.toISOString()}`,
     per_page: 1,
-    headers: {
-      accept: "application/vnd.github.cloak-preview",
-    },
   });
 
   return data.total_count;
@@ -90,7 +100,7 @@ async function getGithubExperienceYears() {
 // ===============================
 async function main() {
   const pullRequests = await getPullRequests();
-  const commits = await getCommits(); // ainda útil pra outros cards
+  const commits = await getCommitsLastYear(); // útil para cards futuros
   const repositories = await getRepositories();
   const stars = await getStars();
   const experienceYears = await getGithubExperienceYears();
@@ -103,39 +113,63 @@ async function main() {
     experienceYears,
   });
 
-  // Resolve ranking por tipo
-  const prData   = resolveRank(pullRequests, PR_RULES);
+  // ===============================
+  // Rankings
+  // ===============================
+  const prData = resolveRank(pullRequests, PR_RULES);
   const starData = resolveRank(stars, STAR_RULES);
-  const expData  = resolveRank(experienceYears, EXPERIENCE_RULES);
+  const expData = resolveRank(experienceYears, EXPERIENCE_RULES);
 
+  // ===============================
+  // Experience custom logic
+  // ===============================
+  const expScore = experienceScore(experienceYears);
+  const expProgress = experienceProgress(experienceYears);
+
+  // ===============================
+  // Trophies definition (orquestração)
+  // ===============================
   const trophies = [
     {
       file: "pull_requests.svg",
       title: "Pull Requests",
       points: pullRequests,
-      ...prData,
+      rank: prData.rank,
+      subtitle: prData.subtitle,
+      progress: 100,
+      icon: RANK_ICONS[prData.rank],
     },
     {
       file: "stars.svg",
       title: "Stars",
       points: stars,
-      ...starData,
+      rank: starData.rank,
+      subtitle: starData.subtitle,
+      progress: 100,
+      icon: RANK_ICONS[starData.rank],
     },
     {
       file: "experience.svg",
       title: "Experience",
-      points: experienceYears,
-      ...expData,
+      points: expScore,
+      rank: expData.rank,
+      subtitle: expData.subtitle,
+      progress: expProgress,
+      icon: RANK_ICONS[expData.rank],
     },
   ];
 
+  // ===============================
+  // SVG generation
+  // ===============================
   for (const t of trophies) {
     const svg = trophySVG({
       title: t.title,
       subtitle: t.subtitle,
       points: t.points,
       rank: t.rank,
-      progress: 100, // pode evoluir depois p/ progresso real
+      progress: t.progress,
+      icon: t.icon,
     });
 
     fs.writeFileSync(`trophies/${t.file}`, svg);
