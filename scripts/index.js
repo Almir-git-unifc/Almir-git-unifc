@@ -2,6 +2,8 @@ import fs from "fs";
 import { Octokit } from "@octokit/rest";
 import { trophySVG } from "./trophyTemplate.js";
 import { rankByPoints } from "./rank.js";
+import { EXPERIENCE_RULES, STAR_RULES, PR_RULES } from "./trophyRules.js";
+import { resolveRank } from "./resolveRank.js";
 
 // --- Configurações ---
 const USER = "Almir-git-unifc"; // Seu username
@@ -101,4 +103,34 @@ async function main() {
   console.log("✅ Trophies updated!");
 }
 
-main().catch(err => console.error(err));
+main(const pullRequests = await getPullRequests();
+const commits = await getCommits();
+const repositories = await getRepositories();
+const stars = await getStars();
+const experienceYears = await getGithubExperienceYears();
+
+// Resolve ranks
+const prData   = resolveRank(pullRequests, PR_RULES);
+const starData = resolveRank(stars, STAR_RULES);
+const expData  = resolveRank(experienceYears, EXPERIENCE_RULES);
+
+const trophies = [
+  {
+    file: "pull_requests.svg",
+    title: "Pull Requests",
+    points: pullRequests,
+    ...prData,
+  },
+  {
+    file: "stars.svg",
+    title: "Stars",
+    points: stars,
+    ...starData,
+  },
+  {
+    file: "experience.svg",
+    title: "Experience",
+    points: experienceYears,
+    ...expData,
+  },
+];).catch(err => console.error(err));
