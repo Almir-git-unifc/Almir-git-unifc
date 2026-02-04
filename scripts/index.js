@@ -1,25 +1,37 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 import { trophySVG } from "./trophyTemplate.js";
-import { rankByPoints } from "./rank.js";
-import { EXPERIENCE_RULES, STAR_RULES, PR_RULES } from "./trophyRules.js";
 import { resolveRank } from "./resolveRank.js";
+import {
+  EXPERIENCE_RULES,
+  STAR_RULES,
+  PR_RULES,
+} from "./trophyRules.js";
 
-// --- Configurações ---
-const USER = "Almir-git-unifc"; // Seu username
-const TOKEN = process.env.GITHUB_TOKEN; // GITHUB_TOKEN do workflow
+// ===============================
+// Configurações
+// ===============================
+const USER = "Almir-git-unifc";
+const TOKEN = process.env.GITHUB_TOKEN;
 
-if (!fs.existsSync("trophies")) fs.mkdirSync("trophies");
+if (!fs.existsSync("trophies")) {
+  fs.mkdirSync("trophies");
+}
 
-// --- GitHub API ---
+// ===============================
+// GitHub API
+// ===============================
 const octokit = new Octokit({ auth: TOKEN });
 
-// --- Funções de métrica ---
+// ===============================
+// Métricas GitHub
+// ===============================
 async function getPullRequests() {
   const { data } = await octokit.search.issuesAndPullRequests({
     q: `is:pr author:${USER} is:merged`,
     per_page: 1,
   });
+
   return data.total_count;
 }
 
@@ -43,6 +55,7 @@ async function getRepositories() {
     username: USER,
     per_page: 100,
   });
+
   return data.length;
 }
 
@@ -51,86 +64,87 @@ async function getStars() {
     username: USER,
     per_page: 100,
   });
-  return data.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+
+  return data.reduce(
+    (sum, repo) => sum + repo.stargazers_count,
+    0
+  );
 }
 
-function getExperience(commits) {
-  if (commits >= 1000) return 25;
-  if (commits >= 500) return 16;
-  if (commits >= 200) return 8;
-  return 4;
+async function getGithubExperienceYears() {
+  const { data } = await octokit.users.getByUsername({
+    username: USER,
+  });
+
+  const createdAt = new Date(data.created_at);
+  const now = new Date();
+
+  const years =
+    (now - createdAt) / (1000 * 60 * 60 * 24 * 365.25);
+
+  return Number(years.toFixed(1));
 }
 
-function getProgress(points, rank) {
-  const limits = {
-    C:  { min: 0,   max: 50 },
-    B:  { min: 50,  max: 100 },
-    A:  { min: 100, max: 150 },
-    AA: { min: 150, max: 200 },
-    AAA:{ min: 200, max: 200 },
-  };
-
-  const { min, max } = limits[rank];
-  if (max === min) return 100;
-
-  return Math.min(100, ((points - min) / (max - min)) * 100);
-}
-
+// ===============================
+// Main
+// ===============================
 async function main() {
   const pullRequests = await getPullRequests();
-  const commits = await getCommits();
+  const commits = await getCommits(); // ainda útil pra outros cards
   const repositories = await getRepositories();
   const stars = await getStars();
-  const experience = getExperience(commits);
+  const experienceYears = await getGithubExperienceYears();
 
-  console.log("METRICS:", { pullRequests, commits, repositories, stars, experience });
+  console.log("📊 METRICS", {
+    pullRequests,
+    commits,
+    repositories,
+    stars,
+    experienceYears,
+  });
+
+  // Resolve ranking por tipo
+  const prData   = resolveRank(pullRequests, PR_RULES);
+  const starData = resolveRank(stars, STAR_RULES);
+  const expData  = resolveRank(experienceYears, EXPERIENCE_RULES);
 
   const trophies = [
-    { file: "pull_requests.svg", title: "Pull Requests", subtitle: "Ultra Puller", points: pullRequests },
-    { file: "commits.svg", title: "Commits", subtitle: "High Committer", points: commits },
-    { file: "repositories.svg", title: "Repositories", subtitle: "High Repo Creator", points: repositories },
-    { file: "experience.svg", title: "Experience", subtitle: "Intermediate Dev", points: experience },
-    { file: "stars.svg", title: "Stars", subtitle: "Middle Star", points: stars },
+    {
+      file: "pull_requests.svg",
+      title: "Pull Requests",
+      points: pullRequests,
+      ...prData,
+    },
+    {
+      file: "stars.svg",
+      title: "Stars",
+      points: stars,
+      ...starData,
+    },
+    {
+      file: "experience.svg",
+      title: "Experience",
+      points: experienceYears,
+      ...expData,
+    },
   ];
 
   for (const t of trophies) {
-    const rank = rankByPoints(t.points);
-    const progress = getProgress(t.points, rank);
-    const svg = trophySVG({ ...t, rank, progress });
+    const svg = trophySVG({
+      title: t.title,
+      subtitle: t.subtitle,
+      points: t.points,
+      rank: t.rank,
+      progress: 100, // pode evoluir depois p/ progresso real
+    });
+
     fs.writeFileSync(`trophies/${t.file}`, svg);
   }
 
-  console.log("✅ Trophies updated!");
+  console.log("🏆 Trophies generated successfully!");
 }
 
-main(const pullRequests = await getPullRequests();
-const commits = await getCommits();
-const repositories = await getRepositories();
-const stars = await getStars();
-const experienceYears = await getGithubExperienceYears();
-
-// Resolve ranks
-const prData   = resolveRank(pullRequests, PR_RULES);
-const starData = resolveRank(stars, STAR_RULES);
-const expData  = resolveRank(experienceYears, EXPERIENCE_RULES);
-
-const trophies = [
-  {
-    file: "pull_requests.svg",
-    title: "Pull Requests",
-    points: pullRequests,
-    ...prData,
-  },
-  {
-    file: "stars.svg",
-    title: "Stars",
-    points: stars,
-    ...starData,
-  },
-  {
-    file: "experience.svg",
-    title: "Experience",
-    points: experienceYears,
-    ...expData,
-  },
-];).catch(err => console.error(err));
+main().catch((err) => {
+  console.error("❌ Error generating trophies:", err);
+  process.exit(1);
+});
