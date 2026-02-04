@@ -17,16 +17,16 @@ export function trophySVG({
     ${title}
   </text>
 
-  <!-- Rank badge -->
+  <!-- Trophy icon -->
+  <text x="100" y="72" text-anchor="middle" font-size="22">
+    ${icon}
+  </text>
+
+    <!-- Rank badge -->
   <rect x="79" y="30" width="42" height="22" rx="6" fill="#8957e5"/>
   <text x="100" y="46" text-anchor="middle"
         fill="#fff" font-size="12" font-weight="700">
     ${rank}
-  </text>
-
-  <!-- Trophy icon -->
-  <text x="100" y="72" text-anchor="middle" font-size="22">
-    ${icon}
   </text>
 
   <!-- Subtitle -->
