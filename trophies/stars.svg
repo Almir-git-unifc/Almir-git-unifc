@@ -9,16 +9,16 @@
     Stars
   </text>
 
-  <!-- Rank badge -->
-  <rect x="79" y="30" width="42" height="22" rx="6" fill="#8957e5"/>
-  <text x="100" y="46" text-anchor="middle"
-        fill="#fff" font-size="12" font-weight="700">
-    C
-  </text>
-
   <!-- Trophy icon -->
   <text x="100" y="72" text-anchor="middle" font-size="22">
     🏆
+  </text>
+
+    <!-- Rank badge -->
+  <rect x="79" y="30" width="42" height="22" rx="6" fill="#8957e5"/>
+  <text x="100" y="46" text-anchor="middle"
+        fill="#fff" font-size="12" font-weight="700">
+    B
   </text>
 
   <!-- Subtitle -->
@@ -35,6 +35,6 @@
 
   <!-- Progress bar -->
   <rect x="12" y="122" width="176" height="8" rx="4" fill="#21262d"/>
-  <rect x="12" y="122" width="84.48"
+  <rect x="12" y="122" width="176"
         height="8" rx="4" fill="#b392f0"/>
 </svg>
