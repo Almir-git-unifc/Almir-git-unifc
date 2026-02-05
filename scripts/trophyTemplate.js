@@ -42,7 +42,7 @@ export function trophySVG({
 
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
-        fill="#8b949e" font-size="12">
+        fill="#788f4d" font-size="12">
     ${subtitle}
   </text>
 
