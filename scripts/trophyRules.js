@@ -30,3 +30,14 @@ export const PR_RULES = [
   { rank: "B",   subtitle: "Middle Puller", min: 10 },
   { rank: "C",   subtitle: "First Pull",    min: 1 },
 ];
+
+export const REPO_RULES = [
+  { rank: "SSS", subtitle: "God Repo Creator",    min: 50 },
+  { rank: "SS",  subtitle: "Deep Repo Creator",   min: 45 },
+  { rank: "S",   subtitle: "Super Repo Creator",  min: 40 },
+  { rank: "AAA", subtitle: "Ultra Repo Creator",  min: 35 },
+  { rank: "AA",  subtitle: "Hyper Repo Creator",  min: 30 },
+  { rank: "A",   subtitle: "High Repo Creator",   min: 20 },
+  { rank: "B",   subtitle: "Middle Repo Creator", min: 10 },
+  { rank: "C",   subtitle: "Starter Repo Creator",min: 0 },
+];
