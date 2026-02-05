@@ -7,6 +7,7 @@ import {
   EXPERIENCE_RULES,
   STAR_RULES,
   PR_RULES,
+  REPO_RULES,
 } from "./trophyRules.js";
 
 import {
@@ -119,6 +120,8 @@ async function main() {
   const prData = resolveRank(pullRequests, PR_RULES);
   const starData = resolveRank(stars, STAR_RULES);
   const expData = resolveRank(experienceYears, EXPERIENCE_RULES);
+  const repoData = resolveRank(repositories, REPO_RULES);
+  const commitData = resolveRank(commits, COMMIT_RULES);
 
   // ===============================
   // Experience custom logic
@@ -156,6 +159,15 @@ async function main() {
       subtitle: expData.subtitle,
       progress: expProgress,
       icon: RANK_ICONS[expData.rank],
+    },
+    {
+      file: "repositories.svg",
+      title: "Repositories",
+      points: repositories,
+      rank: repoData.rank,
+      subtitle: repoData.subtitle,
+      progress: 100,
+      icon: RANK_ICONS[repoData.rank],
     },
   ];
 
