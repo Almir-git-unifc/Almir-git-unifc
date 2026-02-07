@@ -21,7 +21,7 @@ jobs:
           node-version: 20
 
       - name: Install deps
-        run: npm install @octokit/rest
+        run: npm install
 
       - name: Generate trophies
         env:
