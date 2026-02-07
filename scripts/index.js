@@ -39,7 +39,7 @@ if (!fs.existsSync("trophies")) {
 const octokit = new Octokit({
   auth: TOKEN,
   headers: {
-    accept: "application/vnd.github.cloak-preview",
+    accept: "application/vnd.github+json",
   },
 });
 
@@ -54,16 +54,23 @@ async function getPullRequests() {
   return data.total_count;
 }
 
-async function getCommitsLastYear() {
-  const since = new Date();
-  since.setFullYear(since.getFullYear() - 1);
 
-  const { data } = await octokit.search.commits({
-    q: `author:${USER} committer-date:>${since.toISOString()}`,
-    per_page: 1,
+// Commits last year
+async function getCommitsLastYear() {
+  const { data } = await octokit.activity.listPublicEventsForUser({
+    username: USER,
+    per_page: 100,
   });
-  return data.total_count;
+
+  const oneYearAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
+
+  return data.filter(
+    e =>
+      e.type === "PushEvent" &&
+      new Date(e.created_at).getTime() > oneYearAgo
+  ).reduce((sum, e) => sum + e.payload.commits.length, 0);
 }
+
 
 async function getReposData() {
   const { data } = await octokit.repos.listForUser({
