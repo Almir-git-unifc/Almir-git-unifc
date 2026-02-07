@@ -1,0 +1,8 @@
+{
+  "name": "github-trophies",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@octokit/rest": "^21.0.0"
+  }
+}
