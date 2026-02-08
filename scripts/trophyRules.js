@@ -41,3 +41,14 @@ export const REPO_RULES = [
   { rank: "B",   subtitle: "Middle Repo Creator", min: 10 },
   { rank: "C",   subtitle: "Starter Repo Creator",min: 0 },
 ];
+
+export const COMMIT_RULES = [
+  { rank: "SSS", subtitle: "Commit God",        min: 5000 },
+  { rank: "SS",  subtitle: "Commit Monster",    min: 3000 },
+  { rank: "S",   subtitle: "Commit Master",     min: 1500 },
+  { rank: "AAA", subtitle: "Commit Expert",     min: 800 },
+  { rank: "AA",  subtitle: "Commit Pro",        min: 400 },
+  { rank: "A",   subtitle: "Committer",         min: 200 },
+  { rank: "B",   subtitle: "Frequent Commit",   min: 50 },
+  { rank: "C",   subtitle: "Getting Started",   min: 1 },
+];
