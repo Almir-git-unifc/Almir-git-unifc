@@ -196,15 +196,30 @@ async function main() {
   // ===============================
   // SVG generation
   // ===============================
-  for (const trophy of trophies) {
-    const svg = trophySVG(trophy);
-    fs.writeFileSync(`trophies/${trophy.file}`, svg);
-  }
+async function main() {
+  try {
+    ...
+    for (const trophy of trophies) {
+      const svg = trophySVG(trophy);
+      fs.writeFileSync(`trophies/${trophy.file}`, svg);
+    }
 
-  console.log("🏆 Trophies generated successfully!");
+// Fim do arquivo scripts/index.js
+    console.log("🏆 Trophies generated successfully!");
+  } 
+  catch (err) {
+    console.error("⚠️ Metrics error, generating fallback trophies", err);
+
+    // Gera SVGs vazios para evitar 404
+    const fallback = trophySVG({
+      title: "Unavailable",
+      subtitle: "GitHub API limit",
+      points: 0,
+      rank: "C",
+      progress: 0,
+      icon: "⚠️",
+    });
+
+    fs.writeFileSync("trophies/stars.svg", fallback);
+  }
 }
-
-main().catch((err) => {
-  console.error("❌ Error generating trophies:", err);
-  process.exit(1);
-});
