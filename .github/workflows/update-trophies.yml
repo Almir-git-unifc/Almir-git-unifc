@@ -2,7 +2,7 @@ name: Update GitHub Trophies
 
 on:
   schedule:
-    - cron: "0 3 * * *" # todo dia às 03:00 UTC
+    - cron: "0 1 * * *" # todo dia às 01:00 UTC
   workflow_dispatch:
 
 jobs:
