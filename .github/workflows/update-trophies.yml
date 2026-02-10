@@ -34,5 +34,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add trophies/
-          git commit -m "chore: update github trophies" || exit 0
+          git status
+          git commit -m "chore: update github trophies" || echo "No changes"
           git push
