@@ -60,20 +60,18 @@ async function getPullRequests() {
 
 // Commits no último ano (eventos públicos)
 async function getCommitsLastYear() {
-  const { data } = await octokit.activity.listPublicEventsForUser({
-    username: USER,
-    per_page: 100,
+  const since = new Date();
+  since.setFullYear(since.getFullYear() - 1);
+
+  const { data } = await octokit.search.commits({
+    q: `author:${USER} committer-date:>${since.toISOString()}`,
+    per_page: 1,
+    headers: {
+      accept: "application/vnd.github.cloak-preview",
+    },
   });
 
-  const oneYearAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
-
-  return data
-    .filter(
-      (e) =>
-        e.type === "PushEvent" &&
-        new Date(e.created_at).getTime() > oneYearAgo
-    )
-    .reduce((sum, e) => sum + (e.payload.commits?.length || 0), 0);
+  return data.total_count;
 }
 
 // Repositórios e Stars
