@@ -60,7 +60,6 @@ async function getPullRequests() {
 
 // Commits no último ano (eventos públicos)
 async function getCommitsLastYear() {
-async function getCommitsLastYear() {
   const { data } = await octokit.activity.listPublicEventsForUser({
     username: USER,
     per_page: 100,
