@@ -49,30 +49,37 @@ const octokit = new Octokit({
 // ===============================
 
 // Pull Requests merged
-async function getCommitsLastYear() {
-  const oneYearAgo = new Date();
-  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+async function getPullRequests() {
+  const { data } = await octokit.search.issuesAndPullRequests({
+    q: `is:pr author:${USER} is:merged`,
+    per_page: 1,
+  });
 
-  const query = `
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          totalCommitContributions
-        }
-      }
-    }
-  `;
-
-  const variables = {
-    login: USER,
-    from: oneYearAgo.toISOString(),
-    to: new Date().toISOString(),
-  };
-
-  const response = await octokit.graphql(query, variables);
-
-  return response.user.contributionsCollection.totalCommitContributions;
+  return data.total_count || 0;
 }
+
+
+
+
+// Commits no último ano (eventos públicos)
+async function getCommitsLastYear() {
+  const { data } = await octokit.activity.listPublicEventsForUser({
+    username: USER,
+    per_page: 100,
+  });
+
+  const oneYearAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
+
+  return data
+    .filter(
+      (e) =>
+        e.type === "PushEvent" &&
+        new Date(e.created_at).getTime() > oneYearAgo
+    )
+    .reduce((sum, e) => sum + (e.payload.commits?.length || 0), 0);
+}
+
+
 
 // Repositórios e Stars
 async function getReposData() {
@@ -229,3 +236,4 @@ async function main() {
 }
 
 main();
+
