@@ -10,27 +10,27 @@
 
   <!-- Trophy icon -->
   <text x="100" y="58" text-anchor="middle" font-size="26">
-    🥉
+    🥇
   </text>
 
   <!-- Rank badge -->
   <rect x="75" y="70" width="50" height="22" rx="6"
-      fill="#8b949e"/>
+      fill="#58a6ff"/>
   <text x="100" y="86" text-anchor="middle"
         fill="#fff" font-size="12" font-weight="700">
-    C
+    A
   </text>
 
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
         fill="#788f4d" font-size="12">
-    Newbie
+    Committer
   </text>
 
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    0
+    260
   </text>
 
   <!-- Progress bar -->
