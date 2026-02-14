@@ -156,6 +156,14 @@ async function main() {
     const starRank = resolveRank(stars, STAR_RULES);
     const expRank = resolveRank(experienceYears, EXPERIENCE_RULES);
 
+    
+    // Calculate Progress bar using RULES by trophyRules.js
+    const prProgress = calculateProgress(pullRequests, PR_RULES);
+    const commitProgress = calculateProgress(commits, COMMIT_RULES);
+    const repoProgress = calculateProgress(repositories, REPO_RULES);
+    const starProgress = calculateProgress(stars, STAR_RULES);
+    
+
     // Experience custom logic
     const expScore = experienceScore(experienceYears);
     const expProgress = experienceProgress(experienceYears);
@@ -168,7 +176,7 @@ async function main() {
         points: pullRequests,
         rank: prRank.rank,
         subtitle: prRank.subtitle,
-        progress: 100,
+        progress: prProgress,
         icon: RANK_ICONS[prRank.rank],
       },
       {
@@ -177,7 +185,7 @@ async function main() {
         points: commits,
         rank: commitRank.rank,
         subtitle: commitRank.subtitle,
-        progress: 100,
+        progress: commitProgress,
         icon: RANK_ICONS[commitRank.rank],
       },
       {
@@ -186,7 +194,7 @@ async function main() {
         points: repositories,
         rank: repoRank.rank,
         subtitle: repoRank.subtitle,
-        progress: 100,
+        progress: repoProgress,
         icon: RANK_ICONS[repoRank.rank],
       },
       {
@@ -195,7 +203,7 @@ async function main() {
         points: stars,
         rank: starRank.rank,
         subtitle: starRank.subtitle,
-        progress: 100,
+        progress: starProgress,
         icon: RANK_ICONS[starRank.rank],
       },
       {
