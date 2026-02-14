@@ -1,7 +1,6 @@
 ### Hello, I'm Almir! 👋
 I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
-
 <br>
 
 ## 📌 Pinned Repositories
@@ -15,7 +14,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
   </a>
 </p>
 
-
 <p align="center">
   <a href="https://github.com/Almir-git-unifc/single-page-app_portfolio">
     <img src="zzz3Port.png" alt="Link-portfolio" width="45%">
@@ -25,13 +23,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
   </a>
 </p>
 
-
-
 <br>
-
-
-
-
 <br>
 
 ## &#x1f4c8; GitHub Stats
@@ -42,7 +34,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 <!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
 <!-- Se aparecer outras lingaugens estes quadros precisam ser reconfigurados -->
 
-<!-- GitHub Stats voltou a aparecer em 22/01/2026; então vamos deixar a imagem de stats comentada
+<!-- GitHub Stats voltou a aparecer em 22/01/2026; então vamos deixar a imagem de stats comentada momentaneamente
 <p align="center">
   <a href="https://github.com/Almir-git-unifc/Almir-git-unifc">
     <img src="zzgithubStats.png" alt="GitHub Stats" width="800">
@@ -54,19 +46,12 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 <br>
 
-
 ![Vercel Trophies Offline](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)
-
-<!--  Esta imagem nõ é mais necessário. Quando terminar código, ela será totalmente deletado.
-![Alternative image tropheus](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/trofeus-alternative.png)
--->
-
 
 <br>
 
 ## &#x1f4c8; 🏆 GitHub Trophies
 
-<!-- LIBERADO PARA TESTE - TEMPORARIAMENTE -->
 <p align="center">
 <img src="./trophies/pull_requests.svg"/>
   <img src="./trophies/commits.svg"/>
@@ -74,11 +59,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
   <img src="./trophies/experience.svg" />
   <img src="./trophies/stars.svg"/>
 </p>
-
-
-
-
-
 
 <br>
 
@@ -93,8 +73,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![mysql](https://img.shields.io/badge/MySQL-CC6699?style=for-the-badge&logo=mysql&logoColor=white)
 
 
-
-
 <details>
 <summary>More Skills</summary>
 <br>
@@ -105,10 +83,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
 ![ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
 ![mariadb](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
-
-
-
-
 
 <br>
 
@@ -127,13 +101,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 </details>
 
-
-
-
-# 
-
-
-General contributions; made with Platane/snk
+# General contributions; made with Platane/snk
 
 <picture>
   <source
@@ -150,13 +118,8 @@ General contributions; made with Platane/snk
   />
 </picture>
 
-
-
 <br>
 <br>
-
-
-
 <br>
 <br>
 
