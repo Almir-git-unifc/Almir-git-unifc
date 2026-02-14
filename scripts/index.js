@@ -3,6 +3,7 @@ import { Octokit } from "@octokit/rest";
 
 import { trophySVG } from "./trophyTemplate.js";
 import { resolveRank } from "./resolveRank.js";
+import { calculateProgress } from "./progressUtils.js";
 import {
   EXPERIENCE_RULES,
   STAR_RULES,
