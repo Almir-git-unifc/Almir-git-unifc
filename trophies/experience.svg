@@ -35,6 +35,6 @@
 
   <!-- Progress bar -->
   <rect x="12" y="135" width="176" height="8" rx="4" fill="#21262d"/>
-  <rect x="12" y="135" width="31.68"
+  <rect x="12" y="135" width="63.36"
         height="8" rx="4" fill="#b392f0"/>
 </svg>
