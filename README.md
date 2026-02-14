@@ -45,12 +45,9 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 <!-- ![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png)  -->
 
 <br>
-
-![Vercel Trophies Offline](https://github-profile-trophy.vercel.app/?username=Almir-git-unifc&theme=juicyfresh&title=Repositories,Experience,Stars,Issues,Commits,Followers,PullRequest,MultipleLang&margin-w=20)
-
 <br>
 
-## &#x1f4c8; 🏆 GitHub Trophies
+🏆 GitHub Trophies
 
 <p align="center">
 <img src="./trophies/pull_requests.svg"/>
@@ -125,7 +122,5 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 > ### Want to know how I made this README?
 >
-> I use this <a href="https://www.dio.me/articles/como-criar-um-bom-readmemd" target="_blank">tutorial</a>; for statistics this [API](https://github.com/anuraghazra/github-readme-stats); for [trophy](https://github.com/ryo-ma/github-profile-trophy); for [badges1](https://ileriayo.github.io/markdown-badges/) and [badges2](https://github.com/inttter/md-badges); 
-> & this repository to [snake](https://github.com/Platane/Platane/blob/master/README.md)
-
+> I use this <a href="https://www.dio.me/articles/como-criar-um-bom-readmemd" target="_blank">tutorial</a>; for [badges1](https://ileriayo.github.io/markdown-badges/) and [badges2](https://github.com/inttter/md-badges); > & this repository to [snake](https://github.com/Platane/Platane/blob/master/README.md). Unfortunately, the trophies at ryo-ma/github-profile-trophy and the API for anuraghazra statistics are often offline.
 
