@@ -24,5 +24,5 @@ export function experienceProgress(years) {
   if (years <= min) return 5;
   if (years >= max) return 100;
 
-  return Math.round(((years - min) / (max - min)) * 100);
+  return Math.round(((years - min) / (max - min)) * 100 * 2);
 }
