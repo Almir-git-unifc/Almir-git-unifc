@@ -54,7 +54,7 @@ export function trophySVG({
 
   <!-- Progress bar -->
   <rect x="12" y="135" width="176" height="8" rx="4" fill="#21262d"/>
-  <rect x="12" y="135" width="${(176 * progress) / 100}"
+  <rect x="12" y="135" width="${(100 * progress) / 176}"
         height="8" rx="4" fill="#b392f0"/>
 </svg>
 `;
