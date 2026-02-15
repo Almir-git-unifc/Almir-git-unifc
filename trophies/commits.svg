@@ -15,7 +15,7 @@
 
   <!-- Rank badge -->
   <rect x="75" y="70" width="50" height="22" rx="6"
-      fill="#58a6ff"/>
+      fill="#8856e4"/>
   <text x="100" y="86" text-anchor="middle"
         fill="#fff" font-size="12" font-weight="700">
     A
@@ -30,7 +30,7 @@
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    280 pts
+    281 pts
   </text>
 
   <!-- Progress bar -->
