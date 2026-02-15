@@ -5,6 +5,107 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## 📌 Pinned Repositories
 
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+
+  <!-- CARD 1 -->
+  <a href="https://github.com/SEU_USUARIO/Todo_react" 
+     style="text-decoration: none; width: 48%;">
+    <div style="background-color: #315e7f; 
+                border: 1px solid #5d5e60; 
+                border-radius: 12px; 
+                padding: 16px;">
+
+      <!-- Linha 1 -->
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #39ff14;">📁</span>
+        <strong style="color: #eff0f2;">Todo_react</strong>
+      </div>
+
+      <!-- Linha 2 -->
+      <div style="color: #959ea4; margin-top: 8px;">
+        Diretório para controle de tarefas
+      </div>
+
+      <!-- Linha 3 -->
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px;">
+        <span style="color: #f1e05a;">●</span>
+        <span style="color: #959ea4;">JavaScript</span>
+
+        <span style="margin-left: 15px; color: #39ff14;">☆</span>
+        <span style="color: #959ea4;">3</span>
+      </div>
+
+    </div>
+  </a>
+
+  <!-- CARD 2 -->
+  <a href="#" style="text-decoration: none; width: 48%;">
+    <div style="background-color: #315e7f; border: 1px solid #5d5e60; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #39ff14;">📁</span>
+        <strong style="color: #eff0f2;">Projeto_2</strong>
+      </div>
+
+      <div style="color: #959ea4; margin-top: 8px;">
+        Descrição do projeto
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px;">
+        <span style="color: #3572A5;">●</span>
+        <span style="color: #959ea4;">Python</span>
+
+        <span style="margin-left: 15px; color: #39ff14;">☆</span>
+        <span style="color: #959ea4;">10</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- CARD 3 -->
+  <a href="#" style="text-decoration: none; width: 48%;">
+    <div style="background-color: #315e7f; border: 1px solid #5d5e60; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #39ff14;">📁</span>
+        <strong style="color: #eff0f2;">Projeto_3</strong>
+      </div>
+
+      <div style="color: #959ea4; margin-top: 8px;">
+        Descrição do projeto
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px;">
+        <span style="color: #e34c26;">●</span>
+        <span style="color: #959ea4;">HTML</span>
+
+        <span style="margin-left: 15px; color: #39ff14;">☆</span>
+        <span style="color: #959ea4;">5</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- CARD 4 -->
+  <a href="#" style="text-decoration: none; width: 48%;">
+    <div style="background-color: #315e7f; border: 1px solid #5d5e60; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #39ff14;">📁</span>
+        <strong style="color: #eff0f2;">Projeto_4</strong>
+      </div>
+
+      <div style="color: #959ea4; margin-top: 8px;">
+        Descrição do projeto
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px;">
+        <span style="color: #b07219;">●</span>
+        <span style="color: #959ea4;">Java</span>
+
+        <span style="margin-left: 15px; color: #39ff14;">☆</span>
+        <span style="color: #959ea4;">7</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
 <p align="center">
   <a href="https://github.com/Almir-git-unifc/full-stack_crud_mongodb">
     <img src="zzz1Mon.png" alt="Link-MongoDB-CRUD" width="45%">
