@@ -24,13 +24,13 @@
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
         fill="#788f4d" font-size="12">
-    Committer
+    Good Committer
   </text>
 
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    273
+    277
   </text>
 
   <!-- Progress bar -->
