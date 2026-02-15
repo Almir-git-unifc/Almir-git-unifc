@@ -49,13 +49,13 @@ export function trophySVG({
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    ${points} pts
+    `${points} pts`
   </text>
 
   <!-- Progress bar -->
   <rect x="12" y="135" width="176" height="8" rx="4" fill="#21262d"/>
   <rect x="12" y="135" width="${(1.76 * progress) }"
-        height="8" rx="4" fill="#5e5aa2"/>
+        height="8" rx="4" fill="#595599"/>
 </svg>
 `;
 }
