@@ -28,7 +28,7 @@ export function trophySVG({
 
   <!-- Rank badge -->
   <rect x="75" y="70" width="50" height="22" rx="6"
-      fill="${RANK_COLORS[rank] || "#8957e5"}"/>
+      fill="${RANK_COLORS[rank] || "#8856e4"}"/>
   <text x="100" y="86" text-anchor="middle"
         fill="#fff" font-size="12" font-weight="700">
     ${rank}
