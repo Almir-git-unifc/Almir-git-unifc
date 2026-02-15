@@ -30,11 +30,11 @@
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    16
+    16 pts
   </text>
 
   <!-- Progress bar -->
   <rect x="12" y="135" width="176" height="8" rx="4" fill="#21262d"/>
   <rect x="12" y="135" width="65.12"
-        height="8" rx="4" fill="#b392f0"/>
+        height="8" rx="4" fill="#5e5aa2"/>
 </svg>
