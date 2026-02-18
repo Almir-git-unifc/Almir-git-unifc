@@ -1,44 +1,62 @@
 
-<svg width="400" height="130" viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" rx="15"
+<svg width="420" height="160" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="100%" height="100%" rx="18"
         fill="#315e7f"
         stroke="#5d5e60"
-        stroke-width="1.5"/>
+        stroke-width="1.2"
+        filter="url(#shadow)"/>
 
-  <!-- Linha 1 -->
-  <text x="20" y="35" font-size="18" fill="#39ff14">📁</text>
-  <text x="45" y="35"
-        font-size="18"
-        font-weight="bold"
-        fill="#eff0f2">full-stack_crud_mongodb</text>
+  <!-- Repo Icon -->
+  <path d="M30 32 h14 v14 h-14 z M34 22 h6 v8 h-6 z"
+        fill="#39ff14"/>
 
-  <!-- Linha 2 -->
-  <text x="20" y="60"
+  <!-- Title -->
+  <text x="55" y="42"
+        font-size="19"
+        font-weight="600"
+        fill="#eff0f2"
+        font-family="Segoe UI, Arial, sans-serif">
+        full-stack_crud_mongodb
+  </text>
+
+  <!-- Description -->
+  <text x="30" y="75"
         font-size="14"
-        fill="#959ea4">
-        Full Stack Cadastro of A MERN CRUD Application using react and mongoDB
+        fill="#959ea4"
+        font-family="Segoe UI, Arial, sans-serif">
+
+    <tspan x="30" dy="0">Full Stack Cadastro of A MERN CRUD Application using</tspan>
+    <tspan x="30" dy="20">react and mongoDB</tspan>
+
   </text>
 
-  <!-- Linha 3 -->
-<g transform="translate(30,100)">
+  <!-- Language + Stars -->
   
-  <!-- Círculo real -->
-  <circle cx="0" cy="5" r="7" fill="#f1e05a"/>
+  <g transform="translate(30,120)">
 
-  <!-- Texto linguagem + estrela -->
-  <text x="15" y="10"
-        font-size="13"
-        font-family="Segoe UI, Arial, sans-serif"
-        fill="#959ea4">
+    <!-- Language Circle -->
+    <circle cx="0" cy="5" r="8"
+            fill="#f1e05a"/>
 
-    JavaScript
-    
-    <tspan dx="18" fill="#39ff14">☆</tspan>
-    
-    <tspan dx="6" fill="#959ea4">2</tspan>
+    <!-- Language + Star -->
+    <text x="18" y="10"
+          font-size="13"
+          font-family="Segoe UI, Arial, sans-serif"
+          fill="#959ea4">
 
-  </text>
+      JavaScript
 
-</g>
+      <tspan dx="18" fill="#39ff14">☆</tspan>
+      <tspan dx="6" fill="#959ea4">2</tspan>
+    </text>
+  </g>
 
 </svg>
