@@ -198,7 +198,7 @@ function createCard({ name, description, language, stars, langColor }) {
   </g>
 
   <!-- Count (ligeiramente mais baixo) -->
-  <text x="${starSize + 10}" y="1.8"
+  <text x="${starSize + 10}" y="3.8"
         font-size="${textSize}"
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif"
