@@ -26,6 +26,26 @@ if (!fs.existsSync("pinned")) {
 }
 
 // ===============================
+// 🎨 Mapa básico de cores oficiais
+// ===============================
+const LANGUAGE_COLORS = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  Python: "#3572A5",
+  Java: "#b07219",
+  "C++": "#f34b7d",
+  C: "#555555",
+  "C#": "#178600",
+  PHP: "#4F5D95",
+  Go: "#00ADD8",
+  Rust: "#dea584",
+  Dart: "#00B4AB",
+  Shell: "#89e051",
+  HTML: "#e34c26",
+  CSS: "#563d7c"
+};
+
+// ===============================
 // 🔐 Escape XML
 // ===============================
 function escapeXML(str = "") {
@@ -38,7 +58,7 @@ function escapeXML(str = "") {
 }
 
 // ===============================
-// 📝 Quebra automática de texto
+// 📝 Quebra de texto
 // ===============================
 function wrapText(text = "", maxChars = 52, maxLines = 2) {
   const words = text.split(" ");
@@ -54,9 +74,7 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
     }
   }
 
-  if (currentLine) {
-    lines.push(currentLine.trim());
-  }
+  if (currentLine) lines.push(currentLine.trim());
 
   if (lines.length > maxLines) {
     lines.length = maxLines;
@@ -68,7 +86,31 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
 }
 
 // ===============================
-// 🎨 Criar Card SVG
+// ⭐ SVG Estrela Outline
+// ===============================
+function starSVG(x, y) {
+  return `
+  <path d="M${x} ${y}
+           l4 8 9 1 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 9 -1z"
+        fill="none"
+        stroke="#39ff14"
+        stroke-width="1.6"/>`;
+}
+
+// ===============================
+// 📘 SVG Livro (outline neon azul)
+// ===============================
+function bookIconSVG() {
+  return `
+  <g stroke="#00e5ff" stroke-width="1.8" fill="none">
+    <rect x="28" y="25" width="18" height="22" rx="3"/>
+    <line x1="37" y1="25" x2="37" y2="47"/>
+    <path d="M37 25 l6 -4 v22 l-6 4"/>
+  </g>`;
+}
+
+// ===============================
+// 🎨 Criar Card
 // ===============================
 function createCard({ name, description, language, stars, langColor }) {
   name = escapeXML(name);
@@ -77,7 +119,7 @@ function createCard({ name, description, language, stars, langColor }) {
   const descLines = wrapText(description, 52, 2);
 
   return `
-<svg width="420" height="160" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="165" viewBox="0 0 420 165" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
@@ -85,19 +127,17 @@ function createCard({ name, description, language, stars, langColor }) {
     </filter>
   </defs>
 
-  <!-- Card Background -->
+  <!-- Card -->
   <rect width="100%" height="100%" rx="18"
         fill="#315e7f"
         stroke="#5d5e60"
         stroke-width="1.2"
         filter="url(#shadow)"/>
 
-  <!-- Repo Icon -->
-  <path d="M30 32 h14 v14 h-14 z M34 22 h6 v8 h-6 z"
-        fill="#39ff14"/>
+  ${bookIconSVG()}
 
   <!-- Title -->
-  <text x="55" y="42"
+  <text x="60" y="42"
         font-size="19"
         font-weight="600"
         fill="#eff0f2"
@@ -106,7 +146,7 @@ function createCard({ name, description, language, stars, langColor }) {
   </text>
 
   <!-- Description -->
-  <text x="30" y="75"
+  <text x="30" y="80"
         font-size="14"
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif">
@@ -117,24 +157,27 @@ function createCard({ name, description, language, stars, langColor }) {
   </text>
 
   <!-- Language + Stars -->
-  
-  <g transform="translate(30,120)">
+  <g transform="translate(30,125)">
 
-    <!-- Language Circle -->
     <circle cx="0" cy="5" r="8"
-            fill="${langColor || "#f1e05a"}"/>
+            fill="${langColor}"/>
 
-    <!-- Language + Star -->
     <text x="18" y="10"
           font-size="13"
           font-family="Segoe UI, Arial, sans-serif"
           fill="#959ea4">
-
-      ${language || "Unknown"}
-
-      <tspan dx="18" fill="#39ff14">☆</tspan>
-      <tspan dx="6" fill="#959ea4">${stars}</tspan>
+      ${language}
     </text>
+
+    ${starSVG(200, 122)}
+
+    <text x="225" y="135"
+          font-size="13"
+          font-family="Segoe UI, Arial, sans-serif"
+          fill="#959ea4">
+      ${stars}
+    </text>
+
   </g>
 
 </svg>
@@ -147,17 +190,31 @@ function createCard({ name, description, language, stars, langColor }) {
 async function main() {
   try {
     for (const repoName of repos) {
+
       const { data } = await octokit.repos.get({
         owner: USER,
         repo: repoName
       });
 
+      // Linguagem dominante real
+      const langData = await octokit.repos.listLanguages({
+        owner: USER,
+        repo: repoName
+      });
+
+      const sorted = Object.entries(langData.data)
+        .sort((a, b) => b[1] - a[1]);
+
+      const mainLanguage = sorted.length ? sorted[0][0] : "Unknown";
+      const langColor =
+        LANGUAGE_COLORS[mainLanguage] || "#cccccc";
+
       const svg = createCard({
         name: data.name,
         description: data.description,
-        language: data.language,
+        language: mainLanguage,
         stars: data.stargazers_count,
-        langColor: "#f1e05a" // você pode futuramente puxar cor real da linguagem
+        langColor
       });
 
       fs.writeFileSync(`pinned/${repoName}.svg`, svg);
