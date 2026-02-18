@@ -1,7 +1,7 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
-const USER = process.env.GITHUB_ACTOR || "SEU_USUARIO";
+const USER = process.env.GITHUB_ACTOR || "Almir-git-unifc";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {
@@ -13,11 +13,12 @@ const octokit = new Octokit({ auth: TOKEN });
 
 // 🔹 Defina aqui os 4 repositórios
 const repos = [
-  "Todo_react",
-  "Repo2",
-  "Repo3",
-  "Repo4"
+  "full-stack_crud_mongodb",
+  "budget-controll_react-native",
+  "single-page-app_portfolio",
+  "ToDo-List_react"
 ];
+
 
 // Criar pasta pinned se não existir
 if (!fs.existsSync("pinned")) {
