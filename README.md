@@ -30,24 +30,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 
 
-<p align="center">
-  <a href="https://github.com/Almir-git-unifc/full-stack_crud_mongodb">
-    <img src="zzz1Mon.png" alt="Link-MongoDB-CRUD" width="45%">
-  </a>
-  <a href="https://github.com/Almir-git-unifc/budget-controll_react-native">
-    <img src="zzz2Budg.png" alt="Link-Budget-Control" width="45%">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Almir-git-unifc/single-page-app_portfolio">
-    <img src="zzz3Port.png" alt="Link-portfolio" width="45%">
-  </a>
-  <a href="https://github.com/Almir-git-unifc/ToDo-List_react">
-    <img src="zzz4ToDo.png" alt="Link-ToDo-List_react" width="45%">
-  </a>
-</p>
-
 <br>
 <br>
 
