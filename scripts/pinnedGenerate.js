@@ -40,9 +40,14 @@ const LANGUAGE_COLORS = {
   Go: "#00ADD8",
   Rust: "#dea584",
   Dart: "#00B4AB",
+  Kotlin: "#a97bff",
+  Vue: "#41b883",
   Shell: "#89e051",
   HTML: "#e34c26",
-  CSS: "#563d7c"
+  CSS: "#563d7c",
+  Dockerfile: "#384d54",
+  Makefile: "#427819",
+  Other: "#ededed"
 };
 
 // ===============================
