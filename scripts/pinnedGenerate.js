@@ -86,14 +86,17 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
 }
 
 // ===============================
-// ⭐ Estrela proporcional
+// ⭐ Estrela centralizada corretamente
 // ===============================
 function starSVG(size = 11, color = "#45a891") {
   const baseSize = 24;
   const scale = size / baseSize;
 
   return `
-  <g transform="scale(${scale})">
+  <g transform="
+      translate(${-12 * scale}, ${-14 * scale})
+      scale(${scale})
+  ">
     <path d="M12 2
              L15 10
              L23 11
@@ -190,26 +193,21 @@ function createCard({ name, description, language, stars, langColor }) {
     </text>
 
     <!-- Star + Count -->
-<g transform="translate(190,0)">
+    <g transform="translate(190,0)">
 
-  <!-- Star (ligeiramente mais alta) -->
-  <g transform="translate(0,-1.5)">
-    ${starSVG(starSize)}
+      ${starSVG(starSize)}
+
+      <text x="${starSize + 10}" y="0"
+            font-size="${textSize}"
+            fill="#959ea4"
+            font-family="Segoe UI, Arial, sans-serif"
+            dominant-baseline="middle">
+        ${stars}
+      </text>
+
+    </g>
+
   </g>
-
-  <!-- Count (ligeiramente mais baixo) -->
-  <text x="${starSize + 10}" y="3.8"
-        font-size="${textSize}"
-        fill="#959ea4"
-        font-family="Segoe UI, Arial, sans-serif"
-        dominant-baseline="middle">
-    ${stars}
-  </text>
-
-</g>
-
-
-</g>
 
 </svg>
 `;
