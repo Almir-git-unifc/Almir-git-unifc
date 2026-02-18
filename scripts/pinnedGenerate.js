@@ -7,10 +7,10 @@ const TOKEN = process.env.GITHUB_TOKEN;
 const octokit = new Octokit({ auth: TOKEN });
 
 const repos = [
-  "Todo_react",
-  "Repo2",
-  "Repo3",
-  "Repo4"
+  "full-stack_crud_mongodb",
+  "budget-controll_react-native",
+  "single-page-app_portfolio",
+  "ToDo-List_react"
 ];
 
 if (!fs.existsSync("pinned")) {
