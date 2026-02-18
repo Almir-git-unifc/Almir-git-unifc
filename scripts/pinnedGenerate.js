@@ -134,6 +134,11 @@ function createCard({ name, description, language, stars, langColor }) {
   const textSize = 13;
   const starSize = 11;
 
+  // 🔥 Cálculo dinâmico da posição da estrela
+  const approxCharWidth = textSize * 0.6;
+  const languageWidth = language.length * approxCharWidth;
+  const starOffset = 18 + languageWidth + 16;
+
   name = escapeXML(name);
   description = escapeXML(description || "Sem descrição");
 
@@ -192,12 +197,12 @@ function createCard({ name, description, language, stars, langColor }) {
       ${language}
     </text>
 
-    <!-- Star + Count -->
-    <g transform="translate(190,0)">
+    <!-- Star + Count (posição dinâmica) -->
+    <g transform="translate(${starOffset},0)">
 
       ${starSVG(starSize)}
 
-      <text x="${starSize + 10}" y="0"
+      <text x="${starSize + 8}" y="0"
             font-size="${textSize}"
             fill="#959ea4"
             font-family="Segoe UI, Arial, sans-serif"
