@@ -193,7 +193,7 @@ function createCard({ name, description, language, stars, langColor }) {
 <g transform="translate(190,0)">
 
   <!-- Star (ligeiramente mais alta) -->
-  <g transform="translate(0,-1.5)">
+  <g transform="translate(0,-1.8)">
     ${starSVG(starSize)}
   </g>
 
