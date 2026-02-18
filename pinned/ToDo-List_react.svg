@@ -55,7 +55,7 @@
     <!-- Star + count -->
     <g transform="translate(190, -6.5)">
       
-  <g transform="scale(0.5833333333333334)">
+  <g transform="scale(0.4583333333333333)">
     <path d="M12 2
              L15 10
              L23 11
@@ -72,7 +72,7 @@
           stroke-linejoin="round"
           stroke-linecap="round"/>
   </g>
-      <text x="22" y="7.5"
+      <text x="19" y="7.5"
             font-size="13"
             font-family="Segoe UI, Arial, sans-serif"
             fill="#959ea4">
