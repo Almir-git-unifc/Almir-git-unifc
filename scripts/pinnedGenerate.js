@@ -86,9 +86,9 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
 }
 
 // ===============================
-// ⭐ Estrela dinâmica proporcional
+// ⭐ Estrela proporcional
 // ===============================
-function starSVG(size = 14, color = "#45a891") {
+function starSVG(size = 11, color = "#45a891") {
   const baseSize = 24;
   const scale = size / baseSize;
 
@@ -130,7 +130,6 @@ function bookIconSVG() {
 function createCard({ name, description, language, stars, langColor }) {
   const textSize = 13;
   const starSize = 11;
-  const verticalAdjust = -(textSize / 2);
 
   name = escapeXML(name);
   description = escapeXML(description || "Sem descrição");
@@ -154,6 +153,7 @@ function createCard({ name, description, language, stars, langColor }) {
 
   ${bookIconSVG()}
 
+  <!-- Title -->
   <text x="65" y="42"
         font-size="19"
         font-weight="600"
@@ -162,6 +162,7 @@ function createCard({ name, description, language, stars, langColor }) {
         ${name}
   </text>
 
+  <!-- Description -->
   <text x="30" y="85"
         font-size="14"
         fill="#959ea4"
@@ -172,29 +173,35 @@ function createCard({ name, description, language, stars, langColor }) {
 
   </text>
 
+  <!-- Bottom Row -->
   <g transform="translate(30,135)">
 
-    <!-- Language circle -->
+    <!-- Language Circle -->
     <circle cx="0" cy="0" r="8"
             fill="${langColor}"/>
 
-    <!-- Language text -->
-    <text x="18" y="5"
+    <!-- Language -->
+    <text x="18" y="0"
           font-size="${textSize}"
+          fill="#959ea4"
           font-family="Segoe UI, Arial, sans-serif"
-          fill="#959ea4">
+          dominant-baseline="middle">
       ${language}
     </text>
 
-    <!-- Star + count -->
-    <g transform="translate(190, ${verticalAdjust})">
+    <!-- Star + Count -->
+    <g transform="translate(190,0)">
+
       ${starSVG(starSize)}
-      <text x="${starSize + 8}" y="${textSize / 2 + 1}"
+
+      <text x="${starSize + 10}" y="0"
             font-size="${textSize}"
+            fill="#959ea4"
             font-family="Segoe UI, Arial, sans-serif"
-            fill="#959ea4">
+            dominant-baseline="middle">
         ${stars}
       </text>
+
     </g>
 
   </g>
@@ -237,10 +244,12 @@ async function main() {
 
       fs.writeFileSync(`pinned/${repoName}.svg`, svg);
     }
+
     console.log("✅ Pinned cards generated successfully!");
   } catch (error) {
     console.error("⚠️ Error generating pinned cards:", error);
     process.exit(1);
   }
 }
+
 main();
