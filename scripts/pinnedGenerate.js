@@ -93,8 +93,8 @@ function starSVG(x, y) {
   <path d="M${x} ${y}
            l4 8 9 1 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 9 -1z"
         fill="none"
-        stroke="#39ff14"
-        stroke-width="1.6"/>`;
+        stroke="#47aa92"
+        stroke-width="1.8"/>`;
 }
 
 // ===============================
@@ -102,7 +102,7 @@ function starSVG(x, y) {
 // ===============================
 function bookIconSVG() {
   return `
-  <g stroke="#00e5ff" stroke-width="1.8" fill="none">
+  <g stroke="#47aa92" stroke-width="1.8" fill="none">
     <rect x="28" y="25" width="18" height="22" rx="3"/>
     <line x1="37" y1="25" x2="37" y2="47"/>
     <path d="M37 25 l6 -4 v22 l-6 4"/>
@@ -175,7 +175,7 @@ function createCard({ name, description, language, stars, langColor }) {
     <tspan dx="18"></tspan>
 
     <!-- Estrela SVG inline -->
-    <tspan dx="0">
+    <tspan dx="0" fill="#39ff14>
       ★
     </tspan>
 
