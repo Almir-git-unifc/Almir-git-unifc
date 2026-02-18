@@ -129,7 +129,7 @@ function bookIconSVG() {
 // ===============================
 function createCard({ name, description, language, stars, langColor }) {
   const textSize = 13;
-  const starSize = textSize + 1;
+  const starSize = 11;
   const verticalAdjust = -(textSize / 2);
 
   name = escapeXML(name);
