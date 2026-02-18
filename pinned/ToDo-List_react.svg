@@ -20,22 +20,25 @@
   </text>
 
   <!-- Linha 3 -->
-  <circle cx="20" cy="95" r="6" fill="#f1e05a"/>
-<!-- Language + Stars (Dynamic) -->
-<text x="30" y="110"
-      font-size="13"
-      font-family="Segoe UI, Arial, sans-serif"
-      fill="#959ea4">
+<g transform="translate(30,100)">
+  
+  <!-- Círculo real -->
+  <circle cx="0" cy="5" r="7" fill="#f1e05a"/>
 
-  <!-- Language dot (usando caractere ● para manter alinhamento automático) -->
-  <tspan fill="#f1e05a">●</tspan>
-  
-  <tspan dx="6">JavaScript</tspan>
-  
-  <tspan dx="18" fill="#39ff14">☆</tspan>
-  
-  <tspan dx="6" fill="#959ea4">1</tspan>
+  <!-- Texto linguagem + estrela -->
+  <text x="15" y="10"
+        font-size="13"
+        font-family="Segoe UI, Arial, sans-serif"
+        fill="#959ea4">
 
-</text>
+    JavaScript
+    
+    <tspan dx="18" fill="#39ff14">☆</tspan>
+    
+    <tspan dx="6" fill="#959ea4">1</tspan>
+
+  </text>
+
+</g>
 
 </svg>
