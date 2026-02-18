@@ -193,12 +193,12 @@ function createCard({ name, description, language, stars, langColor }) {
 <g transform="translate(190,0)">
 
   <!-- Star (ligeiramente mais alta) -->
-  <g transform="translate(0,-1.8)">
+  <g transform="translate(0,-1.5)">
     ${starSVG(starSize)}
   </g>
 
   <!-- Count (ligeiramente mais baixo) -->
-  <text x="${starSize + 10}" y="1.5"
+  <text x="${starSize + 10}" y="1.8"
         font-size="${textSize}"
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif"
