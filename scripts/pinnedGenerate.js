@@ -26,7 +26,7 @@ if (!fs.existsSync("pinned")) {
 }
 
 // ===============================
-// 🎨 Cores oficiais principais
+// 🎨 Cores principais linguagens
 // ===============================
 const LANGUAGE_COLORS = {
   JavaScript: "#f1e05a",
@@ -86,28 +86,41 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
 }
 
 // ===============================
-// ⭐ Estrela SVG (maior + espessa)
+// ⭐ Estrela dinâmica proporcional
 // ===============================
-function starSVG() {
+function starSVG(size = 14, color = "#45a891") {
+  const baseSize = 24;
+  const scale = size / baseSize;
+
   return `
-  <path d="M0 -2
-           l5 10 11 1 -8 8 3 11 -11 -6 -11 6 3 -11 -8 -8 11 -1z"
-        fill="none"
-        stroke="#45a891"
-        stroke-width="2.4"
-        stroke-linejoin="round"
-        stroke-linecap="round"/>`;
+  <g transform="scale(${scale})">
+    <path d="M12 2
+             L15 10
+             L23 11
+             L17 17
+             L19 25
+             L12 21
+             L5 25
+             L7 17
+             L1 11
+             L9 10 Z"
+          fill="none"
+          stroke="${color}"
+          stroke-width="2"
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+  </g>`;
 }
 
 // ===============================
-// 📘 Ícone Livro (outline)
+// 📘 Ícone Livro
 // ===============================
 function bookIconSVG() {
   return `
-  <g stroke="#45a891" stroke-width="2.2" fill="none">
-    <rect x="28" y="25" width="20" height="24" rx="4"/>
-    <line x1="38" y1="25" x2="38" y2="49"/>
-    <path d="M38 25 l7 -5 v24 l-7 5"/>
+  <g stroke="#45a891" stroke-width="2" fill="none">
+    <rect x="28" y="25" width="18" height="22" rx="4"/>
+    <line x1="37" y1="25" x2="37" y2="47"/>
+    <path d="M37 25 l6 -4 v22 l-6 4"/>
   </g>`;
 }
 
@@ -115,6 +128,10 @@ function bookIconSVG() {
 // 🎨 Criar Card
 // ===============================
 function createCard({ name, description, language, stars, langColor }) {
+  const textSize = 13;
+  const starSize = textSize + 1;
+  const verticalAdjust = -(textSize / 2);
+
   name = escapeXML(name);
   description = escapeXML(description || "Sem descrição");
 
@@ -129,7 +146,6 @@ function createCard({ name, description, language, stars, langColor }) {
     </filter>
   </defs>
 
-  <!-- Card Background -->
   <rect width="100%" height="100%" rx="18"
         fill="#315e7f"
         stroke="#5d5e60"
@@ -138,7 +154,6 @@ function createCard({ name, description, language, stars, langColor }) {
 
   ${bookIconSVG()}
 
-  <!-- Title -->
   <text x="65" y="42"
         font-size="19"
         font-weight="600"
@@ -147,7 +162,6 @@ function createCard({ name, description, language, stars, langColor }) {
         ${name}
   </text>
 
-  <!-- Description -->
   <text x="30" y="85"
         font-size="14"
         fill="#959ea4"
@@ -158,26 +172,25 @@ function createCard({ name, description, language, stars, langColor }) {
 
   </text>
 
-  <!-- Language + Stars -->
   <g transform="translate(30,135)">
 
-    <!-- Language Circle -->
+    <!-- Language circle -->
     <circle cx="0" cy="0" r="8"
             fill="${langColor}"/>
 
-    <!-- Language -->
+    <!-- Language text -->
     <text x="18" y="5"
-          font-size="13"
+          font-size="${textSize}"
           font-family="Segoe UI, Arial, sans-serif"
           fill="#959ea4">
       ${language}
     </text>
 
-    <!-- Star + Count -->
-    <g transform="translate(190,0)">
-      ${starSVG()}
-      <text x="20" y="5"
-            font-size="13"
+    <!-- Star + count -->
+    <g transform="translate(190, ${verticalAdjust})">
+      ${starSVG(starSize)}
+      <text x="${starSize + 8}" y="${textSize / 2 + 1}"
+            font-size="${textSize}"
             font-family="Segoe UI, Arial, sans-serif"
             fill="#959ea4">
         ${stars}
@@ -224,12 +237,10 @@ async function main() {
 
       fs.writeFileSync(`pinned/${repoName}.svg`, svg);
     }
-
     console.log("✅ Pinned cards generated successfully!");
   } catch (error) {
     console.error("⚠️ Error generating pinned cards:", error);
     process.exit(1);
   }
 }
-
 main();
