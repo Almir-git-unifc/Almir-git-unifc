@@ -41,27 +41,22 @@ function createCard({ name, description, language, stars, langColor }) {
 
   <!-- Linha 3 -->
   <circle cx="20" cy="95" r="6" fill="${langColor || "#f1e05a"}"/>
-  <!-- Language -->
-  <text x="45" y="110"
-        font-size="13"
-        fill="#959ea4"
-        font-family="Segoe UI, Arial, sans-serif">
-        ${language || "Unknown"}
-  </text>
+<!-- Language + Stars (Dynamic) -->
+<text x="30" y="110"
+      font-size="13"
+      font-family="Segoe UI, Arial, sans-serif"
+      fill="#959ea4">
 
-  <!-- Star Icon -->
-  <path d="M180 98 l4 8 9 1 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 9 -1z"
-        fill="none"
-        stroke="#39ff14"
-        stroke-width="1.5"/>
+  <!-- Language dot (usando caractere ● para manter alinhamento automático) -->
+  <tspan fill="${langColor || "#f1e05a"}">●</tspan>
+  
+  <tspan dx="6">${language || "Unknown"}</tspan>
+  
+  <tspan dx="18" fill="#39ff14">☆</tspan>
+  
+  <tspan dx="6" fill="#959ea4">${stars}</tspan>
 
-  <!-- Stars Count -->
-  <text x="205" y="110"
-        font-size="13"
-        fill="#959ea4"
-        font-family="Segoe UI, Arial, sans-serif">
-        ${stars}
-  </text>
+</text>
 
 </svg>
 `;
