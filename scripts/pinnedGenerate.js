@@ -26,7 +26,7 @@ if (!fs.existsSync("pinned")) {
 }
 
 // ===============================
-// 🎨 Mapa básico de cores oficiais
+// 🎨 Cores oficiais principais
 // ===============================
 const LANGUAGE_COLORS = {
   JavaScript: "#f1e05a",
@@ -58,7 +58,7 @@ function escapeXML(str = "") {
 }
 
 // ===============================
-// 📝 Quebra de texto
+// 📝 Quebra automática descrição
 // ===============================
 function wrapText(text = "", maxChars = 52, maxLines = 2) {
   const words = text.split(" ");
@@ -86,26 +86,28 @@ function wrapText(text = "", maxChars = 52, maxLines = 2) {
 }
 
 // ===============================
-// ⭐ SVG Estrela Outline
+// ⭐ Estrela SVG (maior + espessa)
 // ===============================
-function starSVG(x, y) {
+function starSVG() {
   return `
-  <path d="M${x} ${y}
-           l4 8 9 1 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 9 -1z"
+  <path d="M0 -2
+           l5 10 11 1 -8 8 3 11 -11 -6 -11 6 3 -11 -8 -8 11 -1z"
         fill="none"
-        stroke="#47aa92"
-        stroke-width="1.8"/>`;
+        stroke="#45a891"
+        stroke-width="2.4"
+        stroke-linejoin="round"
+        stroke-linecap="round"/>`;
 }
 
 // ===============================
-// 📘 SVG Livro (outline neon azul)
+// 📘 Ícone Livro (outline)
 // ===============================
 function bookIconSVG() {
   return `
-  <g stroke="#47aa92" stroke-width="1.8" fill="none">
-    <rect x="28" y="25" width="18" height="22" rx="3"/>
-    <line x1="37" y1="25" x2="37" y2="47"/>
-    <path d="M37 25 l6 -4 v22 l-6 4"/>
+  <g stroke="#45a891" stroke-width="2.2" fill="none">
+    <rect x="28" y="25" width="20" height="24" rx="4"/>
+    <line x1="38" y1="25" x2="38" y2="49"/>
+    <path d="M38 25 l7 -5 v24 l-7 5"/>
   </g>`;
 }
 
@@ -119,7 +121,7 @@ function createCard({ name, description, language, stars, langColor }) {
   const descLines = wrapText(description, 52, 2);
 
   return `
-<svg width="420" height="165" viewBox="0 0 420 165" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="170" viewBox="0 0 420 170" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
@@ -127,7 +129,7 @@ function createCard({ name, description, language, stars, langColor }) {
     </filter>
   </defs>
 
-  <!-- Card -->
+  <!-- Card Background -->
   <rect width="100%" height="100%" rx="18"
         fill="#315e7f"
         stroke="#5d5e60"
@@ -137,7 +139,7 @@ function createCard({ name, description, language, stars, langColor }) {
   ${bookIconSVG()}
 
   <!-- Title -->
-  <text x="60" y="42"
+  <text x="65" y="42"
         font-size="19"
         font-weight="600"
         fill="#eff0f2"
@@ -146,7 +148,7 @@ function createCard({ name, description, language, stars, langColor }) {
   </text>
 
   <!-- Description -->
-  <text x="30" y="80"
+  <text x="30" y="85"
         font-size="14"
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif">
@@ -156,33 +158,31 @@ function createCard({ name, description, language, stars, langColor }) {
 
   </text>
 
-<!-- Language + Stars -->
-<g transform="translate(30,130)">
+  <!-- Language + Stars -->
+  <g transform="translate(30,135)">
 
-  <!-- Language Circle -->
-  <circle cx="0" cy="0" r="8"
-          fill="${langColor}" />
+    <!-- Language Circle -->
+    <circle cx="0" cy="0" r="8"
+            fill="${langColor}"/>
 
-  <!-- Texto linguagem -->
-  <text x="18" y="5"
-        font-size="13"
-        font-family="Segoe UI, Arial, sans-serif"
-        fill="#959ea4">
+    <!-- Language -->
+    <text x="18" y="5"
+          font-size="13"
+          font-family="Segoe UI, Arial, sans-serif"
+          fill="#959ea4">
+      ${language}
+    </text>
 
-    ${language}
-
-    <!-- Espaço antes da estrela -->
-    <tspan dx="18"></tspan>
-
-    <!-- Estrela SVG inline -->
-    <tspan dx="0" fill="#39ff14>
-      ★
-    </tspan>
-
-    <!-- Total estrelas -->
-    <tspan dx="6">${stars}</tspan>
-
-  </text>
+    <!-- Star + Count -->
+    <g transform="translate(190,0)">
+      ${starSVG()}
+      <text x="20" y="5"
+            font-size="13"
+            font-family="Segoe UI, Arial, sans-serif"
+            fill="#959ea4">
+        ${stars}
+      </text>
+    </g>
 
   </g>
 
@@ -202,7 +202,6 @@ async function main() {
         repo: repoName
       });
 
-      // Linguagem dominante real
       const langData = await octokit.repos.listLanguages({
         owner: USER,
         repo: repoName
