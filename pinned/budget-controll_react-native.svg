@@ -1,5 +1,5 @@
 
-<svg width="420" height="160" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="165" viewBox="0 0 420 165" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
@@ -7,19 +7,22 @@
     </filter>
   </defs>
 
-  <!-- Card Background -->
+  <!-- Card -->
   <rect width="100%" height="100%" rx="18"
         fill="#315e7f"
         stroke="#5d5e60"
         stroke-width="1.2"
         filter="url(#shadow)"/>
 
-  <!-- Repo Icon -->
-  <path d="M30 32 h14 v14 h-14 z M34 22 h6 v8 h-6 z"
-        fill="#39ff14"/>
+  
+  <g stroke="#00e5ff" stroke-width="1.8" fill="none">
+    <rect x="28" y="25" width="18" height="22" rx="3"/>
+    <line x1="37" y1="25" x2="37" y2="47"/>
+    <path d="M37 25 l6 -4 v22 l-6 4"/>
+  </g>
 
   <!-- Title -->
-  <text x="55" y="42"
+  <text x="60" y="42"
         font-size="19"
         font-weight="600"
         fill="#eff0f2"
@@ -28,7 +31,7 @@
   </text>
 
   <!-- Description -->
-  <text x="30" y="75"
+  <text x="30" y="80"
         font-size="14"
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif">
@@ -39,24 +42,32 @@
   </text>
 
   <!-- Language + Stars -->
-  
-  <g transform="translate(30,120)">
+  <g transform="translate(30,125)">
 
-    <!-- Language Circle -->
     <circle cx="0" cy="5" r="8"
             fill="#f1e05a"/>
 
-    <!-- Language + Star -->
     <text x="18" y="10"
           font-size="13"
           font-family="Segoe UI, Arial, sans-serif"
           fill="#959ea4">
-
       JavaScript
-
-      <tspan dx="18" fill="#39ff14">☆</tspan>
-      <tspan dx="6" fill="#959ea4">1</tspan>
     </text>
+
+    
+  <path d="M200 122
+           l4 8 9 1 -6 6 2 9 -8 -5 -8 5 2 -9 -6 -6 9 -1z"
+        fill="none"
+        stroke="#39ff14"
+        stroke-width="1.6"/>
+
+    <text x="225" y="135"
+          font-size="13"
+          font-family="Segoe UI, Arial, sans-serif"
+          fill="#959ea4">
+      1
+    </text>
+
   </g>
 
 </svg>
