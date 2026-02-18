@@ -20,6 +20,7 @@
     <path d="M37 25 l6 -4 v22 l-6 4"/>
   </g>
 
+  <!-- Title -->
   <text x="65" y="42"
         font-size="19"
         font-weight="600"
@@ -28,6 +29,7 @@
         ToDo-List_react
   </text>
 
+  <!-- Description -->
   <text x="30" y="85"
         font-size="14"
         fill="#959ea4"
@@ -38,22 +40,25 @@
 
   </text>
 
+  <!-- Bottom Row -->
   <g transform="translate(30,135)">
 
-    <!-- Language circle -->
+    <!-- Language Circle -->
     <circle cx="0" cy="0" r="8"
             fill="#f1e05a"/>
 
-    <!-- Language text -->
-    <text x="18" y="5"
+    <!-- Language -->
+    <text x="18" y="0"
           font-size="13"
+          fill="#959ea4"
           font-family="Segoe UI, Arial, sans-serif"
-          fill="#959ea4">
+          dominant-baseline="middle">
       JavaScript
     </text>
 
-    <!-- Star + count -->
-    <g transform="translate(190, -6.5)">
+    <!-- Star + Count -->
+    <g transform="translate(190,0)">
+
       
   <g transform="scale(0.4583333333333333)">
     <path d="M12 2
@@ -72,12 +77,15 @@
           stroke-linejoin="round"
           stroke-linecap="round"/>
   </g>
-      <text x="19" y="7.5"
+
+      <text x="21" y="0"
             font-size="13"
+            fill="#959ea4"
             font-family="Segoe UI, Arial, sans-serif"
-            fill="#959ea4">
+            dominant-baseline="middle">
         1
       </text>
+
     </g>
 
   </g>
