@@ -14,7 +14,7 @@
         filter="url(#shadow)"/>
 
   
-      <g transform="scale(0.5)"
+      <g transform="scale(0.4)"
          stroke="#45a891"
          fill="none"
          stroke-width="3"
