@@ -125,7 +125,7 @@ function starSVG(size = 11, color = "#45a891") {
 // ===============================
 function bookIconSVG() {
   return `
-      <g transform="scale(0.4)"
+      <g transform="translate(20,20) scale(0.4)"
          stroke="#45a891"
          fill="none"
          stroke-width="3"
