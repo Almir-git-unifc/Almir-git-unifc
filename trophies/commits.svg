@@ -10,7 +10,7 @@
 
   <!-- Trophy icon -->
   <text x="100" y="58" text-anchor="middle" font-size="26">
-    🥇
+    🏅
   </text>
 
   <!-- Rank badge -->
@@ -18,23 +18,23 @@
       fill="#8856e4"/>
   <text x="100" y="86" text-anchor="middle"
         fill="#fff" font-size="12" font-weight="700">
-    A
+    AA
   </text>
 
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
         fill="#788f4d" font-size="12">
-    Good Committer
+    Hyper Committer
   </text>
 
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    293 pts
+    312 pts
   </text>
 
   <!-- Progress bar -->
   <rect x="12" y="135" width="176" height="8" rx="4" fill="#21262d"/>
-  <rect x="12" y="135" width="70.4"
+  <rect x="12" y="135" width="96.8"
         height="8" rx="4" fill="#595599"/>
 </svg>
