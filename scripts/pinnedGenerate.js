@@ -134,13 +134,13 @@ function bookIconSVG() {
       
          <path d="M30 20 H70 A3 3 0 0 1 73 23 V77 A3 3 0 0 1 70 80 H30 A5 5 0 0 1 25 75 V25 A5 5 0 0 1 30 20 Z" />
          
-         <path d="M32 20 V80" stroke-width="2" />
+         <path d="M30 20 V73" stroke-width="2" />
          
-         <path d="M45 80 V88 L50 85 L55 88 V80"
+         <path d="M45 75 V88 L50 85 L55 88 V75"
                fill="#45a891"
-               fill-opacity="0.2" />
+               fill-opacity="0.8" />
          
-         <line x1="35" y1="75" x2="70" y2="75" stroke-width="1.5" />
+         <line x1="28" y1="73" x2="70" y2="73" stroke-width="3.0" />
       </g>
   `;
 }
