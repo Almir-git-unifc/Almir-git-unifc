@@ -125,7 +125,7 @@ function starSVG(size = 11, color = "#45a891") {
 // ===============================
 function bookIconSVG() {
   return `
-    <g stroke="#45a891" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)">
+    <g stroke="#45a891" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
        <path d="M30 20 H70 A3 3 0 0 1 73 23 V77 A3 3 0 0 1 70 80 H30 A5 5 0 0 1 25 75 V25 A5 5 0 0 1 30 20 Z" />
        <path d="M32 20 V80" stroke-width="1.5" />
        <path d="M45 80 V88 L50 85 L55 88 V80" fill="#45a891" fill-opacity="0.2" />
