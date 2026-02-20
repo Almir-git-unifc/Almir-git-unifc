@@ -48,8 +48,8 @@
         fill="#959ea4"
         font-family="Segoe UI, Arial, sans-serif">
 
-    <tspan x="30" dy="0">Portfolio FrontEnd SPA made in react vite using</tspan>
-    <tspan x="30" dy="20">react router and bootstrap.</tspan>
+    <tspan x="30" dy="0">Portfolio FrontEnd SPA responsive made in react vite</tspan>
+    <tspan x="30" dy="20">using react router and bootstrap.</tspan>
 
   </text>
 
