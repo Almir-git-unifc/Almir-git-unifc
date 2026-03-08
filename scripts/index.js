@@ -5,7 +5,7 @@ const USER = process.env.GITHUB_ACTOR || "Almir-git-unifc";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {
-  console.error("Token not found");
+  console.error("❌ GITHUB_TOKEN not defined");
   process.exit(1);
 }
 
@@ -42,21 +42,64 @@ const LANGUAGE_COLORS = {
 };
 
 /* =========================
-ICONS (outline neon)
+ICON STYLE
 ========================= */
 
 const ICON_COLOR = "#037eeb";
 
 const ICONS = {
-  star: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/></svg>`,
 
-  commit: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="8" cy="8" r="3"/></svg>`,
+star: `
+<svg x="20" y="58" width="16" height="16"
+fill="none"
+stroke="${ICON_COLOR}"
+stroke-width="2">
+<polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/>
+</svg>
+`,
 
-  pr: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><path d="M5 3v8M11 5v6"/><circle cx="5" cy="2" r="2"/><circle cx="11" cy="4" r="2"/><circle cx="11" cy="12" r="2"/></svg>`,
+commit: `
+<svg x="20" y="83" width="16" height="16"
+fill="none"
+stroke="${ICON_COLOR}"
+stroke-width="2">
+<circle cx="8" cy="8" r="3"/>
+</svg>
+`,
 
-  issue: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="8" cy="8" r="6"/><line x1="8" y1="4" x2="8" y2="9"/></svg>`,
+pr: `
+<svg x="20" y="108" width="16" height="16"
+fill="none"
+stroke="${ICON_COLOR}"
+stroke-width="2">
+<path d="M5 3v8M11 5v6"/>
+<circle cx="5" cy="2" r="2"/>
+<circle cx="11" cy="4" r="2"/>
+<circle cx="11" cy="12" r="2"/>
+</svg>
+`,
 
-  contrib: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="4" cy="8" r="2"/><circle cx="12" cy="8" r="2"/><line x1="6" y1="8" x2="10" y2="8"/></svg>`
+issue: `
+<svg x="20" y="133" width="16" height="16"
+fill="none"
+stroke="${ICON_COLOR}"
+stroke-width="2">
+<circle cx="8" cy="8" r="6"/>
+<line x1="8" y1="4" x2="8" y2="9"/>
+</svg>
+`,
+
+contrib: `
+<svg x="20" y="158" width="16" height="16"
+fill="none"
+stroke="${ICON_COLOR}"
+stroke-width="2">
+<circle cx="4" cy="8" r="2"/>
+<circle cx="12" cy="8" r="2"/>
+<line x1="6" y1="8" x2="10" y2="8"/>
+</svg>
+`
+
 };
 
 /* =========================
@@ -70,10 +113,9 @@ async function getRepos() {
     { username: USER, per_page: 100 }
   );
 
-  const stars = repos.reduce(
-    (sum, r) => sum + r.stargazers_count,
-    0
-  );
+  const stars =
+    repos.reduce((sum, r) =>
+      sum + r.stargazers_count, 0);
 
   return { repos, stars };
 }
@@ -140,16 +182,21 @@ async function getLanguages(repos) {
 
   for (const repo of repos) {
 
-    const { data } =
-      await octokit.repos.listLanguages({
-        owner: USER,
-        repo: repo.name
-      });
+    try {
 
-    for (const lang in data) {
+      const { data } =
+        await octokit.repos.listLanguages({
+          owner: USER,
+          repo: repo.name
+        });
 
-      map[lang] =
-        (map[lang] || 0) + data[lang];
+      for (const lang in data) {
+        map[lang] =
+          (map[lang] || 0) + data[lang];
+      }
+
+    } catch {
+      continue;
     }
   }
 
@@ -167,7 +214,7 @@ function donut(percent, rank) {
   const p = c * (percent / 100);
 
   return `
-<g transform="translate(320,120)">
+<g transform="translate(320,110)">
 
 <circle r="${r}" cx="0" cy="0"
 fill="none"
@@ -185,7 +232,9 @@ transform="rotate(-90)"/>
 text-anchor="middle"
 fill="#66d1a1"
 font-size="18"
-font-family="Arial">${rank}</text>
+font-family="Arial">
+${rank}
+</text>
 
 </g>
 `;
@@ -199,46 +248,67 @@ function statsSVG(data) {
 
 const score =
 (data.stars +
-data.prs*2 +
-data.commits/10)/10;
+data.prs * 2 +
+data.commits / 10) / 10;
 
-const percent=Math.min(score,100);
+const percent =
+Math.min(score, 100);
 
-const rank=percent>75?"A":"B";
+const rank =
+percent > 90 ? "S" :
+percent > 75 ? "A" :
+percent > 50 ? "B" : "C";
 
 return `
 <svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="420" height="200"
+<rect
+width="420"
+height="200"
 rx="12"
 fill="none"
-stroke="white"/>
+stroke="white"
+/>
 
-<text x="20" y="30"
+<text
+x="20"
+y="30"
 font-size="18"
 fill="#f7f7f8"
-font-family="Arial">
+font-family="Arial"
+font-weight="bold"
+>
 ${USER} GitHub Stats
 </text>
 
-<g font-size="14"
-fill="#66d1a1"
-font-family="Arial">
+${ICONS.star}
+${ICONS.commit}
+${ICONS.pr}
+${ICONS.issue}
+${ICONS.contrib}
 
-<foreignObject x="20" y="50" width="250" height="120">
+<g font-family="Arial" font-size="14">
 
-<div xmlns="http://www.w3.org/1999/xhtml">
+<text x="50" y="70" fill="#66d1a1">
+Total Stars Earned: ${data.stars}
+</text>
 
-<div>${ICONS.star} Total Stars Earned: ${data.stars}</div>
-<div>${ICONS.commit} Commits (last year): ${data.commits}</div>
-<div>${ICONS.pr} Total PRs: ${data.prs}</div>
-<div>${ICONS.issue} Total Issues: ${data.issues}</div>
-<div>${ICONS.contrib} Contributed to: ${data.contributed}</div>
+<text x="50" y="95" fill="#66d1a1">
+Commits (last year): ${data.commits}
+</text>
 
-</div>
+<text x="50" y="120" fill="#66d1a1">
+Total PRs: ${data.prs}
+</text>
 
-</foreignObject>
+<text x="50" y="145" fill="#66d1a1">
+Total Issues: ${data.issues}
+</text>
+
+<text x="50" y="170" fill="#66d1a1">
+Contributed to: ${data.contributed}
+</text>
 
 </g>
 
@@ -279,21 +349,27 @@ bars+=`
 
 <text x="20" y="${y}"
 fill="#66d1a1"
-font-size="13">${lang}</text>
+font-size="13"
+font-family="Arial">
+${lang}
+</text>
 
 <rect x="20" y="${y+6}"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="${y+6}"
-width="${width}" height="8"
+width="${width}"
+height="8"
 fill="${color}"
 rx="4"/>
 
 <text x="290" y="${y+13}"
 fill="#66d1a1"
-font-size="12">
+font-size="12"
+font-family="Arial">
 ${pct.toFixed(2)}%
 </text>
 `;
@@ -305,14 +381,20 @@ return `
 <svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="420" height="200"
+<rect
+width="420"
+height="200"
 rx="12"
 fill="none"
-stroke="white"/>
+stroke="white"
+/>
 
-<text x="20" y="30"
+<text
+x="20"
+y="30"
 font-size="18"
-fill="#f7f7f8">
+fill="#f7f7f8"
+font-family="Arial">
 Linguagens mais usadas
 </text>
 
@@ -328,13 +410,16 @@ MAIN
 
 async function main(){
 
+try{
+
 const {repos,stars}=await getRepos();
 
 const prs=await getPRs();
 
 const issues=await getIssues();
 
-const {commits,contributed}=await getCommits();
+const {commits,contributed}=
+await getCommits();
 
 const languages=
 await getLanguages(repos);
@@ -357,7 +442,14 @@ fs.writeFileSync(
 languagesSVG(languages)
 );
 
-console.log("Stats generated");
+console.log("✅ Stats cards generated");
+
+}catch(err){
+
+console.error("⚠️ Error:",err);
+process.exit(1);
+
+}
 
 }
 
