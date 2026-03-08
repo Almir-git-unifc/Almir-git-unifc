@@ -84,63 +84,175 @@ function calculateRank(score){
 }
 
 /* =========================
+GET REPOS
+========================= */
+
+async function getRepos(){
+
+let page=1;
+let repos=[];
+let stars=0;
+
+while(true){
+
+const {data}=await octokit.rest.repos.listForUser({
+username:USER,
+per_page:100,
+page
+});
+
+if(!data.length) break;
+
+repos=[...repos,...data];
+
+data.forEach(r=>{
+stars+=r.stargazers_count || 0;
+});
+
+page++;
+
+}
+
+return {repos,stars};
+
+}
+
+/* =========================
+GET PRs
+========================= */
+
+async function getPRs(){
+
+const {data}=await octokit.search.issuesAndPullRequests({
+q:`author:${USER} type:pr`
+});
+
+return data.total_count || 0;
+
+}
+
+/* =========================
+GET ISSUES
+========================= */
+
+async function getIssues(){
+
+const {data}=await octokit.search.issuesAndPullRequests({
+q:`author:${USER} type:issue`
+});
+
+return data.total_count || 0;
+
+}
+
+/* =========================
+GET COMMITS + CONTRIBUTED
+========================= */
+
+async function getCommits(){
+
+const {data}=await octokit.rest.users.get({
+username:USER
+});
+
+return{
+commits:data.public_repos*10 || 0,
+contributed:data.public_repos || 0
+};
+
+}
+
+/* =========================
+GET LANGUAGES
+========================= */
+
+async function getLanguages(repos){
+
+const map={};
+
+for(const repo of repos){
+
+if(!repo.language) continue;
+
+map[repo.language]=(map[repo.language]||0)+1;
+
+}
+
+return map;
+
+}
+
+/* =========================
+LANGUAGE CARD
+========================= */
+
+function languagesSVG(langs){
+
+let y=40;
+
+let rows="";
+
+const total=Object.values(langs).reduce((a,b)=>a+b,0);
+
+Object.entries(langs)
+.sort((a,b)=>b[1]-a[1])
+.slice(0,6)
+.forEach(([lang,val])=>{
+
+const percent=((val/total)*100).toFixed(1);
+
+const color=LANGUAGE_COLORS[lang]||LANGUAGE_COLORS.Other;
+
+rows+=`
+<text x="20" y="${y}" fill="#c9d1d9" font-size="12">${lang}</text>
+
+<rect x="120" y="${y-10}" width="180" height="8" fill="#2a2a2a" rx="4"/>
+
+<rect x="120" y="${y-10}" width="${percent*1.8}" height="8"
+fill="${color}" rx="4"/>
+
+`;
+
+y+=25;
+
+});
+
+return`
+<svg width="360" height="200"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="360" height="200" rx="12"
+fill="none"
+stroke="white"/>
+
+<text x="20" y="25"
+font-size="18"
+fill="#f7f7f8"
+font-family="Arial"
+font-weight="bold">
+Top Languages
+</text>
+
+${rows}
+
+</svg>
+`;
+
+}
+
+/* =========================
 ICON STYLE
 ========================= */
 
-const ICON_COLOR = "#037eeb";
+const ICON_COLOR="#037eeb";
 
-const ICONS = {
+const ICONS={
 
-star: `
-<svg x="20" y="58" width="16" height="16"
-fill="none"
-stroke="${ICON_COLOR}"
-stroke-width="2">
-<polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/>
-</svg>
-`,
-
-commit: `
-<svg x="20" y="83" width="16" height="16"
-fill="none"
-stroke="${ICON_COLOR}"
-stroke-width="2">
-<circle cx="8" cy="8" r="3"/>
-</svg>
-`,
-
-pr: `
-<svg x="20" y="108" width="16" height="16"
-fill="none"
-stroke="${ICON_COLOR}"
-stroke-width="2">
-<path d="M5 3v8M11 5v6"/>
-<circle cx="5" cy="2" r="2"/>
-<circle cx="11" cy="4" r="2"/>
-<circle cx="11" cy="12" r="2"/>
-</svg>
-`,
-
-issue: `
-<svg x="20" y="133" width="16" height="16"
-fill="none"
-stroke="${ICON_COLOR}"
-stroke-width="2">
-<circle cx="8" cy="8" r="6"/>
-<line x1="8" y1="4" x2="8" y2="9"/>
-</svg>
-`,
-
-contrib: `
-<svg x="20" y="158" width="16" height="16"
-fill="none"
-stroke="${ICON_COLOR}"
-stroke-width="2">
-<circle cx="4" cy="8" r="2"/>
-<circle cx="12" cy="8" r="2"/>
-<line x1="6" y1="8" x2="10" y2="8"/>
-</svg>
-`
+star:`<circle cx="28" cy="63" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
+commit:`<circle cx="28" cy="88" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
+pr:`<circle cx="28" cy="113" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
+issue:`<circle cx="28" cy="138" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
+contrib:`<circle cx="28" cy="163" r="6" stroke="${ICON_COLOR}" fill="none"/>`
 
 };
 
@@ -150,13 +262,13 @@ DONUT CHART
 
 function donut(score,rank){
 
-const percent = Math.min(score/25*100,100);
+const percent=Math.min(score/25*100,100);
 
 const r=40;
 const c=2*Math.PI*r;
 const p=c*(percent/100);
 
-return `
+return`
 <g transform="translate(320,110)">
 
 <circle r="${r}" cx="0" cy="0"
@@ -182,6 +294,7 @@ ${rank}
 
 </g>
 `;
+
 }
 
 /* =========================
@@ -190,30 +303,25 @@ STATS CARD
 
 function statsSVG(data){
 
-const score = calculateScore(data);
+const score=calculateScore(data);
 
-const rank = calculateRank(score);
+const rank=calculateRank(score);
 
-return `
+return`
+
 <svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect
-width="420"
-height="200"
+<rect width="420" height="200"
 rx="12"
 fill="none"
-stroke="white"
-/>
+stroke="white"/>
 
-<text
-x="20"
-y="30"
+<text x="20" y="30"
 font-size="18"
 fill="#f7f7f8"
 font-family="Arial"
-font-weight="bold"
->
+font-weight="bold">
 ${USER} GitHub Stats
 </text>
 
@@ -251,6 +359,7 @@ ${donut(score,rank)}
 
 </svg>
 `;
+
 }
 
 /* =========================
@@ -267,11 +376,9 @@ const prs=await getPRs();
 
 const issues=await getIssues();
 
-const {commits,contributed}=
-await getCommits();
+const {commits,contributed}=await getCommits();
 
-const languages=
-await getLanguages(repos);
+const languages=await getLanguages(repos);
 
 const stats={
 stars,
