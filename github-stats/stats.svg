@@ -29,7 +29,7 @@ Total Stars Earned: 24
 </text>
 
 <text x="50" y="95" fill="#66d1a1">
-Commits (last year): 250
+Commits (last year): 888
 </text>
 
 <text x="50" y="120" fill="#66d1a1">
@@ -41,7 +41,7 @@ Total Issues: 5
 </text>
 
 <text x="50" y="170" fill="#66d1a1">
-Contributed to: 25
+Contributed to: 0
 </text>
 
 </g>
@@ -58,7 +58,7 @@ stroke-width="10"/>
 fill="none"
 stroke="#66d1a1"
 stroke-width="10"
-stroke-dasharray="186.8870637767496 251.32741228718345"
+stroke-dasharray="189.1992759697917 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
