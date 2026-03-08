@@ -1,72 +1,26 @@
 
+
 <svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect
-width="420"
-height="200"
+<rect width="420" height="200"
 rx="12"
 fill="none"
-stroke="white"
-/>
+stroke="white"/>
 
-<text
-x="20"
-y="30"
+<text x="20" y="30"
 font-size="18"
 fill="#f7f7f8"
 font-family="Arial"
-font-weight="bold"
->
+font-weight="bold">
 Almir-git-unifc GitHub Stats
 </text>
 
-
-<svg x="20" y="58" width="16" height="16"
-fill="none"
-stroke="#037eeb"
-stroke-width="2">
-<polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/>
-</svg>
-
-
-<svg x="20" y="83" width="16" height="16"
-fill="none"
-stroke="#037eeb"
-stroke-width="2">
-<circle cx="8" cy="8" r="3"/>
-</svg>
-
-
-<svg x="20" y="108" width="16" height="16"
-fill="none"
-stroke="#037eeb"
-stroke-width="2">
-<path d="M5 3v8M11 5v6"/>
-<circle cx="5" cy="2" r="2"/>
-<circle cx="11" cy="4" r="2"/>
-<circle cx="11" cy="12" r="2"/>
-</svg>
-
-
-<svg x="20" y="133" width="16" height="16"
-fill="none"
-stroke="#037eeb"
-stroke-width="2">
-<circle cx="8" cy="8" r="6"/>
-<line x1="8" y1="4" x2="8" y2="9"/>
-</svg>
-
-
-<svg x="20" y="158" width="16" height="16"
-fill="none"
-stroke="#037eeb"
-stroke-width="2">
-<circle cx="4" cy="8" r="2"/>
-<circle cx="12" cy="8" r="2"/>
-<line x1="6" y1="8" x2="10" y2="8"/>
-</svg>
-
+<circle cx="28" cy="63" r="6" stroke="#037eeb" fill="none"/>
+<circle cx="28" cy="88" r="6" stroke="#037eeb" fill="none"/>
+<circle cx="28" cy="113" r="6" stroke="#037eeb" fill="none"/>
+<circle cx="28" cy="138" r="6" stroke="#037eeb" fill="none"/>
+<circle cx="28" cy="163" r="6" stroke="#037eeb" fill="none"/>
 
 <g font-family="Arial" font-size="14">
 
@@ -75,7 +29,7 @@ Total Stars Earned: 24
 </text>
 
 <text x="50" y="95" fill="#66d1a1">
-Commits (last year): 319
+Commits (last year): 250
 </text>
 
 <text x="50" y="120" fill="#66d1a1">
@@ -87,7 +41,7 @@ Total Issues: 5
 </text>
 
 <text x="50" y="170" fill="#66d1a1">
-Contributed to: 12
+Contributed to: 25
 </text>
 
 </g>
@@ -104,15 +58,16 @@ stroke-width="10"/>
 fill="none"
 stroke="#66d1a1"
 stroke-width="10"
-stroke-dasharray="91.96070015588042 251.32741228718345"
+stroke-dasharray="186.8870637767496 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
 text-anchor="middle"
 fill="#66d1a1"
 font-size="18"
-font-family="Arial">
-C
+font-family="Arial"
+font-weight="bold">
+A
 </text>
 
 </g>
