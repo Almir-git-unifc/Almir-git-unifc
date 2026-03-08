@@ -23,7 +23,7 @@ font-family="Arial">
 <div xmlns="http://www.w3.org/1999/xhtml">
 
 <div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/></svg> Total Stars Earned: 24</div>
-<div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><circle cx="8" cy="8" r="3"/></svg> Commits (last year): 317</div>
+<div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><circle cx="8" cy="8" r="3"/></svg> Commits (last year): 318</div>
 <div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><path d="M5 3v8M11 5v6"/><circle cx="5" cy="2" r="2"/><circle cx="11" cy="4" r="2"/><circle cx="11" cy="12" r="2"/></svg> Total PRs: 155</div>
 <div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><circle cx="8" cy="8" r="6"/><line x1="8" y1="4" x2="8" y2="9"/></svg> Total Issues: 5</div>
 <div><svg width="16" height="16" fill="none" stroke="#037eeb" stroke-width="2"><circle cx="4" cy="8" r="2"/><circle cx="12" cy="8" r="2"/><line x1="6" y1="8" x2="10" y2="8"/></svg> Contributed to: 12</div>
@@ -46,7 +46,7 @@ stroke-width="10"/>
 fill="none"
 stroke="#66d1a1"
 stroke-width="10"
-stroke-dasharray="91.910434673423 251.32741228718345"
+stroke-dasharray="91.9355674146517 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
