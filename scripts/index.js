@@ -146,25 +146,34 @@ return data.total_count || 0;
 }
 
 /* =========================
-GET COMMITS + CONTRIBUTED
+GET COMMITS (GraphQL)
 ========================= */
 
 async function getCommits(){
 
-const { data } = await octokit.request(
-"GET /search/commits",
-{
-q: `author:${USER}`,
-per_page: 1,
-headers: {
-Accept: "application/vnd.github.cloak-preview"
+const oneYearAgo = new Date();
+oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+const query = `
+query($login:String!,$from:DateTime!,$to:DateTime!) {
+  user(login:$login) {
+    contributionsCollection(from:$from,to:$to) {
+      totalCommitContributions
+      totalRepositoriesWithContributedCommits
+    }
+  }
 }
-}
-);
+`;
+
+const result = await octokit.graphql(query,{
+login:USER,
+from:oneYearAgo.toISOString(),
+to:new Date().toISOString()
+});
 
 return{
-commits: data.total_count || 0,
-contributed: 0
+commits: result.user.contributionsCollection.totalCommitContributions,
+contributed: result.user.contributionsCollection.totalRepositoriesWithContributedCommits
 };
 
 }
@@ -196,7 +205,6 @@ LANGUAGE CARD
 function languagesSVG(langs){
 
 let y=40;
-
 let rows="";
 
 const total=Object.values(langs).reduce((a,b)=>a+b,0);
@@ -207,7 +215,6 @@ Object.entries(langs)
 .forEach(([lang,val])=>{
 
 const percent=((val/total)*100).toFixed(1);
-
 const color=LANGUAGE_COLORS[lang]||LANGUAGE_COLORS.Other;
 
 rows+=`
@@ -217,7 +224,6 @@ rows+=`
 
 <rect x="120" y="${y-10}" width="${percent*1.8}" height="8"
 fill="${color}" rx="4"/>
-
 `;
 
 y+=25;
@@ -246,22 +252,6 @@ ${rows}
 `;
 
 }
-
-/* =========================
-ICON STYLE
-========================= */
-
-const ICON_COLOR="#037eeb";
-
-const ICONS={
-
-star:`<circle cx="28" cy="63" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
-commit:`<circle cx="28" cy="88" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
-pr:`<circle cx="28" cy="113" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
-issue:`<circle cx="28" cy="138" r="6" stroke="${ICON_COLOR}" fill="none"/>`,
-contrib:`<circle cx="28" cy="163" r="6" stroke="${ICON_COLOR}" fill="none"/>`
-
-};
 
 /* =========================
 DONUT CHART
@@ -311,7 +301,6 @@ STATS CARD
 function statsSVG(data){
 
 const score=calculateScore(data);
-
 const rank=calculateRank(score);
 
 return`
@@ -331,12 +320,6 @@ font-family="Arial"
 font-weight="bold">
 ${USER} GitHub Stats
 </text>
-
-${ICONS.star}
-${ICONS.commit}
-${ICONS.pr}
-${ICONS.issue}
-${ICONS.contrib}
 
 <g font-family="Arial" font-size="14">
 
