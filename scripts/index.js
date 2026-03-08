@@ -204,7 +204,7 @@ LANGUAGE CARD
 
 function languagesSVG(langs){
 
-let y=40;
+let y=60;
 let rows="";
 
 const total=Object.values(langs).reduce((a,b)=>a+b,0);
@@ -214,16 +214,20 @@ Object.entries(langs)
 .slice(0,6)
 .forEach(([lang,val])=>{
 
-const percent=((val/total)*100).toFixed(1);
+const percent=((val/total)*100).toFixed(2);
 const color=LANGUAGE_COLORS[lang]||LANGUAGE_COLORS.Other;
 
 rows+=`
-<text x="20" y="${y}" fill="#c9d1d9" font-size="12">${lang}</text>
+<text x="20" y="${y}" fill="#66d1a1" font-size="12">${lang}</text>
 
 <rect x="120" y="${y-10}" width="180" height="8" fill="#2a2a2a" rx="4"/>
 
 <rect x="120" y="${y-10}" width="${percent*1.8}" height="8"
 fill="${color}" rx="4"/>
+
+<text x="310" y="${y}" fill="#66d1a1" font-size="12" text-anchor="end">
+${percent}%
+</text>
 `;
 
 y+=25;
@@ -240,7 +244,7 @@ stroke="white"/>
 
 <text x="20" y="25"
 font-size="18"
-fill="#f7f7f8"
+fill="#66d1a1"
 font-family="Arial"
 font-weight="bold">
 Top Languages
