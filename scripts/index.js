@@ -1,15 +1,11 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
-// =============================
-// CONFIG
-// =============================
-
 const USER = process.env.GITHUB_ACTOR || "Almir-git-unifc";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {
-  console.error("❌ GITHUB_TOKEN not defined");
+  console.error("Token not found");
   process.exit(1);
 }
 
@@ -19,121 +15,100 @@ if (!fs.existsSync("github-stats")) {
 
 const octokit = new Octokit({ auth: TOKEN });
 
+/* =========================
+LANGUAGE COLORS
+========================= */
 
-// =============================
-// HELPERS
-// =============================
+const LANGUAGE_COLORS = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  Python: "#3572A5",
+  Java: "#b07219",
+  "C++": "#f34b7d",
+  C: "#555555",
+  "C#": "#178600",
+  PHP: "#4F5D95",
+  Go: "#00ADD8",
+  Rust: "#dea584",
+  Dart: "#00B4AB",
+  Kotlin: "#a97bff",
+  Vue: "#41b883",
+  Shell: "#89e051",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Dockerfile: "#384d54",
+  Makefile: "#427819",
+  Other: "#ededed"
+};
 
-function calculateRank(score) {
-  if (score > 95) return "S++";
-  if (score > 90) return "S+";
-  if (score > 85) return "S";
-  if (score > 75) return "A+";
-  if (score > 65) return "A";
-  if (score > 55) return "A-";
-  if (score > 45) return "B+";
-  if (score > 35) return "B";
-  if (score > 25) return "B-";
-  return "C";
-}
+/* =========================
+ICONS (outline neon)
+========================= */
 
+const ICON_COLOR = "#037eeb";
 
-function donut(percent, rank) {
-  const radius = 45;
-  const circumference = 2 * Math.PI * radius;
-  const progress = circumference * (percent / 100);
+const ICONS = {
+  star: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><polygon points="8,1 10.5,6 16,6 11.5,9.5 13.5,15 8,11.5 2.5,15 4.5,9.5 0,6 5.5,6"/></svg>`,
 
-  return `
-  <g transform="translate(460,120)">
-    
-    <circle
-      r="${radius}"
-      cx="0"
-      cy="0"
-      fill="none"
-      stroke="#2a2a2a"
-      stroke-width="10"
-    />
+  commit: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="8" cy="8" r="3"/></svg>`,
 
-    <circle
-      r="${radius}"
-      cx="0"
-      cy="0"
-      fill="none"
-      stroke="#66d1a1"
-      stroke-width="10"
-      stroke-dasharray="${progress} ${circumference}"
-      transform="rotate(-90)"
-    />
+  pr: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><path d="M5 3v8M11 5v6"/><circle cx="5" cy="2" r="2"/><circle cx="11" cy="4" r="2"/><circle cx="11" cy="12" r="2"/></svg>`,
 
-    <text
-      x="0"
-      y="6"
-      text-anchor="middle"
-      font-size="20"
-      fill="#66d1a1"
-      font-family="Arial"
-    >
-      ${rank}
-    </text>
+  issue: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="8" cy="8" r="6"/><line x1="8" y1="4" x2="8" y2="9"/></svg>`,
 
-  </g>
-  `;
-}
+  contrib: `<svg width="16" height="16" fill="none" stroke="${ICON_COLOR}" stroke-width="2"><circle cx="4" cy="8" r="2"/><circle cx="12" cy="8" r="2"/><line x1="6" y1="8" x2="10" y2="8"/></svg>`
+};
 
+/* =========================
+API CALLS
+========================= */
 
-// =============================
-// API CALLS
-// =============================
+async function getRepos() {
 
-async function getStarsAndRepos() {
   const repos = await octokit.paginate(
     octokit.repos.listForUser,
     { username: USER, per_page: 100 }
   );
 
   const stars = repos.reduce(
-    (sum, repo) => sum + repo.stargazers_count,
+    (sum, r) => sum + r.stargazers_count,
     0
   );
 
-  return { stars, repos };
+  return { repos, stars };
 }
 
+async function getPRs() {
 
-
-async function getPullRequests() {
   const { data } =
     await octokit.search.issuesAndPullRequests({
       q: `is:pr author:${USER} is:merged`,
       per_page: 1
     });
 
-  return data.total_count || 0;
+  return data.total_count;
 }
 
-
-
 async function getIssues() {
+
   const { data } =
     await octokit.search.issuesAndPullRequests({
       q: `type:issue author:${USER}`,
       per_page: 1
     });
 
-  return data.total_count || 0;
+  return data.total_count;
 }
 
+async function getCommits() {
 
-
-async function getCommitsLastYear() {
-  const oneYearAgo = new Date();
-  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  const year = new Date();
+  year.setFullYear(year.getFullYear() - 1);
 
   const query = `
-  query($login:String!,$from:DateTime!,$to:DateTime!) {
-    user(login:$login) {
-      contributionsCollection(from:$from,to:$to) {
+  query($login:String!,$from:DateTime!,$to:DateTime!){
+    user(login:$login){
+      contributionsCollection(from:$from,to:$to){
         totalCommitContributions
         totalRepositoriesWithContributedCommits
       }
@@ -142,208 +117,202 @@ async function getCommitsLastYear() {
 
   const res = await octokit.graphql(query, {
     login: USER,
-    from: oneYearAgo.toISOString(),
+    from: year.toISOString(),
     to: new Date().toISOString()
   });
 
   return {
     commits:
-      res.user.contributionsCollection
-        .totalCommitContributions,
+      res.user.contributionsCollection.totalCommitContributions,
 
     contributed:
-      res.user.contributionsCollection
-        .totalRepositoriesWithContributedCommits
+      res.user.contributionsCollection.totalRepositoriesWithContributedCommits
   };
 }
 
-
-
-// =============================
-// LANGUAGES
-// =============================
+/* =========================
+LANGUAGES
+========================= */
 
 async function getLanguages(repos) {
+
   const map = {};
 
   for (const repo of repos) {
 
-    try {
+    const { data } =
+      await octokit.repos.listLanguages({
+        owner: USER,
+        repo: repo.name
+      });
 
-      const { data } =
-        await octokit.repos.listLanguages({
-          owner: USER,
-          repo: repo.name
-        });
+    for (const lang in data) {
 
-      for (const lang in data) {
-
-        map[lang] = (map[lang] || 0) + data[lang];
-      }
-
-    } catch {
-      continue;
+      map[lang] =
+        (map[lang] || 0) + data[lang];
     }
   }
+
   return map;
 }
 
+/* =========================
+DONUT CHART
+========================= */
 
+function donut(percent, rank) {
 
-// =============================
-// SVG GENERATORS
-// =============================
-
-function statsSVG(data) {
-  const score =
-    (data.stars +
-      data.prs * 2 +
-      data.commits / 10 +
-      data.repos) /
-    10;
-
-  const percent = Math.min(score, 100);
-
-  const rank = calculateRank(percent);
+  const r = 40;
+  const c = 2 * Math.PI * r;
+  const p = c * (percent / 100);
 
   return `
-<svg width="600" height="220"
+<g transform="translate(320,120)">
+
+<circle r="${r}" cx="0" cy="0"
+fill="none"
+stroke="#2a2a2a"
+stroke-width="10"/>
+
+<circle r="${r}" cx="0" cy="0"
+fill="none"
+stroke="#66d1a1"
+stroke-width="10"
+stroke-dasharray="${p} ${c}"
+transform="rotate(-90)"/>
+
+<text x="0" y="6"
+text-anchor="middle"
+fill="#66d1a1"
+font-size="18"
+font-family="Arial">${rank}</text>
+
+</g>
+`;
+}
+
+/* =========================
+STATS CARD
+========================= */
+
+function statsSVG(data) {
+
+const score =
+(data.stars +
+data.prs*2 +
+data.commits/10)/10;
+
+const percent=Math.min(score,100);
+
+const rank=percent>75?"A":"B";
+
+return `
+<svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect
-width="600"
-height="220"
+<rect width="420" height="200"
 rx="12"
 fill="none"
-stroke="white"
-/>
+stroke="white"/>
 
-<text
-x="30"
-y="40"
-font-size="20"
+<text x="20" y="30"
+font-size="18"
 fill="#f7f7f8"
-font-family="Arial"
->
+font-family="Arial">
 ${USER} GitHub Stats
 </text>
 
-<g font-size="15"
+<g font-size="14"
 fill="#66d1a1"
 font-family="Arial">
 
-<text x="60" y="80">
-⭐ Total Stars Earned: ${data.stars}
-</text>
+<foreignObject x="20" y="50" width="250" height="120">
 
-<text x="60" y="105">
-⏱ Total Commits (last year): ${data.commits}
-</text>
+<div xmlns="http://www.w3.org/1999/xhtml">
 
-<text x="60" y="130">
-🔀 Total PRs: ${data.prs}
-</text>
+<div>${ICONS.star} Total Stars Earned: ${data.stars}</div>
+<div>${ICONS.commit} Commits (last year): ${data.commits}</div>
+<div>${ICONS.pr} Total PRs: ${data.prs}</div>
+<div>${ICONS.issue} Total Issues: ${data.issues}</div>
+<div>${ICONS.contrib} Contributed to: ${data.contributed}</div>
 
-<text x="60" y="155">
-❗ Total Issues: ${data.issues}
-</text>
+</div>
 
-<text x="60" y="180">
-🤝 Contributed to: ${data.contributed}
-</text>
+</foreignObject>
 
 </g>
 
-${donut(percent, rank)}
+${donut(percent,rank)}
 
 </svg>
 `;
 }
 
+/* =========================
+LANGUAGE CARD
+========================= */
 
+function languagesSVG(languages){
 
-function languagesSVG(languages) {
-  const entries =
-    Object.entries(languages)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5);
+const entries=
+Object.entries(languages)
+.sort((a,b)=>b[1]-a[1])
+.slice(0,5);
 
-  const total =
-    entries.reduce((s, [, v]) => s + v, 0);
+const total=
+entries.reduce((s,[,v])=>s+v,0);
 
-  let y = 70;
+let y=60;
+let bars="";
 
-  let bars = "";
+for(const [lang,val] of entries){
 
-  for (const [lang, val] of entries) {
+const pct=(val/total)*100;
 
-    const pct = (val / total) * 100;
+const width=260*(pct/100);
 
-    const width = 420 * (pct / 100);
+const color=
+LANGUAGE_COLORS[lang]||
+LANGUAGE_COLORS.Other;
 
-    bars += `
+bars+=`
 
-<text
-x="40"
-y="${y}"
+<text x="20" y="${y}"
 fill="#66d1a1"
-font-size="14"
-font-family="Arial"
->
-${lang}
-</text>
+font-size="13">${lang}</text>
 
-<rect
-x="40"
-y="${y + 8}"
-width="420"
-height="8"
-fill="white"
-rx="4"
-/>
+<rect x="20" y="${y+6}"
+width="260" height="8"
+fill="#ffffff22"
+rx="4"/>
 
-<rect
-x="40"
-y="${y + 8}"
-width="${width}"
-height="8"
-fill="#037eeb"
-rx="4"
-/>
+<rect x="20" y="${y+6}"
+width="${width}" height="8"
+fill="${color}"
+rx="4"/>
 
-<text
-x="470"
-y="${y + 15}"
+<text x="290" y="${y+13}"
 fill="#66d1a1"
-font-size="12"
-font-family="Arial"
->
+font-size="12">
 ${pct.toFixed(2)}%
 </text>
 `;
 
-    y += 40;
-  }
+y+=28;
+}
 
-  return `
-<svg width="600" height="220"
+return `
+<svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect
-width="600"
-height="220"
+<rect width="420" height="200"
 rx="12"
 fill="none"
-stroke="white"
-/>
+stroke="white"/>
 
-<text
-x="40"
-y="40"
-font-size="20"
-fill="#f7f7f8"
-font-family="Arial"
->
+<text x="20" y="30"
+font-size="18"
+fill="#f7f7f8">
 Linguagens mais usadas
 </text>
 
@@ -353,59 +322,43 @@ ${bars}
 `;
 }
 
+/* =========================
+MAIN
+========================= */
 
-// =============================
-// MAIN
-// =============================
+async function main(){
 
-async function main() {
+const {repos,stars}=await getRepos();
 
-  try {
-    const { stars, repos } =
-      await getStarsAndRepos();
+const prs=await getPRs();
 
-    const prs = await getPullRequests();
+const issues=await getIssues();
 
-    const issues = await getIssues();
+const {commits,contributed}=await getCommits();
 
-    const { commits, contributed } =
-      await getCommitsLastYear();
+const languages=
+await getLanguages(repos);
 
-    const languages =
-      await getLanguages(repos);
+const stats={
+stars,
+prs,
+issues,
+commits,
+contributed
+};
 
-    const stats = {
-      stars,
-      prs,
-      issues,
-      commits,
-      contributed,
-      repos: repos.length
-    };
+fs.writeFileSync(
+"github-stats/stats.svg",
+statsSVG(stats)
+);
 
-    const statsCard = statsSVG(stats);
+fs.writeFileSync(
+"github-stats/languages.svg",
+languagesSVG(languages)
+);
 
-    const langCard =
-      languagesSVG(languages);
+console.log("Stats generated");
 
-    fs.writeFileSync(
-      "github-stats/stats.svg",
-      statsCard
-    );
-
-    fs.writeFileSync(
-      "github-stats/languages.svg",
-      langCard
-    );
-
-    console.log("✅ Stats cards generated");
-
-  } catch (err) {
-
-    console.error("⚠️ Error:", err);
-
-    process.exit(1);
-  }
 }
 
 main();
