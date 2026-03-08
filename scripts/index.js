@@ -42,6 +42,48 @@ const LANGUAGE_COLORS = {
 };
 
 /* =========================
+RANK WEIGHTS
+========================= */
+
+const WEIGHTS = {
+  stars: 4,
+  commits: 3,
+  prs: 2,
+  contributed: 1
+};
+
+/* =========================
+SCORE + RANK
+========================= */
+
+function calculateScore(stats){
+
+  const stars = stats.stars || 0;
+  const commits = stats.commits || 0;
+  const prs = stats.prs || 0;
+  const contributed = stats.contributed || 0;
+
+  const score =
+    WEIGHTS.stars * Math.log10(stars + 1) +
+    WEIGHTS.commits * Math.log10(commits + 1) +
+    WEIGHTS.prs * Math.log10(prs + 1) +
+    WEIGHTS.contributed * Math.log10(contributed + 1);
+
+  return Number(score.toFixed(2));
+}
+
+function calculateRank(score){
+
+  if(score >= 22) return "S";
+  if(score >= 18) return "A";
+  if(score >= 14) return "B";
+  if(score >= 10) return "C";
+  if(score >= 6) return "D";
+
+  return "E";
+}
+
+/* =========================
 ICON STYLE
 ========================= */
 
@@ -103,117 +145,18 @@ stroke-width="2">
 };
 
 /* =========================
-API CALLS
-========================= */
-
-async function getRepos() {
-
-  const repos = await octokit.paginate(
-    octokit.repos.listForUser,
-    { username: USER, per_page: 100 }
-  );
-
-  const stars =
-    repos.reduce((sum, r) =>
-      sum + r.stargazers_count, 0);
-
-  return { repos, stars };
-}
-
-async function getPRs() {
-
-  const { data } =
-    await octokit.search.issuesAndPullRequests({
-      q: `is:pr author:${USER} is:merged`,
-      per_page: 1
-    });
-
-  return data.total_count;
-}
-
-async function getIssues() {
-
-  const { data } =
-    await octokit.search.issuesAndPullRequests({
-      q: `type:issue author:${USER}`,
-      per_page: 1
-    });
-
-  return data.total_count;
-}
-
-async function getCommits() {
-
-  const year = new Date();
-  year.setFullYear(year.getFullYear() - 1);
-
-  const query = `
-  query($login:String!,$from:DateTime!,$to:DateTime!){
-    user(login:$login){
-      contributionsCollection(from:$from,to:$to){
-        totalCommitContributions
-        totalRepositoriesWithContributedCommits
-      }
-    }
-  }`;
-
-  const res = await octokit.graphql(query, {
-    login: USER,
-    from: year.toISOString(),
-    to: new Date().toISOString()
-  });
-
-  return {
-    commits:
-      res.user.contributionsCollection.totalCommitContributions,
-
-    contributed:
-      res.user.contributionsCollection.totalRepositoriesWithContributedCommits
-  };
-}
-
-/* =========================
-LANGUAGES
-========================= */
-
-async function getLanguages(repos) {
-
-  const map = {};
-
-  for (const repo of repos) {
-
-    try {
-
-      const { data } =
-        await octokit.repos.listLanguages({
-          owner: USER,
-          repo: repo.name
-        });
-
-      for (const lang in data) {
-        map[lang] =
-          (map[lang] || 0) + data[lang];
-      }
-
-    } catch {
-      continue;
-    }
-  }
-
-  return map;
-}
-
-/* =========================
 DONUT CHART
 ========================= */
 
-function donut(percent, rank) {
+function donut(score,rank){
 
-  const r = 40;
-  const c = 2 * Math.PI * r;
-  const p = c * (percent / 100);
+const percent = Math.min(score/25*100,100);
 
-  return `
+const r=40;
+const c=2*Math.PI*r;
+const p=c*(percent/100);
+
+return `
 <g transform="translate(320,110)">
 
 <circle r="${r}" cx="0" cy="0"
@@ -232,7 +175,8 @@ transform="rotate(-90)"/>
 text-anchor="middle"
 fill="#66d1a1"
 font-size="18"
-font-family="Arial">
+font-family="Arial"
+font-weight="bold">
 ${rank}
 </text>
 
@@ -244,20 +188,11 @@ ${rank}
 STATS CARD
 ========================= */
 
-function statsSVG(data) {
+function statsSVG(data){
 
-const score =
-(data.stars +
-data.prs * 2 +
-data.commits / 10) / 10;
+const score = calculateScore(data);
 
-const percent =
-Math.min(score, 100);
-
-const rank =
-percent > 90 ? "S" :
-percent > 75 ? "A" :
-percent > 50 ? "B" : "C";
+const rank = calculateRank(score);
 
 return `
 <svg width="420" height="200"
@@ -312,93 +247,7 @@ Contributed to: ${data.contributed}
 
 </g>
 
-${donut(percent,rank)}
-
-</svg>
-`;
-}
-
-/* =========================
-LANGUAGE CARD
-========================= */
-
-function languagesSVG(languages){
-
-const entries=
-Object.entries(languages)
-.sort((a,b)=>b[1]-a[1])
-.slice(0,5);
-
-const total=
-entries.reduce((s,[,v])=>s+v,0);
-
-let y=60;
-let bars="";
-
-for(const [lang,val] of entries){
-
-const pct=(val/total)*100;
-
-const width=260*(pct/100);
-
-const color=
-LANGUAGE_COLORS[lang]||
-LANGUAGE_COLORS.Other;
-
-bars+=`
-
-<text x="20" y="${y}"
-fill="#66d1a1"
-font-size="13"
-font-family="Arial">
-${lang}
-</text>
-
-<rect x="20" y="${y+6}"
-width="260"
-height="8"
-fill="#ffffff22"
-rx="4"/>
-
-<rect x="20" y="${y+6}"
-width="${width}"
-height="8"
-fill="${color}"
-rx="4"/>
-
-<text x="290" y="${y+13}"
-fill="#66d1a1"
-font-size="12"
-font-family="Arial">
-${pct.toFixed(2)}%
-</text>
-`;
-
-y+=28;
-}
-
-return `
-<svg width="420" height="200"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect
-width="420"
-height="200"
-rx="12"
-fill="none"
-stroke="white"
-/>
-
-<text
-x="20"
-y="30"
-font-size="18"
-fill="#f7f7f8"
-font-family="Arial">
-Linguagens mais usadas
-</text>
-
-${bars}
+${donut(score,rank)}
 
 </svg>
 `;
