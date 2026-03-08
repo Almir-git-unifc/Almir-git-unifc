@@ -244,7 +244,7 @@ stroke="white"/>
 
 <text x="20" y="25"
 font-size="18"
-fill="#66d1a1"
+fill="#f7f7f8"
 font-family="Arial"
 font-weight="bold">
 Top Languages
