@@ -152,15 +152,19 @@ GET COMMITS + CONTRIBUTED
 async function getCommits(){
 
 const { data } = await octokit.request(
-"GET /users/{username}",
+"GET /search/commits",
 {
-username: USER
+q: `author:${USER}`,
+per_page: 1,
+headers: {
+Accept: "application/vnd.github.cloak-preview"
+}
 }
 );
 
-return {
-commits: data.public_repos * 10 || 0,
-contributed: data.public_repos || 0
+return{
+commits: data.total_count || 0,
+contributed: 0
 };
 
 }
