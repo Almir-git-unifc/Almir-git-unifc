@@ -151,13 +151,16 @@ GET COMMITS + CONTRIBUTED
 
 async function getCommits(){
 
-const {data}=await octokit.rest.users.get({
-username:USER
-});
+const { data } = await octokit.request(
+"GET /users/{username}",
+{
+username: USER
+}
+);
 
-return{
-commits:data.public_repos*10 || 0,
-contributed:data.public_repos || 0
+return {
+commits: data.public_repos * 10 || 0,
+contributed: data.public_repos || 0
 };
 
 }
