@@ -17,9 +17,9 @@ Top Languages
 
 <text x="20" y="60" fill="#66d1a1" font-size="12">JavaScript</text>
 
-<rect x="120" y="50" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="50" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="50" width="127.494" height="8"
+<rect x="120" y="50" width="99.16199999999999" height="8"
 fill="#f1e05a" rx="4"/>
 
 <text x="310" y="60" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -28,9 +28,9 @@ fill="#f1e05a" rx="4"/>
 
 <text x="20" y="85" fill="#66d1a1" font-size="12">CSS</text>
 
-<rect x="120" y="75" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="75" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="75" width="22.5" height="8"
+<rect x="120" y="75" width="17.5" height="8"
 fill="#563d7c" rx="4"/>
 
 <text x="310" y="85" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -39,9 +39,9 @@ fill="#563d7c" rx="4"/>
 
 <text x="20" y="110" fill="#66d1a1" font-size="12">HTML</text>
 
-<rect x="120" y="100" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="100" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="100" width="7.506" height="8"
+<rect x="120" y="100" width="5.837999999999999" height="8"
 fill="#e34c26" rx="4"/>
 
 <text x="310" y="110" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -50,9 +50,9 @@ fill="#e34c26" rx="4"/>
 
 <text x="20" y="135" fill="#66d1a1" font-size="12">Vue</text>
 
-<rect x="120" y="125" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="125" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="125" width="7.506" height="8"
+<rect x="120" y="125" width="5.837999999999999" height="8"
 fill="#41b883" rx="4"/>
 
 <text x="310" y="135" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -61,9 +61,9 @@ fill="#41b883" rx="4"/>
 
 <text x="20" y="160" fill="#66d1a1" font-size="12">Kotlin</text>
 
-<rect x="120" y="150" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="150" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="150" width="7.506" height="8"
+<rect x="120" y="150" width="5.837999999999999" height="8"
 fill="#a97bff" rx="4"/>
 
 <text x="310" y="160" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -72,9 +72,9 @@ fill="#a97bff" rx="4"/>
 
 <text x="20" y="185" fill="#66d1a1" font-size="12">Java</text>
 
-<rect x="120" y="175" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="175" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="175" width="7.506" height="8"
+<rect x="120" y="175" width="5.837999999999999" height="8"
 fill="#b07219" rx="4"/>
 
 <text x="310" y="185" fill="#66d1a1" font-size="12" text-anchor="end">

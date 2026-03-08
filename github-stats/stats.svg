@@ -19,23 +19,23 @@ Almir-git-unifc GitHub Stats
 <g font-family="Arial" font-size="14">
 
 <text x="50" y="70" fill="#66d1a1">
-Total Stars Earned: 24
+⭐ Total Stars Earned: 24
 </text>
 
 <text x="50" y="95" fill="#66d1a1">
-Commits (last year): 325
+🔨 Commits (last year): 326
 </text>
 
 <text x="50" y="120" fill="#66d1a1">
-Total PRs: 155
+🔁 Total PRs: 155
 </text>
 
 <text x="50" y="145" fill="#66d1a1">
-Total Issues: 5
+❗ Total Issues: 5
 </text>
 
 <text x="50" y="170" fill="#66d1a1">
-Contributed to: 12
+📦 Contributed to: 12
 </text>
 
 </g>
@@ -52,7 +52,7 @@ stroke-width="10"/>
 fill="none"
 stroke="#66d1a1"
 stroke-width="10"
-stroke-dasharray="187.2891876364091 251.32741228718345"
+stroke-dasharray="187.38971860132398 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
