@@ -1,254 +1,408 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
-import { trophySVG } from "./trophyTemplate.js";
-import { resolveRank } from "./resolveRank.js";
-import { calculateProgress } from "./progressUtils.js";
-import {
-  EXPERIENCE_RULES,
-  STAR_RULES,
-  PR_RULES,
-  REPO_RULES,
-  COMMIT_RULES,
-} from "./trophyRules.js";
+// =============================
+// CONFIG
+// =============================
 
-import {
-  experienceScore,
-  experienceProgress,
-} from "./experienceUtils.js";
-
-import { RANK_ICONS } from "./rankIcons.js";
-
-// ===============================
-// Configurações
-// ===============================
 const USER = process.env.GITHUB_ACTOR || "Almir-git-unifc";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {
-  console.error("❌ GITHUB_TOKEN não definido");
+  console.error("❌ GITHUB_TOKEN not defined");
   process.exit(1);
 }
 
-// Garante que a pasta trophies exista
-if (!fs.existsSync("trophies")) {
-  fs.mkdirSync("trophies", { recursive: true });
+if (!fs.existsSync("github-stats")) {
+  fs.mkdirSync("github-stats", { recursive: true });
 }
 
-// ===============================
-// GitHub API
-// ===============================
-const octokit = new Octokit({
-  auth: TOKEN,
-  headers: {
-    accept: "application/vnd.github+json",
-  },
-});
+const octokit = new Octokit({ auth: TOKEN });
 
-// ===============================
-// Métricas GitHub
-// ===============================
 
-// Pull Requests merged
+// =============================
+// HELPERS
+// =============================
+
+function calculateRank(score) {
+  if (score > 95) return "S++";
+  if (score > 90) return "S+";
+  if (score > 85) return "S";
+  if (score > 75) return "A+";
+  if (score > 65) return "A";
+  if (score > 55) return "A-";
+  if (score > 45) return "B+";
+  if (score > 35) return "B";
+  if (score > 25) return "B-";
+  return "C";
+}
+
+
+function donut(percent, rank) {
+  const radius = 45;
+  const circumference = 2 * Math.PI * radius;
+  const progress = circumference * (percent / 100);
+
+  return `
+  <g transform="translate(460,120)">
+    
+    <circle
+      r="${radius}"
+      cx="0"
+      cy="0"
+      fill="none"
+      stroke="#2a2a2a"
+      stroke-width="10"
+    />
+
+    <circle
+      r="${radius}"
+      cx="0"
+      cy="0"
+      fill="none"
+      stroke="#66d1a1"
+      stroke-width="10"
+      stroke-dasharray="${progress} ${circumference}"
+      transform="rotate(-90)"
+    />
+
+    <text
+      x="0"
+      y="6"
+      text-anchor="middle"
+      font-size="20"
+      fill="#66d1a1"
+      font-family="Arial"
+    >
+      ${rank}
+    </text>
+
+  </g>
+  `;
+}
+
+
+// =============================
+// API CALLS
+// =============================
+
+async function getStarsAndRepos() {
+  const repos = await octokit.paginate(
+    octokit.repos.listForUser,
+    { username: USER, per_page: 100 }
+  );
+
+  const stars = repos.reduce(
+    (sum, repo) => sum + repo.stargazers_count,
+    0
+  );
+
+  return { stars, repos };
+}
+
+
+
 async function getPullRequests() {
-  const { data } = await octokit.search.issuesAndPullRequests({
-    q: `is:pr author:${USER} is:merged`,
-    per_page: 1,
-  });
+  const { data } =
+    await octokit.search.issuesAndPullRequests({
+      q: `is:pr author:${USER} is:merged`,
+      per_page: 1
+    });
 
   return data.total_count || 0;
 }
 
 
 
+async function getIssues() {
+  const { data } =
+    await octokit.search.issuesAndPullRequests({
+      q: `type:issue author:${USER}`,
+      per_page: 1
+    });
 
-// Commits no último ano (eventos públicos)
+  return data.total_count || 0;
+}
+
+
+
 async function getCommitsLastYear() {
   const oneYearAgo = new Date();
   oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
   const query = `
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          totalCommitContributions
-        }
+  query($login:String!,$from:DateTime!,$to:DateTime!) {
+    user(login:$login) {
+      contributionsCollection(from:$from,to:$to) {
+        totalCommitContributions
+        totalRepositoriesWithContributedCommits
       }
     }
-  `;
+  }`;
 
-  const variables = {
+  const res = await octokit.graphql(query, {
     login: USER,
     from: oneYearAgo.toISOString(),
-    to: new Date().toISOString(),
-  };
-
-  const response = await octokit.graphql(query, variables);
-
-  return (
-    response.user?.contributionsCollection?.totalCommitContributions || 0
-  );
-}
-
-
-
-// Repositórios e Stars
-async function getReposData() {
-  const { data } = await octokit.repos.listForUser({
-    username: USER,
-    per_page: 100,
+    to: new Date().toISOString()
   });
 
   return {
-    repositories: data.length,
-    stars: data.reduce(
-      (sum, repo) => sum + repo.stargazers_count,
-      0
-    ),
+    commits:
+      res.user.contributionsCollection
+        .totalCommitContributions,
+
+    contributed:
+      res.user.contributionsCollection
+        .totalRepositoriesWithContributedCommits
   };
 }
 
-// Anos de experiência no GitHub
-async function getGithubExperienceYears() {
-  const { data } = await octokit.users.getByUsername({
-    username: USER,
-  });
 
-  const createdAt = new Date(data.created_at);
-  const now = new Date();
 
-  const years =
-    (now - createdAt) / (1000 * 60 * 60 * 24 * 365.25);
+// =============================
+// LANGUAGES
+// =============================
 
-  return Number(years.toFixed(1));
+async function getLanguages(repos) {
+  const map = {};
+
+  for (const repo of repos) {
+
+    try {
+
+      const { data } =
+        await octokit.repos.listLanguages({
+          owner: USER,
+          repo: repo.name
+        });
+
+      for (const lang in data) {
+
+        map[lang] = (map[lang] || 0) + data[lang];
+      }
+
+    } catch {
+      continue;
+    }
+  }
+  return map;
 }
 
-// ===============================
-// Main
-// ===============================
+
+
+// =============================
+// SVG GENERATORS
+// =============================
+
+function statsSVG(data) {
+  const score =
+    (data.stars +
+      data.prs * 2 +
+      data.commits / 10 +
+      data.repos) /
+    10;
+
+  const percent = Math.min(score, 100);
+
+  const rank = calculateRank(percent);
+
+  return `
+<svg width="600" height="220"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect
+width="600"
+height="220"
+rx="12"
+fill="none"
+stroke="white"
+/>
+
+<text
+x="30"
+y="40"
+font-size="20"
+fill="#f7f7f8"
+font-family="Arial"
+>
+${USER} GitHub Stats
+</text>
+
+<g font-size="15"
+fill="#66d1a1"
+font-family="Arial">
+
+<text x="60" y="80">
+⭐ Total Stars Earned: ${data.stars}
+</text>
+
+<text x="60" y="105">
+⏱ Total Commits (last year): ${data.commits}
+</text>
+
+<text x="60" y="130">
+🔀 Total PRs: ${data.prs}
+</text>
+
+<text x="60" y="155">
+❗ Total Issues: ${data.issues}
+</text>
+
+<text x="60" y="180">
+🤝 Contributed to: ${data.contributed}
+</text>
+
+</g>
+
+${donut(percent, rank)}
+
+</svg>
+`;
+}
+
+
+
+function languagesSVG(languages) {
+  const entries =
+    Object.entries(languages)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+
+  const total =
+    entries.reduce((s, [, v]) => s + v, 0);
+
+  let y = 70;
+
+  let bars = "";
+
+  for (const [lang, val] of entries) {
+
+    const pct = (val / total) * 100;
+
+    const width = 420 * (pct / 100);
+
+    bars += `
+
+<text
+x="40"
+y="${y}"
+fill="#66d1a1"
+font-size="14"
+font-family="Arial"
+>
+${lang}
+</text>
+
+<rect
+x="40"
+y="${y + 8}"
+width="420"
+height="8"
+fill="white"
+rx="4"
+/>
+
+<rect
+x="40"
+y="${y + 8}"
+width="${width}"
+height="8"
+fill="#037eeb"
+rx="4"
+/>
+
+<text
+x="470"
+y="${y + 15}"
+fill="#66d1a1"
+font-size="12"
+font-family="Arial"
+>
+${pct.toFixed(2)}%
+</text>
+`;
+
+    y += 40;
+  }
+
+  return `
+<svg width="600" height="220"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect
+width="600"
+height="220"
+rx="12"
+fill="none"
+stroke="white"
+/>
+
+<text
+x="40"
+y="40"
+font-size="20"
+fill="#f7f7f8"
+font-family="Arial"
+>
+Linguagens mais usadas
+</text>
+
+${bars}
+
+</svg>
+`;
+}
+
+
+// =============================
+// MAIN
+// =============================
+
 async function main() {
+
   try {
-    const [
-      pullRequests,
-      commits,
-      repoData,
-      experienceYears,
-    ] = await Promise.all([
-      getPullRequests(),
-      getCommitsLastYear(),
-      getReposData(),
-      getGithubExperienceYears(),
-    ]);
+    const { stars, repos } =
+      await getStarsAndRepos();
 
-    const { repositories, stars } = repoData;
+    const prs = await getPullRequests();
 
-    console.log("📊 METRICS:", {
-      pullRequests,
-      commits,
-      repositories,
+    const issues = await getIssues();
+
+    const { commits, contributed } =
+      await getCommitsLastYear();
+
+    const languages =
+      await getLanguages(repos);
+
+    const stats = {
       stars,
-      experienceYears,
-    });
+      prs,
+      issues,
+      commits,
+      contributed,
+      repos: repos.length
+    };
 
-    // Rankings
-    const prRank = resolveRank(pullRequests, PR_RULES);
-    const commitRank = resolveRank(commits, COMMIT_RULES);
-    const repoRank = resolveRank(repositories, REPO_RULES);
-    const starRank = resolveRank(stars, STAR_RULES);
-    const expRank = resolveRank(experienceYears, EXPERIENCE_RULES);
+    const statsCard = statsSVG(stats);
 
-    
-    // Calculate Progress bar using RULES by trophyRules.js
-    const prProgress = calculateProgress(pullRequests, PR_RULES);
-    const commitProgress = calculateProgress(commits, COMMIT_RULES);
-    const repoProgress = calculateProgress(repositories, REPO_RULES);
-    const starProgress = calculateProgress(stars, STAR_RULES);
-    
+    const langCard =
+      languagesSVG(languages);
 
-    // Experience custom logic
-    const expScore = experienceScore(experienceYears);
-    const expProgress = experienceProgress(experienceYears);
+    fs.writeFileSync(
+      "github-stats/stats.svg",
+      statsCard
+    );
 
-    // Orquestração das trophies
-    const trophies = [
-      {
-        file: "pull_requests.svg",
-        title: "Pull Requests",
-        points: pullRequests,
-        rank: prRank.rank,
-        subtitle: prRank.subtitle,
-        progress: prProgress,
-        icon: RANK_ICONS[prRank.rank],
-      },
-      {
-        file: "commits.svg",
-        title: "Commits",
-        points: commits,
-        rank: commitRank.rank,
-        subtitle: commitRank.subtitle,
-        progress: commitProgress,
-        icon: RANK_ICONS[commitRank.rank],
-      },
-      {
-        file: "repositories.svg",
-        title: "Repositories",
-        points: repositories,
-        rank: repoRank.rank,
-        subtitle: repoRank.subtitle,
-        progress: repoProgress,
-        icon: RANK_ICONS[repoRank.rank],
-      },
-      {
-        file: "stars.svg",
-        title: "Stars",
-        points: stars,
-        rank: starRank.rank,
-        subtitle: starRank.subtitle,
-        progress: starProgress,
-        icon: RANK_ICONS[starRank.rank],
-      },
-      {
-        file: "experience.svg",
-        title: "Experience",
-        points: expScore,
-        rank: expRank.rank,
-        subtitle: expRank.subtitle,
-        progress: expProgress,
-        icon: RANK_ICONS[expRank.rank],
-      },
-    ];
+    fs.writeFileSync(
+      "github-stats/languages.svg",
+      langCard
+    );
 
-    // Geração dos SVGs
-    for (const trophy of trophies) {
-      const svg = trophySVG(trophy);
-      fs.writeFileSync(`trophies/${trophy.file}`, svg);
-    }
+    console.log("✅ Stats cards generated");
 
-    console.log("🏆 Trophies generated successfully!");
   } catch (err) {
-    console.error("⚠️ Error generating trophies:", err);
 
-    // Fallback SVG
-    const fallback = trophySVG({
-      title: "Unavailable",
-      subtitle: "GitHub API limit",
-      points: 0,
-      rank: "C",
-      progress: 0,
-      icon: "⚠️",
-    });
-
-    const fallbackFiles = [
-      "pull_requests.svg",
-      "commits.svg",
-      "repositories.svg",
-      "stars.svg",
-      "experience.svg",
-    ];
-
-    for (const file of fallbackFiles) {
-      fs.writeFileSync(`trophies/${file}`, fallback);
-    }
+    console.error("⚠️ Error:", err);
 
     process.exit(1);
   }
