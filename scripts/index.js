@@ -220,9 +220,9 @@ const color=LANGUAGE_COLORS[lang]||LANGUAGE_COLORS.Other;
 rows+=`
 <text x="20" y="${y}" fill="#66d1a1" font-size="12">${lang}</text>
 
-<rect x="120" y="${y-10}" width="180" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="${y-10}" width="140" height="8" fill="#2a2a2a" rx="4"/>
 
-<rect x="120" y="${y-10}" width="${percent*1.8}" height="8"
+<rect x="120" y="${y-10}" width="${percent*1.4}" height="8"
 fill="${color}" rx="4"/>
 
 <text x="310" y="${y}" fill="#66d1a1" font-size="12" text-anchor="end">
@@ -328,23 +328,23 @@ ${USER} GitHub Stats
 <g font-family="Arial" font-size="14">
 
 <text x="50" y="70" fill="#66d1a1">
-Total Stars Earned: ${data.stars}
+⭐ Total Stars Earned: ${data.stars}
 </text>
 
 <text x="50" y="95" fill="#66d1a1">
-Commits (last year): ${data.commits}
+🔨 Commits (last year): ${data.commits}
 </text>
 
 <text x="50" y="120" fill="#66d1a1">
-Total PRs: ${data.prs}
+🔁 Total PRs: ${data.prs}
 </text>
 
 <text x="50" y="145" fill="#66d1a1">
-Total Issues: ${data.issues}
+❗ Total Issues: ${data.issues}
 </text>
 
 <text x="50" y="170" fill="#66d1a1">
-Contributed to: ${data.contributed}
+📦 Contributed to: ${data.contributed}
 </text>
 
 </g>
