@@ -35,9 +35,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 ## &#x1f4c8; GitHub Stats
 
-![GitHub-stats-and](https://github-readme-stats.vercel.app/api?username=Almir-git-unifc&show_icons=true&theme=cobalt&title_color=fff&line_height=40)
- ![Langs-Vercel-offline](https://github-readme-stats.vercel.app/api/top-langs/?username=Almir-git-unifc&langs_count=5&theme=cobalt&title_color=fff) 
-
 <p align="center">
    <img src="./github-stats/stats.svg" height="200"/>
    <img src="./github-stats/languages.svg" height="200"/>
