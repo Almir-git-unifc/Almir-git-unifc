@@ -22,14 +22,12 @@ Top Languages
 <rect x="120" y="30" width="127.44" height="8"
 fill="#f1e05a" rx="4"/>
 
-
 <text x="20" y="65" fill="#c9d1d9" font-size="12">CSS</text>
 
 <rect x="120" y="55" width="180" height="8" fill="#2a2a2a" rx="4"/>
 
 <rect x="120" y="55" width="22.5" height="8"
 fill="#563d7c" rx="4"/>
-
 
 <text x="20" y="90" fill="#c9d1d9" font-size="12">HTML</text>
 
@@ -38,14 +36,12 @@ fill="#563d7c" rx="4"/>
 <rect x="120" y="80" width="7.5600000000000005" height="8"
 fill="#e34c26" rx="4"/>
 
-
 <text x="20" y="115" fill="#c9d1d9" font-size="12">Vue</text>
 
 <rect x="120" y="105" width="180" height="8" fill="#2a2a2a" rx="4"/>
 
 <rect x="120" y="105" width="7.5600000000000005" height="8"
 fill="#41b883" rx="4"/>
-
 
 <text x="20" y="140" fill="#c9d1d9" font-size="12">Kotlin</text>
 
@@ -54,14 +50,12 @@ fill="#41b883" rx="4"/>
 <rect x="120" y="130" width="7.5600000000000005" height="8"
 fill="#a97bff" rx="4"/>
 
-
 <text x="20" y="165" fill="#c9d1d9" font-size="12">Java</text>
 
 <rect x="120" y="155" width="180" height="8" fill="#2a2a2a" rx="4"/>
 
 <rect x="120" y="155" width="7.5600000000000005" height="8"
 fill="#b07219" rx="4"/>
-
 
 
 </svg>
