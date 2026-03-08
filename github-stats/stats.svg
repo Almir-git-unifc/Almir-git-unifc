@@ -1,0 +1,86 @@
+
+<svg width="600" height="220"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect
+width="600"
+height="220"
+rx="12"
+fill="none"
+stroke="white"
+/>
+
+<text
+x="30"
+y="40"
+font-size="20"
+fill="#f7f7f8"
+font-family="Arial"
+>
+Almir-git-unifc GitHub Stats
+</text>
+
+<g font-size="15"
+fill="#66d1a1"
+font-family="Arial">
+
+<text x="60" y="80">
+⭐ Total Stars Earned: 24
+</text>
+
+<text x="60" y="105">
+⏱ Total Commits (last year): 316
+</text>
+
+<text x="60" y="130">
+🔀 Total PRs: 155
+</text>
+
+<text x="60" y="155">
+❗ Total Issues: 5
+</text>
+
+<text x="60" y="180">
+🤝 Contributed to: 12
+</text>
+
+</g>
+
+
+  <g transform="translate(460,120)">
+    
+    <circle
+      r="45"
+      cx="0"
+      cy="0"
+      fill="none"
+      stroke="#2a2a2a"
+      stroke-width="10"
+    />
+
+    <circle
+      r="45"
+      cx="0"
+      cy="0"
+      fill="none"
+      stroke="#66d1a1"
+      stroke-width="10"
+      stroke-dasharray="110.43954814429559 282.7433388230814"
+      transform="rotate(-90)"
+    />
+
+    <text
+      x="0"
+      y="6"
+      text-anchor="middle"
+      font-size="20"
+      fill="#66d1a1"
+      font-family="Arial"
+    >
+      B
+    </text>
+
+  </g>
+  
+
+</svg>
