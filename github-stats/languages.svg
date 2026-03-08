@@ -2,14 +2,20 @@
 <svg width="420" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="420" height="200"
+<rect
+width="420"
+height="200"
 rx="12"
 fill="none"
-stroke="white"/>
+stroke="white"
+/>
 
-<text x="20" y="30"
+<text
+x="20"
+y="30"
 font-size="18"
-fill="#f7f7f8">
+fill="#f7f7f8"
+font-family="Arial">
 Linguagens mais usadas
 </text>
 
@@ -17,105 +23,135 @@ Linguagens mais usadas
 
 <text x="20" y="60"
 fill="#66d1a1"
-font-size="13">Java</text>
+font-size="13"
+font-family="Arial">
+Java
+</text>
 
 <rect x="20" y="66"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="66"
-width="202.68587476009074" height="8"
+width="202.67844183778803"
+height="8"
 fill="#b07219"
 rx="4"/>
 
 <text x="290" y="73"
 fill="#66d1a1"
-font-size="12">
-77.96%
+font-size="12"
+font-family="Arial">
+77.95%
 </text>
 
 
 <text x="20" y="88"
 fill="#66d1a1"
-font-size="13">HTML</text>
+font-size="13"
+font-family="Arial">
+HTML
+</text>
 
 <rect x="20" y="94"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="94"
-width="32.71656489488314" height="8"
+width="32.71536510883409"
+height="8"
 fill="#e34c26"
 rx="4"/>
 
 <text x="290" y="101"
 fill="#66d1a1"
-font-size="12">
+font-size="12"
+font-family="Arial">
 12.58%
 </text>
 
 
 <text x="20" y="116"
 fill="#66d1a1"
-font-size="13">JavaScript</text>
+font-size="13"
+font-family="Arial">
+JavaScript
+</text>
 
 <rect x="20" y="122"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="122"
-width="12.618081847022085" height="8"
+width="12.627153868340283"
+height="8"
 fill="#f1e05a"
 rx="4"/>
 
 <text x="290" y="129"
 fill="#66d1a1"
-font-size="12">
-4.85%
+font-size="12"
+font-family="Arial">
+4.86%
 </text>
 
 
 <text x="20" y="144"
 fill="#66d1a1"
-font-size="13">C</text>
+font-size="13"
+font-family="Arial">
+C
+</text>
 
 <rect x="20" y="150"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="150"
-width="10.169526169173338" height="8"
+width="10.169153231009986"
+height="8"
 fill="#555555"
 rx="4"/>
 
 <text x="290" y="157"
 fill="#66d1a1"
-font-size="12">
+font-size="12"
+font-family="Arial">
 3.91%
 </text>
 
 
 <text x="20" y="172"
 fill="#66d1a1"
-font-size="13">Shell</text>
+font-size="13"
+font-family="Arial">
+Shell
+</text>
 
 <rect x="20" y="178"
-width="260" height="8"
+width="260"
+height="8"
 fill="#ffffff22"
 rx="4"/>
 
 <rect x="20" y="178"
-width="1.8099523288306942" height="8"
+width="1.8098859540275773"
+height="8"
 fill="#89e051"
 rx="4"/>
 
 <text x="290" y="185"
 fill="#66d1a1"
-font-size="12">
+font-size="12"
+font-family="Arial">
 0.70%
 </text>
 
