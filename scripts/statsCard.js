@@ -19,7 +19,7 @@ y="0"
 width="600"
 height="220"
 rx="10"
-fill="#315e7f"
+fill="none"
 stroke="white"
 />
 
@@ -34,7 +34,7 @@ ${user} GitHub Stats
 <g fill="#66d1a1" font-size="15">
 
 <text x="60" y="80">Total Stars Earned: ${stars}</text>
-<text x="60" y="105">Total Commits (last year): ${commits - 19}</text>
+<text x="60" y="105">Total Commits (last year): ${commits}</text>
 <text x="60" y="130">Total PRs: ${prs}</text>
 <text x="60" y="155">Total Issues: ${issues}</text>
 <text x="60" y="180">Contributed to (last year): ${contributed}</text>
