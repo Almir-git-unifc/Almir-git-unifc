@@ -19,7 +19,7 @@ y="0"
 width="600"
 height="220"
 rx="10"
-fill="none"
+fill="#315e7f"
 stroke="white"
 />
 
