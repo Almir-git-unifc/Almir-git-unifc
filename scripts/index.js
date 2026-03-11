@@ -172,7 +172,7 @@ to:new Date().toISOString()
 });
 
 return{
-commits: result.user.contributionsCollection.totalCommitContributions,
+commits: result.user.contributionsCollection.totalCommitContributions - 19,
 contributed: result.user.contributionsCollection.totalRepositoriesWithContributedCommits
 };
 
