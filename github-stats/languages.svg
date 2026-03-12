@@ -1,23 +1,27 @@
 
+
 <svg width="360" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="360" height="200" rx="12"
-fill="none"
-stroke="white"/>
+<rect width="360" height="200"
+rx="12"
+fill="#315e7f"
+stroke="#1b3c55"
+stroke-width="1.5"/>
 
 <text x="20" y="25"
 font-size="18"
-fill="#f7f7f8"
+fill="#ffffff"
 font-family="Arial"
 font-weight="bold">
 Top Languages
 </text>
 
 
+
 <text x="20" y="60" fill="#66d1a1" font-size="12">JavaScript</text>
 
-<rect x="120" y="50" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="50" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="50" width="99.16199999999999" height="8"
 fill="#f1e05a" rx="4"/>
@@ -26,9 +30,11 @@ fill="#f1e05a" rx="4"/>
 70.83%
 </text>
 
+
+
 <text x="20" y="85" fill="#66d1a1" font-size="12">CSS</text>
 
-<rect x="120" y="75" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="75" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="75" width="17.5" height="8"
 fill="#563d7c" rx="4"/>
@@ -37,9 +43,11 @@ fill="#563d7c" rx="4"/>
 12.50%
 </text>
 
+
+
 <text x="20" y="110" fill="#66d1a1" font-size="12">HTML</text>
 
-<rect x="120" y="100" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="100" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="100" width="5.837999999999999" height="8"
 fill="#e34c26" rx="4"/>
@@ -48,9 +56,11 @@ fill="#e34c26" rx="4"/>
 4.17%
 </text>
 
+
+
 <text x="20" y="135" fill="#66d1a1" font-size="12">Vue</text>
 
-<rect x="120" y="125" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="125" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="125" width="5.837999999999999" height="8"
 fill="#41b883" rx="4"/>
@@ -59,9 +69,11 @@ fill="#41b883" rx="4"/>
 4.17%
 </text>
 
+
+
 <text x="20" y="160" fill="#66d1a1" font-size="12">Kotlin</text>
 
-<rect x="120" y="150" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="150" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="150" width="5.837999999999999" height="8"
 fill="#a97bff" rx="4"/>
@@ -70,9 +82,11 @@ fill="#a97bff" rx="4"/>
 4.17%
 </text>
 
+
+
 <text x="20" y="185" fill="#66d1a1" font-size="12">Java</text>
 
-<rect x="120" y="175" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="175" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="175" width="5.837999999999999" height="8"
 fill="#b07219" rx="4"/>
@@ -82,4 +96,6 @@ fill="#b07219" rx="4"/>
 </text>
 
 
+
 </svg>
+

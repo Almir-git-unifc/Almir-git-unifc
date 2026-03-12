@@ -5,59 +5,86 @@ xmlns="http://www.w3.org/2000/svg">
 
 <rect width="420" height="200"
 rx="12"
-fill="none"
-stroke="white"/>
+fill="#315e7f"
+stroke="#1b3c55"
+stroke-width="1.5"/>
 
 <text x="20" y="30"
 font-size="18"
-fill="#f7f7f8"
+fill="#ffffff"
 font-family="Arial"
 font-weight="bold">
 Almir-git-unifc GitHub Stats
 </text>
 
-<g font-family="Arial" font-size="14">
+<g font-family="Arial" font-size="14" fill="#66d1a1">
 
-<text x="50" y="70" fill="#66d1a1">
-⭐ Total Stars Earned: 24
-</text>
+<g transform="translate(30,60)">
 
-<text x="50" y="95" fill="#66d1a1">
-🔨 Commits (last year): 313
-</text>
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/>
+</svg>
+<text x="20" y="12">Total Stars Earned: 24</text>
+</g>
 
-<text x="50" y="120" fill="#66d1a1">
-🔁 Total PRs: 155
-</text>
+<g transform="translate(30,85)">
 
-<text x="50" y="145" fill="#66d1a1">
-❗ Total Issues: 5
-</text>
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M12 8a4 4 0 100 8 4 4 0 000-8zm8 3h-3.1a5 5 0 00-9.8 0H4v2h3.1a5 5 0 009.8 0H20z"/>
+</svg>
+<text x="20" y="12">Commits (last year): 315</text>
+</g>
 
-<text x="50" y="170" fill="#66d1a1">
-📦 Contributed to: 12
-</text>
+<g transform="translate(30,110)">
+
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M7 5a3 3 0 11-2 2.83V16a3 3 0 11-2 0V7.83A3 3 0 017 5zm10 4a3 3 0 11-2 2.83V16a3 3 0 11-2 0V11a5 5 0 10-2-4h2a3 3 0 114 0z"/>
+</svg>
+<text x="20" y="12">Total PRs: 155</text>
+</g>
+
+<g transform="translate(30,135)">
+
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M11 7h2v6h-2zm0 8h2v2h-2z"/>
+</svg>
+<text x="20" y="12">Total Issues: 5</text>
+</g>
+
+<g transform="translate(30,160)">
+
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M4 3h16v18H4zM6 7h12M6 11h12M6 15h8"/>
+</svg>
+<text x="20" y="12">Contributed to: 12</text>
+</g>
 
 </g>
+
 
 
 <g transform="translate(320,110)">
 
 <circle r="40" cx="0" cy="0"
 fill="none"
-stroke="#2a2a2a"
+stroke="#1f2f3a"
 stroke-width="10"/>
 
 <circle r="40" cx="0" cy="0"
 fill="none"
-stroke="#66d1a1"
+stroke="#00eaff"
 stroke-width="10"
-stroke-dasharray="186.78653281183475 251.32741228718345"
+stroke-dasharray="186.8870637767496 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
 text-anchor="middle"
-fill="#66d1a1"
+fill="#00eaff"
 font-size="18"
 font-family="Arial"
 font-weight="bold">
@@ -67,4 +94,6 @@ A
 </g>
 
 
+
 </svg>
+
