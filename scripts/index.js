@@ -34,7 +34,7 @@ commit: `
 </svg>
 
 pr: `
-<svg width="14" height="14" viewBox="0 0 24 24">
+<svg width="24" height="24" viewBox="0 0 28 28">
 <path fill="#00eaff"
 d="M7 5a3 3 0 11-2 2.83V16a3 3 0 11-2 0V7.83A3 3 0 017 5zm10 4a3 3 0 11-2 2.83V16a3 3 0 11-2 0V11a5 5 0 10-2-4h2a3 3 0 114 0z"/>
 </svg>`,
