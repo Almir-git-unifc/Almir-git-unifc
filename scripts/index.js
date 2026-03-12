@@ -16,6 +16,43 @@ if (!fs.existsSync("github-stats")) {
 const octokit = new Octokit({ auth: TOKEN });
 
 /* =========================
+ICONS (NEON BLUE SVG)
+========================= */
+
+const ICONS = {
+
+star: `
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/>
+</svg>`,
+
+commit: `
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M12 8a4 4 0 100 8 4 4 0 000-8zm8 3h-3.1a5 5 0 00-9.8 0H4v2h3.1a5 5 0 009.8 0H20z"/>
+</svg>`,
+
+pr: `
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M7 5a3 3 0 11-2 2.83V16a3 3 0 11-2 0V7.83A3 3 0 017 5zm10 4a3 3 0 11-2 2.83V16a3 3 0 11-2 0V11a5 5 0 10-2-4h2a3 3 0 114 0z"/>
+</svg>`,
+
+issue: `
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M11 7h2v6h-2zm0 8h2v2h-2z"/>
+</svg>`,
+
+repo: `
+<svg width="14" height="14" viewBox="0 0 24 24">
+<path fill="#00eaff"
+d="M4 3h16v18H4zM6 7h12M6 11h12M6 15h8"/>
+</svg>`
+};
+
+/* =========================
 LANGUAGE COLORS
 ========================= */
 
@@ -58,29 +95,22 @@ SCORE + RANK
 
 function calculateScore(stats){
 
-  const stars = stats.stars || 0;
-  const commits = stats.commits || 0;
-  const prs = stats.prs || 0;
-  const contributed = stats.contributed || 0;
+const score =
+WEIGHTS.stars * Math.log10((stats.stars || 0) + 1) +
+WEIGHTS.commits * Math.log10((stats.commits || 0) + 1) +
+WEIGHTS.prs * Math.log10((stats.prs || 0) + 1) +
+WEIGHTS.contributed * Math.log10((stats.contributed || 0) + 1);
 
-  const score =
-    WEIGHTS.stars * Math.log10(stars + 1) +
-    WEIGHTS.commits * Math.log10(commits + 1) +
-    WEIGHTS.prs * Math.log10(prs + 1) +
-    WEIGHTS.contributed * Math.log10(contributed + 1);
-
-  return Number(score.toFixed(2));
+return Number(score.toFixed(2));
 }
 
 function calculateRank(score){
-
-  if(score >= 22) return "S";
-  if(score >= 18) return "A";
-  if(score >= 14) return "B";
-  if(score >= 10) return "C";
-  if(score >= 6) return "D";
-
-  return "E";
+if(score >= 22) return "S";
+if(score >= 18) return "A";
+if(score >= 14) return "B";
+if(score >= 10) return "C";
+if(score >= 6) return "D";
+return "E";
 }
 
 /* =========================
@@ -114,11 +144,10 @@ page++;
 }
 
 return {repos,stars};
-
 }
 
 /* =========================
-GET PRs
+PRS
 ========================= */
 
 async function getPRs(){
@@ -128,11 +157,10 @@ q:`author:${USER} type:pr`
 });
 
 return data.total_count || 0;
-
 }
 
 /* =========================
-GET ISSUES
+ISSUES
 ========================= */
 
 async function getIssues(){
@@ -142,11 +170,10 @@ q:`author:${USER} type:issue`
 });
 
 return data.total_count || 0;
-
 }
 
 /* =========================
-GET COMMITS (GraphQL)
+COMMITS
 ========================= */
 
 async function getCommits(){
@@ -156,12 +183,12 @@ oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
 const query = `
 query($login:String!,$from:DateTime!,$to:DateTime!) {
-  user(login:$login) {
-    contributionsCollection(from:$from,to:$to) {
-      totalCommitContributions
-      totalRepositoriesWithContributedCommits
-    }
-  }
+user(login:$login) {
+contributionsCollection(from:$from,to:$to) {
+totalCommitContributions
+totalRepositoriesWithContributedCommits
+}
+}
 }
 `;
 
@@ -179,7 +206,7 @@ contributed: result.user.contributionsCollection.totalRepositoriesWithContribute
 }
 
 /* =========================
-GET LANGUAGES
+LANGUAGES
 ========================= */
 
 async function getLanguages(repos){
@@ -195,7 +222,6 @@ map[repo.language]=(map[repo.language]||0)+1;
 }
 
 return map;
-
 }
 
 /* =========================
@@ -218,9 +244,10 @@ const percent=((val/total)*100).toFixed(2);
 const color=LANGUAGE_COLORS[lang]||LANGUAGE_COLORS.Other;
 
 rows+=`
+
 <text x="20" y="${y}" fill="#66d1a1" font-size="12">${lang}</text>
 
-<rect x="120" y="${y-10}" width="140" height="8" fill="#2a2a2a" rx="4"/>
+<rect x="120" y="${y-10}" width="140" height="8" fill="#1f2f3a" rx="4"/>
 
 <rect x="120" y="${y-10}" width="${percent*1.4}" height="8"
 fill="${color}" rx="4"/>
@@ -228,6 +255,7 @@ fill="${color}" rx="4"/>
 <text x="310" y="${y}" fill="#66d1a1" font-size="12" text-anchor="end">
 ${percent}%
 </text>
+
 `;
 
 y+=25;
@@ -235,16 +263,19 @@ y+=25;
 });
 
 return`
+
 <svg width="360" height="200"
 xmlns="http://www.w3.org/2000/svg">
 
-<rect width="360" height="200" rx="12"
-fill="none"
-stroke="white"/>
+<rect width="360" height="200"
+rx="12"
+fill="#315e7f"
+stroke="#1b3c55"
+stroke-width="1.5"/>
 
 <text x="20" y="25"
 font-size="18"
-fill="#f7f7f8"
+fill="#ffffff"
 font-family="Arial"
 font-weight="bold">
 Top Languages
@@ -253,12 +284,13 @@ Top Languages
 ${rows}
 
 </svg>
+
 `;
 
 }
 
 /* =========================
-DONUT CHART
+DONUT
 ========================= */
 
 function donut(score,rank){
@@ -270,23 +302,24 @@ const c=2*Math.PI*r;
 const p=c*(percent/100);
 
 return`
+
 <g transform="translate(320,110)">
 
 <circle r="${r}" cx="0" cy="0"
 fill="none"
-stroke="#2a2a2a"
+stroke="#1f2f3a"
 stroke-width="10"/>
 
 <circle r="${r}" cx="0" cy="0"
 fill="none"
-stroke="#66d1a1"
+stroke="#00eaff"
 stroke-width="10"
 stroke-dasharray="${p} ${c}"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
 text-anchor="middle"
-fill="#66d1a1"
+fill="#00eaff"
 font-size="18"
 font-family="Arial"
 font-weight="bold">
@@ -294,6 +327,7 @@ ${rank}
 </text>
 
 </g>
+
 `;
 
 }
@@ -314,46 +348,52 @@ xmlns="http://www.w3.org/2000/svg">
 
 <rect width="420" height="200"
 rx="12"
-fill="none"
-stroke="white"/>
+fill="#315e7f"
+stroke="#1b3c55"
+stroke-width="1.5"/>
 
 <text x="20" y="30"
 font-size="18"
-fill="#f7f7f8"
+fill="#ffffff"
 font-family="Arial"
 font-weight="bold">
 ${USER} GitHub Stats
 </text>
 
-<g font-family="Arial" font-size="14">
+<g font-family="Arial" font-size="14" fill="#66d1a1">
 
-<text x="50" y="70" fill="#66d1a1">
-⭐ Total Stars Earned: ${data.stars}
-</text>
+<g transform="translate(30,60)">
+${ICONS.star}
+<text x="20" y="12">Total Stars Earned: ${data.stars}</text>
+</g>
 
-<text x="50" y="95" fill="#66d1a1">
-🔨 Commits (last year): ${data.commits}
-</text>
+<g transform="translate(30,85)">
+${ICONS.commit}
+<text x="20" y="12">Commits (last year): ${data.commits}</text>
+</g>
 
-<text x="50" y="120" fill="#66d1a1">
-🔁 Total PRs: ${data.prs}
-</text>
+<g transform="translate(30,110)">
+${ICONS.pr}
+<text x="20" y="12">Total PRs: ${data.prs}</text>
+</g>
 
-<text x="50" y="145" fill="#66d1a1">
-❗ Total Issues: ${data.issues}
-</text>
+<g transform="translate(30,135)">
+${ICONS.issue}
+<text x="20" y="12">Total Issues: ${data.issues}</text>
+</g>
 
-<text x="50" y="170" fill="#66d1a1">
-📦 Contributed to: ${data.contributed}
-</text>
+<g transform="translate(30,160)">
+${ICONS.repo}
+<text x="20" y="12">Contributed to: ${data.contributed}</text>
+</g>
 
 </g>
 
 ${donut(score,rank)}
 
 </svg>
-`;
 
+`;
 }
 
 /* =========================
