@@ -25,7 +25,7 @@ Almir-git-unifc GitHub Stats
 <path fill="#00eaff"
 d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/>
 </svg>
-<text x="20" y="12">Total Stars Earned: 24</text>
+<text x="20" y="12">Total Stars Earned: 23</text>
 </g>
 
 <g transform="translate(30,85)">
@@ -95,7 +95,7 @@ stroke-width="10"/>
 fill="none"
 stroke="#00eaff"
 stroke-width="10"
-stroke-dasharray="183.67007289947367 251.32741228718345"
+stroke-dasharray="182.96635614506954 251.32741228718345"
 transform="rotate(-90)"/>
 
 <text x="0" y="6"
