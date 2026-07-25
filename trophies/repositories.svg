@@ -23,7 +23,7 @@
 
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
-        fill="#788f4d" font-size="12">
+        fill="#40bb4b" font-size="12">
     High Repo Creator
   </text>
 
