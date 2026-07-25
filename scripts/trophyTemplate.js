@@ -13,7 +13,8 @@ export function trophySVG({
 };
   return `
 <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="150" rx="12" fill="#0d1117" stroke="#30363d"/>
+
+<rect width="200" height="150" rx="12" fill="#315e7f" stroke="#1b3c55"/>
 
   <!-- Title -->
   <text x="100" y="22" text-anchor="middle"
