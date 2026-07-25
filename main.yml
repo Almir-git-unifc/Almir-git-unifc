@@ -29,7 +29,7 @@ jobs:
         with:
           github_user_name: Almir-git-unifc
           outputs: |
-            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake.svg?color_snake=#315f7f&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
           
           
