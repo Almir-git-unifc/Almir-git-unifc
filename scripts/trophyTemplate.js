@@ -5,16 +5,15 @@ export function trophySVG({
   rank,
   progress,
   icon,
+  backgroundColor = "#315e7f" // valor padrão, pode ser alterado
 }) {
-  // SE QUIZER MDUAR A COR DA BADGE DO RANK COLOQUE O CÓDIGO ABAIXO; SENÃO APAGUE ...
   const RANK_COLORS = {
-     //  SSS: "#ff7b72", SS:  "#ffa657", S:   "#f2cc60", AAA: "#d2a8ff", AA: "#a371f7", A: "#58a6ff", B: "#3fb950", C: "#8b949e",
     SSS: "#8856e4", SS: "#8856e4", S: "#8856e4", AAA: "#8856e4", AA: "#8856e4", A: "#8856e4", B: "#8856e4", C: "#8856e4",    
-};
+  };
   return `
-<svg width="200" height="150" fill="#315e7f" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
 
-<rect width="200" height="150" rx="12" fill="#315e7f" stroke="#1b3c55"/>
+<rect width="200" height="150" rx="12" fill="${backgroundColor}" stroke="#1b3c55"/>
 
   <!-- Title -->
   <text x="100" y="22" text-anchor="middle"
