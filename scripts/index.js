@@ -28,10 +28,10 @@ d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/>
 </svg>`,
 
 commit: `
-<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0678de" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-history">
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00eaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-history">
   <polyline points="12 6 12 12 16 14">  
   </polyline>
-  <path fill="#00eaff" d="M2 13.24a9.67 9.67 0 0 0 2.71 5.83 10.2 10.2 0 0 0 14.32 0 9.89 9.89 0 0 0 0-14.14 10.2 10.2 0 0 0-13.52-.7C5.24 4.44 2.26 7.74 2 8">    
+  <path fill=no d="M2 13.24a9.67 9.67 0 0 0 2.71 5.83 10.2 10.2 0 0 0 14.32 0 9.89 9.89 0 0 0 0-14.14 10.2 10.2 0 0 0-13.52-.7C5.24 4.44 2.26 7.74 2 8">    
   </path>
   <path d="M6 9H1V4">    
   </path>
@@ -43,15 +43,15 @@ pr: `
 </svg>`,
 
 issue: `
-<svg fill="#00eaff" height="15px" width="15px" stroke="#0678de" stroke-width="3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+<svg fill="#0678de" height="15px" width="15px" stroke="#00eaff" stroke-width="3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 27.963 27.963" xml:space="preserve">
 <g>
 	<g id="c129_exclamation">
-		<path fill="#00eaff" d="M13.983,0C6.261,0,0.001,6.259,0.001,13.979c0,7.724,6.26,13.984,13.982,13.984s13.98-6.261,13.98-13.984
+		<path fill="#0678de" d="M13.983,0C6.261,0,0.001,6.259,0.001,13.979c0,7.724,6.26,13.984,13.982,13.984s13.98-6.261,13.98-13.984
 			C27.963,6.259,21.705,0,13.983,0z M13.983,26.531c-6.933,0-12.55-5.62-12.55-12.553c0-6.93,5.617-12.548,12.55-12.548
 			c6.931,0,12.549,5.618,12.549,12.548C26.531,20.911,20.913,26.531,13.983,26.531z"/>
-		<polygon points="15.579,17.158 16.191,4.579 11.804,4.579 12.414,17.158 		"/>
-		<path d="M13.998,18.546c-1.471,0-2.5,1.029-2.5,2.526c0,1.443,0.999,2.528,2.444,2.528h0.056c1.499,0,2.469-1.085,2.469-2.528
+		<polygon  points="15.579,17.158 16.191,4.579 11.804,4.579 12.414,17.158 		"/>
+		<path fill="#0678de" d="M13.998,18.546c-1.471,0-2.5,1.029-2.5,2.526c0,1.443,0.999,2.528,2.444,2.528h0.056c1.499,0,2.469-1.085,2.469-2.528
 			C16.441,19.575,15.468,18.546,13.998,18.546z"/>
 	</g>
 	<g id="Capa_1_207_">
