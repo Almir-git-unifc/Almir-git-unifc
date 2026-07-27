@@ -1,6 +1,7 @@
 
 <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="150" rx="12" fill="#315e7f" stroke="#30363d"/>
+
+<rect width="200" height="150" rx="12" fill="#315e7f" stroke="#1b3c55"/>
 
   <!-- Title -->
   <text x="100" y="22" text-anchor="middle"
@@ -10,7 +11,10 @@
 
   <!-- Trophy icon -->
   <text x="100" y="58" text-anchor="middle" font-size="26">
-    🏆
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
+         <text x="12" y="16" text-anchor="middle" font-size="12" fill="#000">🏆</text>
+       </svg>
   </text>
 
   <!-- Rank badge -->
@@ -23,14 +27,14 @@
 
   <!-- Subtitle -->
   <text x="100" y="108" text-anchor="middle"
-        fill="#40bb4b" font-size="12">
+        fill="#788f4d" font-size="12">
     Ultra Puller
   </text>
 
   <!-- Score -->
   <text x="100" y="125" text-anchor="middle"
         fill="#539df1" font-size="13" font-weight="700">
-    155 pts
+    160 pts
   </text>
 
   <!-- Progress bar -->
