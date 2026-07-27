@@ -61,7 +61,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 <p align="center">
 <img src="./trophies/pull_requests.svg"/>
   <img src="./trophies/commits.svg"/>
-  <img src="./trophies/repositories.svg" "/>
+  <img src="./trophies/repositories.svg"/>
   <img src="./trophies/experience.svg" />
   <img src="./trophies/stars.svg"/>
 </p>
