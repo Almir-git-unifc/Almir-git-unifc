@@ -23,10 +23,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/pinnedGenerate.js
 
-      - name: Commit
+      - name: Commit and Push changes
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add pinned/
-          git commit -m "update pinned cards" || echo "no changes"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git status
+          git commit -m "chore: auto update profile stats" || echo "No changes to commit"
+          git pull --rebase origin main
           git push
