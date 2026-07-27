@@ -2,7 +2,7 @@ import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
 // Módulos locais de troféus
-import { trophySVG } from "./Template.js";
+import { trophySVG } from "./trophyTemplate.js";
 import { resolveRank } from "./resolveRank.js";
 import { calculateProgress } from "./progressUtils.js";
 import { experienceScore, experienceProgress } from "./experienceUtils.js";
