@@ -8,7 +8,7 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions: # Adicione isso para permitir o push
+    permissions:
       contents: write
 
     steps:
@@ -18,22 +18,21 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 # Atualizado para Node 22 (LTS)
 
       - name: Install deps
         run: npm install
 
-      - name: Generate trophies
+      - name: Generate trophies and stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # MUDANÇA AQUI: Executar o index.js em vez do generate_trophies.js
         run: node scripts/index.js 
 
       - name: Commit changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add trophies/
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add trophies/ github-stats/
           git status
-          git commit -m "chore: update github trophies" || echo "No changes"
+          git commit -m "chore: update trophies and stats" || echo "No changes"
           git push
