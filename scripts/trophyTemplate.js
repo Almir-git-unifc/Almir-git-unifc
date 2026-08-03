@@ -50,7 +50,7 @@ export function trophySVG({
 
   <!-- Pontuação -->
   <text x="100" y="122" text-anchor="middle"
-        fill="#d4b93c" font-size="13" font-weight="700" font-family="Arial">
+        fill="#d4b93c" font-size="12" font-weight="700" font-family="Arial">
     ${points} pts
   </text>
 
