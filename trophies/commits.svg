@@ -33,8 +33,8 @@
 
   <!-- Pontuação -->
   <text x="100" y="122" text-anchor="middle"
-        fill="#d4b93c" font-size="13" font-weight="700" font-family="Arial">
-    346 pts
+        fill="#d4b93c" font-size="12" font-weight="700" font-family="Arial">
+    347 pts
   </text>
 
   <!-- Barra de Progresso -->
