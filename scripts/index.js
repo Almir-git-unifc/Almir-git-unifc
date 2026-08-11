@@ -1,6 +1,9 @@
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
+// Adicione a importação no topo do scripts/index.js
+import { donut } from "./svgUtils.js";
+
 // Módulos locais de troféus
 import { trophySVG } from "./trophyTemplate.js";
 import { resolveRank } from "./resolveRank.js";
@@ -137,20 +140,60 @@ const ICONS = {
   </svg>`,
 };
 
+
+
+// Substituido função SVGStats por calculateOverallRank(data)  + nova statsSVG(data)
+// Função auxiliar para calcular o percentual do Donut e o Rank
+function calculateOverallRank(data) {
+  // Exemplo de cálculo ponderado de pontuação com base nos dados
+  const totalScore = 
+    (data.stars * 3) + 
+    (data.commits * 0.2) + 
+    (data.prs * 2) + 
+    (data.issues * 1) + 
+    (data.contributed * 2.5);
+
+  // Define uma meta de pontos para 100% de preenchimento do Donut (ex: 500)
+  const percent = Math.min(Math.round((totalScore / 500) * 100), 100);
+
+  let rank = "C";
+  if (percent >= 90) rank = "S";
+  else if (percent >= 75) rank = "A+";
+  else if (percent >= 60) rank = "A";
+  else if (percent >= 45) rank = "B+";
+  else if (percent >= 30) rank = "B";
+
+  return { percent, rank };
+}
+
 function statsSVG(data) {
+  const { percent, rank } = calculateOverallRank(data);
+  const donutGraphic = donut(percent, rank);
+
   return `
-<svg width="420" height="200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="420" height="200" rx="12" fill="#315e7f" stroke="#1b3c55" stroke-width="1.5"/>
-  <text x="20" y="30" font-size="18" fill="#ffffff" font-family="Arial" font-weight="bold">${USER} GitHub Stats</text>
+<svg width="580" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo do Card -->
+  <rect width="580" height="200" rx="12" fill="#315e7f" stroke="#1b3c55" stroke-width="1.5"/>
+
+  <!-- Título -->
+  <text x="25" y="32" font-size="18" fill="#ffffff" font-family="Arial" font-weight="bold">${USER} GitHub Stats</text>
+
+  <!-- Lista de Estatísticas (Lado Esquerdo) -->
   <g font-family="Arial" font-size="14" fill="#66d1a1">
-    <g transform="translate(30,60)">${ICONS.star}<text x="20" y="12">Total Stars Earned: ${data.stars}</text></g>
-    <g transform="translate(30,85)">${ICONS.commit}<text x="20" y="12">Commits (last year): ${data.commits}</text></g>
-    <g transform="translate(30,110)">${ICONS.pr}<text x="20" y="12">Total PRs: ${data.prs}</text></g>
-    <g transform="translate(30,135)">${ICONS.issue}<text x="20" y="12">Total Issues: ${data.issues}</text></g>
-    <g transform="translate(30,160)">${ICONS.repo}<text x="20" y="12">Contributed to: ${data.contributed}</text></g>
+    <g transform="translate(25, 58)">${ICONS.star}<text x="22" y="12">Total Stars Earned: ${data.stars}</text></g>
+    <g transform="translate(25, 83)">${ICONS.commit}<text x="22" y="12">Commits (last year): ${data.commits}</text></g>
+    <g transform="translate(25, 108)">${ICONS.pr}<text x="22" y="12">Total PRs: ${data.prs}</text></g>
+    <g transform="translate(25, 133)">${ICONS.issue}<text x="22" y="12">Total Issues: ${data.issues}</text></g>
+    <g transform="translate(25, 158)">${ICONS.repo}<text x="22" y="12">Contributed to: ${data.contributed}</text></g>
   </g>
+
+  <!-- Gráfico Donut (Lado Direito) -->
+  ${donutGraphic}
 </svg>`;
 }
+
+
+
 
 function languagesSVG(langs) {
   let y = 60;
