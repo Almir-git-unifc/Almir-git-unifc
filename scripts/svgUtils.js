@@ -6,7 +6,7 @@ export function donut(percent, rank = "A") {
   const progress = circumference * (validPercent / 100);
 
   return `
-  <g transform="translate(490, 115)">
+  <g transform="translate(360, 115)">
     <!-- Círculo de Fundo (Trilho) -->
     <circle
       r="${radius}"
