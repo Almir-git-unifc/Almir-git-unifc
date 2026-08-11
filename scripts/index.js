@@ -158,7 +158,7 @@ function calculateOverallRank(data) {
 
   let rank = "C";
   if (percent >= 90) rank = "S";
-  else if (percent >= 80) rank = "A++";
+  else if (percent >= 80) rank = "A⬆️";
   else if (percent >= 70) rank = "A+";
   else if (percent >= 60) rank = "A";
   else if (percent >= 45) rank = "B+";
