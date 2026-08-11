@@ -166,14 +166,16 @@ function calculateOverallRank(data) {
   return { percent, rank };
 }
 
+
 function statsSVG(data) {
   const { percent, rank } = calculateOverallRank(data);
   const donutGraphic = donut(percent, rank);
 
   return `
-<svg width="580" height="200" xmlns="http://www.w3.org/2000/svg">
+<!-- Card reduzido para 440px de largura -->
+<svg width="440" height="200" xmlns="http://www.w3.org/2000/svg">
   <!-- Fundo do Card -->
-  <rect width="580" height="200" rx="12" fill="#315e7f" stroke="#1b3c55" stroke-width="1.5"/>
+  <rect width="440" height="200" rx="12" fill="#315e7f" stroke="#1b3c55" stroke-width="1.5"/>
 
   <!-- Título -->
   <text x="25" y="32" font-size="18" fill="#ffffff" font-family="Arial" font-weight="bold">${USER} GitHub Stats</text>
@@ -187,7 +189,7 @@ function statsSVG(data) {
     <g transform="translate(25, 158)">${ICONS.repo}<text x="22" y="12">Contributed to: ${data.contributed}</text></g>
   </g>
 
-  <!-- Gráfico Donut (Lado Direito) -->
+  <!-- Gráfico Donut -->
   ${donutGraphic}
 </svg>`;
 }
