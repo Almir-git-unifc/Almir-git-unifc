@@ -154,14 +154,16 @@ function calculateOverallRank(data) {
     (data.contributed * 2.5);
 
   // Define uma meta de pontos para 100% de preenchimento do Donut (ex: 500)
-  const percent = Math.min(Math.round((totalScore / 500) * 100), 100);
+  const percent = Math.min(Math.round((totalScore / 700) * 100), 100);
 
   let rank = "C";
   if (percent >= 90) rank = "S";
-  else if (percent >= 75) rank = "A+";
+  else if (percent >= 80) rank = "A++";
+  else if (percent >= 70) rank = "A+";
   else if (percent >= 60) rank = "A";
   else if (percent >= 45) rank = "B+";
   else if (percent >= 30) rank = "B";
+  else if (percent >= 25) rank = "B-";
 
   return { percent, rank };
 }
