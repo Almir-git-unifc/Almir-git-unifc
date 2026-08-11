@@ -147,8 +147,8 @@ const ICONS = {
 function calculateOverallRank(data) {
   // Exemplo de cálculo ponderado de pontuação com base nos dados
   const totalScore = 
-    (data.stars * 3) + 
-    (data.commits * 0.2) + 
+    (data.stars * 2) + 
+    (data.commits * 0.5) + 
     (data.prs * 2) + 
     (data.issues * 1) + 
     (data.contributed * 2.5);
