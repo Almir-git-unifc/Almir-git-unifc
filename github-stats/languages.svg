@@ -5,26 +5,26 @@
   
       <text x="20" y="60" fill="#66d1a1" font-size="12">JavaScript</text>
       <rect x="120" y="50" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="50" width="91.56" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="60" fill="#66d1a1" font-size="12" text-anchor="end">65.4%</text>
+      <rect x="120" y="50" width="93.38" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="60" fill="#66d1a1" font-size="12" text-anchor="end">66.7%</text>
       <text x="20" y="85" fill="#66d1a1" font-size="12">CSS</text>
       <rect x="120" y="75" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="75" width="21.56" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="85" fill="#66d1a1" font-size="12" text-anchor="end">15.4%</text>
+      <rect x="120" y="75" width="20.72" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="85" fill="#66d1a1" font-size="12" text-anchor="end">14.8%</text>
       <text x="20" y="110" fill="#66d1a1" font-size="12">Vue</text>
       <rect x="120" y="100" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="100" width="10.78" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="110" fill="#66d1a1" font-size="12" text-anchor="end">7.7%</text>
+      <rect x="120" y="100" width="10.36" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="110" fill="#66d1a1" font-size="12" text-anchor="end">7.4%</text>
       <text x="20" y="135" fill="#66d1a1" font-size="12">HTML</text>
       <rect x="120" y="125" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="125" width="5.319999999999999" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="135" fill="#66d1a1" font-size="12" text-anchor="end">3.8%</text>
+      <rect x="120" y="125" width="5.18" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="135" fill="#66d1a1" font-size="12" text-anchor="end">3.7%</text>
       <text x="20" y="160" fill="#66d1a1" font-size="12">Kotlin</text>
       <rect x="120" y="150" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="150" width="5.319999999999999" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="160" fill="#66d1a1" font-size="12" text-anchor="end">3.8%</text>
+      <rect x="120" y="150" width="5.18" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="160" fill="#66d1a1" font-size="12" text-anchor="end">3.7%</text>
       <text x="20" y="185" fill="#66d1a1" font-size="12">Java</text>
       <rect x="120" y="175" width="140" height="8" fill="#1f2f3a" rx="4"/>
-      <rect x="120" y="175" width="5.319999999999999" height="8" fill="#00eaff" rx="4"/>
-      <text x="310" y="185" fill="#66d1a1" font-size="12" text-anchor="end">3.8%</text>
+      <rect x="120" y="175" width="5.18" height="8" fill="#00eaff" rx="4"/>
+      <text x="310" y="185" fill="#66d1a1" font-size="12" text-anchor="end">3.7%</text>
 </svg>
