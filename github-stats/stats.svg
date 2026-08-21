@@ -9,7 +9,7 @@
 
   <!-- Lista de Estatísticas (Lado Esquerdo) -->
   <g font-family="Arial" font-size="14" fill="#66d1a1">
-    <g transform="translate(25, 58)"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#00eaff" d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/></svg><text x="22" y="12">Total Stars Earned: 25</text></g>
+    <g transform="translate(25, 58)"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#00eaff" d="M12 2l3 7 7 .6-5.3 4.6 1.6 7-6.3-3.8-6.3 3.8 1.6-7L2 9.6 9 9z"/></svg><text x="22" y="12">Total Stars Earned: 24</text></g>
     <g transform="translate(25, 83)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00eaff" stroke-width="3"><polyline points="12 6 12 12 16 14"/><path d="M2 13.24a9.67 9.67 0 0 0 2.71 5.83 10.2 10.2 0 0 0 14.32 0 9.89 9.89 0 0 0 0-14.14 10.2 10.2 0 0 0-13.52-.7C5.24 4.44 2.26 7.74 2 8"/><path d="M6 9H1V4"/></svg><text x="22" y="12">Commits (last year): 426</text></g>
     <g transform="translate(25, 108)">
    <svg fill="#0678de" width="15px" height="15px"  stroke-width="3" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
