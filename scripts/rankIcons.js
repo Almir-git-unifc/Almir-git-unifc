@@ -1,34 +1,34 @@
 export const RANK_ICONS = {
-  C: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#355fb8" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="12" fill="#000">🥉</text>
+  C: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#355fb8" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="12" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">🥉</text>
        </svg>`,
-  B: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#355fb8" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="12" fill="#000">🚀</text>
+  B: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#355fb8" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="12" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">🚀</text>
        </svg>`,
-  A: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#355fb8" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="15" fill="#000">🏆</text>
+  A: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#355fb8" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="13" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">🏆</text>
        </svg>`,
-  AA: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#355fb8" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="15" fill="#000">💎</text>
+  AA: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#355fb8" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="13" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">💎</text>
        </svg>`,
-  AAA: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#355fb8" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="15" fill="#000">👑</text>
+  AAA: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#355fb8" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="13" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">👑</text>
        </svg>`,
-  S: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="15" fill="#000">⭐</text>
+  S: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#FFD700" stroke="#000000" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="13" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">⭐</text>
        </svg>`,
-  SS: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="12" fill="#000">🔥</text>
+  SS: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#FFD700" stroke="#000000" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="12" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">🔥</text>
        </svg>`,
-  SSS: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#ff0000" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
-         <text x="12" y="16" text-anchor="middle" font-size="12" fill="#fff">☀️</text>
+  SSS: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" fill="#FF0000" stroke="#ffffff" stroke-width="1.5"/>
+         <text x="12" y="16.5" text-anchor="middle" font-size="12" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif">☀️</text>
        </svg>`,
 };
