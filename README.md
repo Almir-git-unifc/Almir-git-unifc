@@ -102,7 +102,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![node-current](https://img.shields.io/badge/Node->=18.16.0-informational?style=flat&logo=nodedotjs&logoColor=white&color=4AB197)
 [![CertiProf - Scrum](https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
 [![CertiProf - BI](https://img.shields.io/static/v1?label=CertiProf&message=BI-Fundation&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
-[![CertiProf - 27001](https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197)](https://certiprof.com/products/certified-iso-iec-20000-foundation-i20000f)
+[![CertiProf - 27001](https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197)](https://verify.certiprof.com/pt-br?id=JLDPFKLJSR-QTHCBKCW-YDDBQBQWDQ)
 
 
 </details>
