@@ -99,10 +99,10 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![sublime](https://img.shields.io/badge/Tools-sublime_text-informational?style=flat&logo=sublimetext&logoColor=c0a47c&color=4AB197)
 ![Jenkins](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
 ![SonarQube](https://img.shields.io/badge/Tools-SonarQube-informational?style=flat&logo=SonarQube&logoColor=white&color=4AB197)
-![node-current](https://img.shields.io/badge/Node->=18.16.0-informational?style=flat&logo=nodedotjs&logoColor=white&color=4AB197)
-[![CertiProf - Scrum](https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
-[![CertiProf - BI](https://img.shields.io/static/v1?label=CertiProf&message=BI-Fundation&color=4AB197)](https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr)
-[![CertiProf - 27001](https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197)](https://verify.certiprof.com/pt-br?id=JLDPFKLJSR-QTHCBKCW-YDDBQBQWDQ)
+![node-current](https://shields.io)
+<a href="https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr" target="_blank"><img src="https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197" alt="CertiProf - Scrum" /></a>
+<a href="https://certiprof.com/pages/scrum-foundations-professional-certificate-sfpc-ptbr" target="_blank"><img src="https://img.shields.io/static/v1?label=CertiProf&message=BI-Fundation&color=4AB197" alt="CertiProf - BI" /></a>
+<a href="https://verify.certiprof.com/pt-br?id=JLDPFKLJSR-QTHCBKCW-YDDBQBQWDQ" target="_blank"><img src="https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197" alt="CertiProf - 27001" /></a>
 
 
 </details>
