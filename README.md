@@ -40,19 +40,6 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
    <img src="./github-stats/languages.svg" height="200"/>
 </p> 
 
-<!-- O quadro Stats foi configurado para altura 33, ou seja, &line_height=33 ; e o quadro language foi configurado para 4 linguagens &langs_count=4 -->
-<!-- Se aparecer outras lingaugens estes quadros precisam ser reconfigurados -->
-
-<!-- GitHub Stats voltou a aparecer em 22/01/2026; então vamos deixar a imagem de stats comentada momentaneamente
-<p align="center">
-  <a href="https://github.com/Almir-git-unifc/Almir-git-unifc">
-    <img src="zzgithubStats.png" alt="GitHub Stats" width="800">
-  </a>
-</p>
--->
-
-<!-- ![Stats & Top Langs - Vercel is offline](https://github.com/Almir-git-unifc/Almir-git-unifc/blob/main/zzgithubStats.png)  -->
-
 <br>
 <br>
 
@@ -76,7 +63,10 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Node](https://img.shields.io/badge/Node-239120?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![java](https://img.shields.io/badge/Java-FA7343?style=for-the-badge&logo=java&logoColor=white)
-![mysql](https://img.shields.io/badge/MySQL-CC6699?style=for-the-badge&logo=mysql&logoColor=white)
+![java](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+<!-- 
+![mysql](https://img.shields.io/badge/MySQL-CC6699?style=for-the-badge&logo=mysql&logoColor=white
+-->
 
 
 <details>
