@@ -91,8 +91,14 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 ![Jenkins](https://img.shields.io/badge/Tools-Jenkins-informational?style=flat&logo=jenkins&logoColor=white&color=4AB197)
 ![SonarQube](https://img.shields.io/badge/Tools-SonarQube-informational?style=flat&logo=SonarQube&logoColor=white&color=4AB197)
 
+
+<!-- 
 ![CertiProf-Scrum](https://img.shields.io/static/v1?label=CertiProf&message=Scrum&color=4AB197)
 ![CertiProf-BI](https://img.shields.io/static/v1?label=CertiProf&message=BI-Foundation&color=4AB197)
+-->
+<a href="./zzzCertifprof_BI-FPC.png">
+  <img src="https://img.shields.io/static/v1?label=Certif&message=BI-Foundation&color=4AB197" alt="Certification BI-Foundation">
+</a>
 ![CertiProf-27001](https://img.shields.io/static/v1?label=CertiProf&message=ISO-27001&color=4AB197)
 
 
