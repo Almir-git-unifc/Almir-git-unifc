@@ -114,7 +114,7 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
     srcset="https://raw.githubusercontent.com/Almir-git-unifc/Almir-git-unifc/output/github-contribution-grid-snake.svg"
   />
   <img
-    alt="github contribution grid snake animation"
+    alt="GitHub contribution grid snake animation"
     src="https://raw.githubusercontent.com/Almir-git-unifc/Almir-git-unifc/output/github-contribution-grid-snake.svg"
   />
 </picture>
@@ -126,5 +126,5 @@ I studies Software Engineering, Full Stack Development & SFPC Scrum Foundation.
 
 > ### Want to know how I made this README?
 >
-> I use this <a href="https://www.dio.me/articles/como-criar-um-bom-readmemd" target="_blank">tutorial</a>; for [badges1](https://ileriayo.github.io/markdown-badges/) and [badges2](https://github.com/inttter/md-badges); > & this repository to [snake](https://github.com/Platane/Platane/blob/master/README.md). Unfortunately, the trophies at ryo-ma/github-profile-trophy and the API for anuraghazra statistics are often offline.
+> I use this <a href="https://www.dio.me/articles/como-criar-um-bom-readmemd" target="_blank">tutorial</a>; for [badges1](https://ileriayo.github.io/markdown-badges/) and [badges2](https://github.com/inttter/md-badges); and this repository to [snake](https://github.com/Platane/Platane/blob/master/README.md). The GitHub Stats, Top Languages, and GitHub Trophies cards were developed in Node/JavaScript using GitHub Actions and svg images.
 
